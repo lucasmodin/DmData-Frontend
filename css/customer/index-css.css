@@ -181,20 +181,44 @@ section {
     transform: translateY(0);
 }
 
+.case-carousel-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 6rem;   /* afstand fra bokse til carousel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    color: #1E2A38;
+    text-align: center;
+}
+
 .case-carousel {
-    margin-top: 6rem;
+    margin-top: 0rem;
     position: relative;
     width: 100%;
     max-width: 800px;
+
 
 }
 
 .carousel-track-container {
     overflow: hidden;
+    max-height: 200px;
+}
+
+.carousel-track .carousel-slide {
+    height: 55px;
+    flex: 0 0 auto;
 }
 
 .carousel-track {
     display: flex;
+    gap: 2rem;
     transition: transform 0.5s ease;
     list-style: none;
     padding: 0;
@@ -211,7 +235,9 @@ section {
 
 .carousel-slide img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .carousel-button {
@@ -228,10 +254,10 @@ section {
 }
 
 .carousel-button.prev {
-    left: 0;
+    left: -30px;
 }
 
 .carousel-button.next {
-    right: 0;
+    right: -30px;
 }
 
