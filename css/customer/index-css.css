@@ -184,7 +184,7 @@ section {
 .case-carousel-wrapper {
     width: 100%;
     max-width: 800px;
-    margin-top: 6rem;   /* afstand fra bokse til carousel */
+    margin-top: 4rem;   /* afstand fra bokse til carousel */
     display: flex;
     flex-direction: column;
     align-items: center;
