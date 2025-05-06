@@ -1,0 +1,26 @@
+/* === Global styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+/* === Layout structure === */
+section {
+    height: 100vh; /* Each section takes up full viewport height */
+    scroll-snap-align: start;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
