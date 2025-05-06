@@ -27,67 +27,81 @@ section {
 
 /* === CASE SECTION === */
 /* full‐screen, grey background, scroll‐snap */
-#case‐presentation {
+#case-presentation {
     height: 100vh;
-    scroll‐snap‐align: start;
-    background‐color: #e0e0e0;
+    scroll-snap-align: start;
+    background: lightgray;
     display: flex;
-    align‐items: center;
-    justify‐content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 2rem 5%;
     gap: 4rem;
+
 }
 
 /* === CASE SECTION === */
 /* === HEADER === */
 .case-header {
-    position: absolute;
-    margin-bottom: 400px;
+    align-self: center; /* placerer overskriften lodret øverst */
+    text-align: center;
+    padding-bottom: 5rem;                /* nulstil margin hvis du har andet */
+    padding-top: 1rem;        /* luft fra toppen af sektionen */
+    font-size: 2rem;
+    width: 100%;
+
 }
 
 /* left white‐transparent box */
 .case‐paragraph {
-    flex: 1;
-    min‐width: 300px;
+    flex: 3;
+    min-width: 400px;
     background: rgba(255,255,255,0.8);
-    padding: 2rem;
-    border‐radius: 8px;
-    box‐shadow: 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
     display: inline-block;
-    margin-left: 100px;
-    max-width: 450px;
+
+    max-width: 600px;
     max-height: 450px;
-    font-size: 20px;
-    margin-top: 60px;
-    padding: 70px;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 4rem;
     border-radius: 10px;
+}
+/* Wrapper til tekst+links */
+.case-content-wrapper {
+    display: flex;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1400px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;         /* Luft før carouselen */
 }
 
 /* right links column */
 .case‐container {
-    flex: 1;
-    min‐width: 300px;
+    flex: 2;
+    min-width: 350px;
     display: flex;
-    flex‐direction: column;
-    gap: 1.5rem;
-    display: inline-block;
-    margin-top: 40px;
+    flex-direction: column;
+    margin-left: 6rem;
+    gap: 2rem;
     font-size: 25px;
 }
 
 /* individual links with underline */
 .case‐container a {
     display: block;
-    font‐size: 1.2rem;
+    font-size: 1.5rem;
     text-decoration: none;
     color: #111;
-    border‐bottom: 1px solid #333;
-    padding‐bottom: 0.2rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.2rem;
     transition: color 0.3s ease;
     border-bottom: 1.5px solid;
     padding-right: 0px;
     border-right-width: 20px;
-    max-width: 350px;
+    max-width: none;
     margin-bottom: 20px;
 }
 
@@ -95,4 +109,56 @@ section {
     color: #2C8ED6;
 }
 
+.case-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carousel-slide {
+    min-width: 150px;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(30,42,56,0.8);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 0;
+}
+
+.carousel-button.next {
+    right: 0;
+}
 
