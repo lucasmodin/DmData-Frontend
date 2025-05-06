@@ -79,6 +79,8 @@ section {
     flex-direction: column;
     padding: 2rem 5%;
     gap: 4rem;
+    position: relative;
+
 
 }
 
@@ -259,5 +261,41 @@ section {
 
 .carousel-button.next {
     right: -30px;
+}
+
+
+/* Øverste diagonale overlay */
+#case-presentation::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 150%; height: 150%;
+    background: rgba(255,255,255,0.8);
+    /* Klipper en trekant ud, så den dækker skråt */
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    transform: translateY(-50%) rotate(45deg);
+    pointer-events: none;
+    z-index: 9;
+}
+
+/* Nederste diagonale overlay */
+#case-presentation::after {
+    content: "";
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 150%; height: 150%;
+    background: rgba(255,255,255,0.8);
+    /* Klipper en trekant ud, spejlet i bunden */
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+    transform: translateY(50%) rotate(45deg);
+    pointer-events: none;
+    z-index: 9;
+}
+
+
+/* Sørg for, at din carousel, bokse og knapper ligger over overlays */
+#case-presentation > * {
+    position: relative;
+    z-index: 9;
 }
 
