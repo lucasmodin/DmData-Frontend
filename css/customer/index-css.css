@@ -129,7 +129,7 @@ section {
     display: flex;
     flex-direction: column;
     margin-left: 6rem;
-    gap: 2rem;
+    gap: 3rem;
     font-size: 25px;
 }
 
@@ -190,6 +190,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .carousel-title {
@@ -202,6 +203,7 @@ section {
 .case-carousel {
     margin-top: 0rem;
     position: relative;
+    display: inline-block;
     width: 100%;
     max-width: 800px;
 
@@ -246,23 +248,33 @@ section {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(30,42,56,0.8);
+
+    width: 3rem;
+    height: 3rem;
     border: none;
-    color: white;
-    font-size: 2rem;
-    padding: 0.5rem;
+    border-radius: 20%;               /* Gør knappen cirkulær */
+    background: rgba(30, 42, 56, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    z-index: 10;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 5;
 }
 
 .carousel-button.prev {
-    left: -30px;
+    left: -50px;
 }
 
 .carousel-button.next {
-    right: -30px;
+    right: -50px;
 }
-
+.carousel-button svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: #fff;
+}
 
 /* Øverste diagonale overlay */
 #case-presentation::before {
