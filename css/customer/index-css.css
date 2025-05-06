@@ -26,59 +26,72 @@ section {
 }
 
 /* === CASE SECTION === */
-#case-presentation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* full‐screen, grey background, scroll‐snap */
+#case‐presentation {
     height: 100vh;
-    scroll-snap-align: start;
+    scroll‐snap‐align: start;
+    background‐color: #e0e0e0;
+    display: flex;
+    align‐items: center;
+    justify‐content: center;
     padding: 2rem 5%;
-    /* background-color:; */
     gap: 4rem;
-    flex-wrap: wrap;
-}
-
-.case-paragraph,
-.case-container {
-    flex: 1;
-    min-width: 300px;
 }
 
 /* === CASE SECTION === */
-/* === LEFT TEXTBOX === */
-.case-paragraph {
-    background-color: rgba(255,255,255, 0.8); /* TRANSPARENT LOOK */
+/* === HEADER === */
+.case-header {
+    position: absolute;
+    margin-bottom: 400px;
+}
+
+/* left white‐transparent box */
+.case‐paragraph {
+    flex: 1;
+    min‐width: 300px;
+    background: rgba(255,255,255,0.8);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border‐radius: 8px;
+    box‐shadow: 0 0 10px rgba(0,0,0,0.05);
+    display: inline-block;
+    margin-left: 100px;
+    max-width: 450px;
+    max-height: 450px;
+    font-size: 20px;
+    margin-top: 60px;
+    padding: 70px;
+    border-radius: 10px;
 }
 
-.case-paragraph h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.case-paragraph p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.case-container {
+/* right links column */
+.case‐container {
+    flex: 1;
+    min‐width: 300px;
     display: flex;
-    flex-direction: column;
+    flex‐direction: column;
     gap: 1.5rem;
+    display: inline-block;
+    margin-top: 40px;
+    font-size: 25px;
 }
 
-.case-container a {
-    font-size: 1.2rem;
+/* individual links with underline */
+.case‐container a {
+    display: block;
+    font‐size: 1.2rem;
     text-decoration: none;
     color: #111;
-    border-bottom: 1px solid #333;
-    padding-bottom: 0.2rem;
+    border‐bottom: 1px solid #333;
+    padding‐bottom: 0.2rem;
     transition: color 0.3s ease;
+    border-bottom: 1.5px solid;
+    padding-right: 0px;
+    border-right-width: 20px;
+    max-width: 350px;
+    margin-bottom: 20px;
 }
 
-.case-container a:hover {
+.case‐container a:hover {
     color: #2C8ED6;
 }
 
