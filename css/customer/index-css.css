@@ -24,3 +24,62 @@ section {
     align-items: center;
     justify-content: center;
 }
+
+/* === CASE SECTION === */
+#case-presentation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    scroll-snap-align: start;
+    padding: 2rem 5%;
+    /* background-color:; */
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.case-paragraph,
+.case-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* === CASE SECTION === */
+/* === LEFT TEXTBOX === */
+.case-paragraph {
+    background-color: rgba(255,255,255, 0.8); /* TRANSPARENT LOOK */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.case-paragraph h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.case-paragraph p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.case-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.case-container a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #111;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.2rem;
+    transition: color 0.3s ease;
+}
+
+.case-container a:hover {
+    color: #2C8ED6;
+}
+
+
