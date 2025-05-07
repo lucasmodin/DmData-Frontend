@@ -1,6 +1,18 @@
+/* === FOOTER GENERAL === */
 {
     margin: 0;
     padding: 0;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
+}
+
+/* === LOGO === */
+.logo {
+    background-color: transparent !important; /* sletning af farverne får logoet til at blende ind i baggrunden */
+    padding: 0 !important;
+}
+
+.logo img { /* størrelsen på logoet*/
+    width: 100px;
+    height: 75px;
 }
