@@ -17,5 +17,5 @@ function loadComponent(url, containerID, callback){
 }
 
 function loadNavLogic(){
-    console.log("it should be working")
+    console.log("placeholder for when navigation is added")
 }
