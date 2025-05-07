@@ -1,11 +1,7 @@
 
 /*-----------------------------------------Start on the GLOBAL Styles ----------------------------------*/
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 html {
     /*scroll-snap-type: y mandatory;*/
@@ -15,6 +11,7 @@ html {
 
 body {
     overflow-y: scroll;
+    background-color: #1E2A38;
 }
 
 /* === Layout structure === */
@@ -72,26 +69,47 @@ section {
 }
 /*-----------------------------------------End on the hero-section ---------------------------------*/
 
+
+/*-----------------------------------------Start on the intro to DM-Science ---------------------------------*/
+
+#intro {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about-dm-picture {
+    background-image: url("/assets/images/pro-pc-pic.jpg");
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+
+/*-----------------------------------------End on the intro to DM-Science ---------------------------------*/
+
+
+
 /*-----------------------------------------Start on the case-presentation ---------------------------------*/
 
 /* === CASE SECTION === */
 /* full‐screen*/
-#case-presentation {
-    height: 100vh;
+section {
+    height: 100vh; /* Each section takes up full viewport height */
     scroll-snap-align: start;
-    background-color: #E3F2FD; /* ved ikke helt om det skal være denne farve*/
+    padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 2rem 5%;
-    gap: 4rem;
-    position: relative;
-
 }
 
-/* === CASE SECTION === */
-/* === HEADER TEXT === */
+#case-presentation{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+}
+
 .case-header {
     align-self: center; /* placerer overskriften lodret øverst */
     text-align: left;
@@ -107,46 +125,45 @@ section {
 /* === PARAGRAPH SECTION === */
 /* left white‐transparent box */
 .case‐paragraph {
-    flex: 3;
-    min-width: 400px;
-    background: #ffffff;
+    min-width: 450px;
+    max-width: 450px;
+    background: #F5F7FA;
     box-shadow: 0 0 16px rgba(0,0,0,0.05);
     display: inline-block;
-    max-width: 600px;
     font-size: 1.2rem;
-    margin: 0;
-    padding: 4rem;
     border-radius: 10px;
-    border-left: 4px solid #2C8ED6
+    border-left: 4px solid #2C8ED6;
+    margin-left: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .case-paragraph h3 {
-    margin-bottom: 1rem;
     font-weight: 600;
+    margin: 0;
 }
 
 /* === CASE SECTION === */
 /* Wrapper til tekst+links */
 .case-content-wrapper {
     display: flex;
-    gap: 4rem;
-    width: 100%;
-    max-width: 1400px;
-    justify-content: space-between;
-    align-items: stretch;
-            /* Luft før carouselen */
+    flex-direction: column;
+    background-color: #E3F2FD;
+    height: 100%;
+    border-top-left-radius: 10px;
+    /* Luft før carouselen */
 }
 
 /* === CASE SECTION === */
 /* right links column */
 .case‐container {
-    flex: 2;
-    min-width: 350px;
+    height: 100%;
+    background-color: #E3F2FD;
     display: flex;
     flex-direction: column;
-    margin-left: 6rem;
     gap: 3rem;
     font-size: 25px;
+    border-top-right-radius: 10px;
 }
 /* === CASE SECTION === */
 /* individual links with underline */
@@ -161,9 +178,15 @@ section {
     border-bottom: 1.5px solid;
     padding-right: 0px;
     border-right-width: 20px;
-    max-width: none;
+    max-width: 650px;
     margin-bottom: 20px;
+    margin-left: 40px;
 }
+
+#pushed-case{
+    margin-top: 140px;
+}
+
 /* === CASE SECTION === */
 .case‐container a:hover {
     color: #2C8ED6;
@@ -187,6 +210,8 @@ section {
     /* Cursor & transition */
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-left: 40px;
+
 }
 /* === CASE SECTION === */
 /* Hover-state */
@@ -202,13 +227,11 @@ section {
 }
 /* === CASE SECTION === */
 .case-carousel-wrapper {
-    width: 100%;
-    max-width: 800px;
-    margin-top: 4rem;   /* afstand fra bokse til carousel */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-column: span 2;
     text-align: center;
+    background-color: #E3F2FD;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 /* === CASE SECTION === */
 .carousel-title {
@@ -219,13 +242,11 @@ section {
 }
 /* === CASE SECTION === */
 .case-carousel {
-    margin-top: 0rem;
     position: relative;
     display: inline-block;
     width: 100%;
     max-width: 800px;
-
-
+    bottom: 40px;
 }
 /* === CASE SECTION === */
 .carousel-track-container {
@@ -294,6 +315,7 @@ section {
     height: 1.2rem;
     color: #fff;
 }
+
 /* === DIAGONALE LINJER I BAGGRUNDEN === */
 /* Øverste diagonale overlay */
 /*
