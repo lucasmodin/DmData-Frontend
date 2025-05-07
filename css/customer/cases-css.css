@@ -1,0 +1,70 @@
+:root {
+    --gap: 1rem;
+    --card-radius: 0.5rem;
+    --shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 var(--gap);
+    background: #f9f9f9;
+}
+
+header {
+    text-align: center;
+    padding: var(--gap) 0;
+}
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #1E2A38;
+}
+
+/* MASONRY-LIKE GRID */
+#cases-grid {
+    column-count: 3;
+    column-gap: var(--gap);
+}
+
+@media (max-width: 900px) {
+    #cases-grid { column-count: 2; }
+}
+@media (max-width: 600px) {
+    #cases-grid { column-count: 1; }
+}
+
+/* CASE CARD */
+.case-card {
+    display: inline-block;              /* necessary for columns */
+    width: 100%;
+    margin: 0 0 var(--gap);
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.case-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* CARD IMAGE */
+.card-image {
+    width: 100%;
+    padding-top: 56%;                  /* 16:9 aspect ratio */
+    background-size: cover;
+    background-position: center;
+}
+
+/* CARD TITLE */
+.card-title {
+    margin: var(--gap);
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
