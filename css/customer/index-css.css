@@ -68,11 +68,11 @@ section {
 }
 
 /* === CASE SECTION === */
-/* full‐screen, grey background, scroll‐snap */
+/* full‐screen*/
 #case-presentation {
     height: 100vh;
     scroll-snap-align: start;
-    background: lightgray;
+    background-color: #E3F2FD; /* ved ikke helt om det skal være denne farve*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,15 +81,14 @@ section {
     gap: 4rem;
     position: relative;
 
-
 }
 
 /* === CASE SECTION === */
-/* === HEADER === */
+/* === HEADER TEXT === */
 .case-header {
     align-self: center; /* placerer overskriften lodret øverst */
     text-align: left;
-    padding-bottom: 2rem;                /* nulstil margin hvis du har andet */
+    padding-bottom: 2rem;
     padding-top: 1rem;        /* luft fra toppen af sektionen */
     padding-left: 4rem;
     font-size: 2rem;
@@ -97,21 +96,29 @@ section {
 
 }
 
+/* === CASE SECTION === */
+/* === PARAGRAPH SECTION === */
 /* left white‐transparent box */
 .case‐paragraph {
     flex: 3;
     min-width: 400px;
-    background: rgba(255,255,255,0.8);
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    background: #ffffff;
+    box-shadow: 0 0 16px rgba(0,0,0,0.05);
     display: inline-block;
     max-width: 600px;
     font-size: 1.2rem;
     margin: 0;
     padding: 4rem;
     border-radius: 10px;
-
-
+    border-left: 4px solid #2C8ED6
 }
+
+.case-paragraph h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* === CASE SECTION === */
 /* Wrapper til tekst+links */
 .case-content-wrapper {
     display: flex;
@@ -123,6 +130,7 @@ section {
             /* Luft før carouselen */
 }
 
+/* === CASE SECTION === */
 /* right links column */
 .case‐container {
     flex: 2;
@@ -133,7 +141,7 @@ section {
     gap: 3rem;
     font-size: 25px;
 }
-
+/* === CASE SECTION === */
 /* individual links with underline */
 .case‐container a {
     display: block;
@@ -149,10 +157,12 @@ section {
     max-width: none;
     margin-bottom: 20px;
 }
-
+/* === CASE SECTION === */
 .case‐container a:hover {
     color: #2C8ED6;
 }
+
+/* === CASE SECTION === */
 .case-button {
     /* Størrelse og placering */
     align-self: flex-start;       /* Sørger for venstre-justering i kolonnen */
@@ -171,19 +181,19 @@ section {
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
-
+/* === CASE SECTION === */
 /* Hover-state */
 .case-button:hover {
     background-color: #246fb3;    /* En smule mørkere blå */
     transform: translateY(-2px);  /* Lidt “løft”-effekt */
 }
-
+/* === CASE SECTION === */
 /* Active-state (klik) */
 .case-button:active {
     background-color: #1d5a8f;    /* Endnu mørkere ved klik */
     transform: translateY(0);
 }
-
+/* === CASE SECTION === */
 .case-carousel-wrapper {
     width: 100%;
     max-width: 800px;
@@ -193,14 +203,14 @@ section {
     align-items: center;
     text-align: center;
 }
-
+/* === CASE SECTION === */
 .carousel-title {
     margin-bottom: 1.5rem;
     font-size: 1.75rem;
     color: #1E2A38;
     text-align: center;
 }
-
+/* === CASE SECTION === */
 .case-carousel {
     margin-top: 0rem;
     position: relative;
@@ -210,17 +220,17 @@ section {
 
 
 }
-
+/* === CASE SECTION === */
 .carousel-track-container {
     overflow: hidden;
     max-height: 200px;
 }
-
+/* === CASE SECTION === */
 .carousel-track .carousel-slide {
     height: 55px;
     flex: 0 0 auto;
 }
-
+/* === CASE SECTION === */
 .carousel-track {
     display: flex;
     gap: 2rem;
@@ -229,7 +239,7 @@ section {
     padding: 0;
     margin: 0;
 }
-
+/* === CASE SECTION === */
 .carousel-slide {
     min-width: 150px;
     margin: 0 1rem;
@@ -237,14 +247,14 @@ section {
     justify-content: center;
     align-items: center;
 }
-
+/* === CASE SECTION === */
 .carousel-slide img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     display: block;
 }
-
+/* === CASE SECTION === */
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -263,20 +273,21 @@ section {
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     z-index: 5;
 }
-
+/* === CASE SECTION === */
 .carousel-button.prev {
     left: -50px;
 }
-
+/* === CASE SECTION === */
 .carousel-button.next {
     right: -50px;
 }
+/* === CASE SECTION === */
 .carousel-button svg {
     width: 1.2rem;
     height: 1.2rem;
     color: #fff;
 }
-
+/* === DIAGONALE LINJER I BAGGRUNDEN === */
 /* Øverste diagonale overlay */
 #case-presentation::before {
     content: "";
@@ -290,7 +301,7 @@ section {
     pointer-events: none;
     z-index: 9;
 }
-
+/* === DIAGONALE LINJER I BAGGRUNDEN === */
 /* Nederste diagonale overlay */
 #case-presentation::after {
     content: "";
@@ -306,7 +317,7 @@ section {
 }
 
 
-/* Sørg for, at din carousel, bokse og knapper ligger over overlays */
+/* Positionering af indhold i section case-presentation*/
 #case-presentation > * {
     position: relative;
     z-index: 9;
