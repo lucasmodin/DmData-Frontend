@@ -1,0 +1,89 @@
+/* Alle CSS værdier her bruges kun i header sektionerne på html filerne */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ddd; /* light gray background */
+}
+
+.nav-bar { /* nav-bar er tekst elementerne på toppen af siden */
+    background-color: transparent; /* or remove this line entirely */
+    padding: 20px 0; /* padding betyder at elementerne ikke vises på kanten af skærmen*/
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center; /* basis for det midterste element */
+    gap: 40px; /* afstanden imellem hver del på headeren*/
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-list li a:hover::after { /* hover er når musen peger på elementet */
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-list li {
+    background-color: #ddd; /* keep if you want the boxes */
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.logo {
+    background-color: transparent !important; /* sletning af farverne får logoet til at blende ind i baggrunden */
+    padding: 0 !important;
+}
+
+.logo img { /* størrelsen på logoet*/
+    width: 100px;
+    height: 75px;
+}
+
+.logo a {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.logo a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.logo a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
