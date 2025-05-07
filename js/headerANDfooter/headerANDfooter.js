@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", script)
 
-function script(){
-    loadComponent("headerANDfooter/header.html", "header-container", function (){loadNavLogic})
-
+function script() {
+    loadComponent("headerANDfooter/header.html", "header-container", function () {
+        loadNavLogic();
+    });
 }
 
 function loadComponent(url, containerID, callback){
@@ -16,6 +17,47 @@ function loadComponent(url, containerID, callback){
         .catch(error => console.log("error in loading" + url))
 }
 
-function loadNavLogic(){
-    console.log("placeholder for when navigation is added")
+function loadNavLogic() {
+    const serviceLink = document.getElementById('ydelser');
+    const casesLink = document.getElementById('cases');
+    const indexLink = document.getElementById('logo');
+    const aboutLink = document.getElementById('omos');
+    const contactLink = document.getElementById('kontakt');
+
+    if (serviceLink) {
+        serviceLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = "case.html";
+        });
+    }
+
+    if (casesLink) {
+        casesLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = "cases.html";
+        });
+    }
+
+    if (indexLink) {
+        indexLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = "index.html";
+
+        });
+    }
+
+    if (aboutLink) {
+        aboutLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = "about.html";
+        });
+    }
+
+    if (contactLink) {
+        contactLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = "contact.html";
+        });
+    }
 }
+
