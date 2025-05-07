@@ -100,7 +100,28 @@
 </section>
 
 <!-- ========== CONTACT FORM SECTION ========== -->
-<section id="contact"></section>
+<section id="contact">
+    <h2>Kontakt os</h2>
+    <form action="">
+        <div class="form-boxes">
+            <label for="name">Navn*</label>
+            <input type="text" id="name" name="name" placeholder="Indtast venligst navn" required>
+        </div>
+        <div class="form-boxes">
+            <label for="email">Mail*</label>
+            <input type="email" id="email" name="email" placeholder="Indtast venligst email" required>
+        </div>
+        <div class="form-boxes">
+            <label for="phone-number">Tlf. Nr.</label>
+            <input type="tel" id="phone-number" name="phone-number" value="+45" pattern="\+45[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}">
+        </div>
+        <div class="form-boxes">
+            <label for="message">Besked*</label>
+            <input type="text" id="message" name="message">
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</section>
 
 <!-- ========== JavaScript section ========== -->
 <script src="../../js/heroSection.js"></script>
