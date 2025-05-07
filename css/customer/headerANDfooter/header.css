@@ -1,12 +1,14 @@
+/* Alle CSS værdier her bruges kun i header sektionerne på html filerne */
+
 body {
     margin: 0;
     padding: 0;
     background-color: #ddd; /* light gray background */
 }
 
-.nav-bar {
+.nav-bar { /* nav-bar er tekst elementerne på toppen af siden */
     background-color: transparent; /* or remove this line entirely */
-    padding: 20px 0;
+    padding: 20px 0; /* padding betyder at elementerne ikke vises på kanten af skærmen*/
     display: flex;
     justify-content: center;
 }
@@ -14,8 +16,8 @@ body {
 .nav-list {
     list-style-type: none;
     display: flex;
-    align-items: center;
-    gap: 40px;
+    align-items: center; /* basis for det midterste element */
+    gap: 40px; /* afstanden imellem hver del på headeren*/
     padding: 0;
     margin: 0;
 }
@@ -33,7 +35,7 @@ body {
     transition: transform 0.3s ease-out;
 }
 
-.nav-list li a:hover::after {
+.nav-list li a:hover::after { /* hover er når musen peger på elementet */
     transform: scaleX(1);
     transform-origin: bottom left;
 }
@@ -53,11 +55,11 @@ body {
 }
 
 .logo {
-    background-color: transparent !important;
+    background-color: transparent !important; /* sletning af farverne får logoet til at blende ind i baggrunden */
     padding: 0 !important;
 }
 
-.logo img {
+.logo img { /* størrelsen på logoet*/
     width: 100px;
     height: 75px;
 }

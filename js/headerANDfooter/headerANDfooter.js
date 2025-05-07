@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", script)
 
+// loadComponent er en function til at hente et bestemt HTML element efter elemtentet er blevet stylet
 function script() {
     loadComponent("headerANDfooter/header.html", "header-container", function () {
-        loadNavLogic();
+        loadNavLogic(); // denne function skal loades efter html filen er hentet
     });
 }
 
@@ -17,6 +18,7 @@ function loadComponent(url, containerID, callback){
         .catch(error => console.log("error in loading" + url))
 }
 
+//Id i denne function er baseret på html siden header.html
 function loadNavLogic() {
     const serviceLink = document.getElementById('ydelser');
     const casesLink = document.getElementById('cases');
@@ -26,8 +28,8 @@ function loadNavLogic() {
 
     if (serviceLink) {
         serviceLink.addEventListener('click', function(event) {
-            event.preventDefault();
-            window.location.href = "case.html";
+            event.preventDefault(); // gør det muligt at selv programmere sidens adfærd
+            window.location.href = "case.html"; //hardcoded fil navn til navigation
         });
     }
 
