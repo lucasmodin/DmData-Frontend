@@ -70,6 +70,7 @@ section {
 /*-----------------------------------------End on the hero-section ---------------------------------*/
 
 
+
 /*-----------------------------------------Start on the intro to DM-Science ---------------------------------*/
 
 #intro {
@@ -78,15 +79,111 @@ section {
     grid-template-columns: 1fr 1fr;
 }
 
-.about-dm-picture {
-    background-image: url("/assets/images/pro-pc-pic.jpg");
+.about-dm-wrapper{
+    background-color: #F5F7FA;
     height: 100%;
-    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    align-content: center;
+}
+
+.about-dm-text h2{
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 47px;
+    color: #246fb3;
+    font-family: Serif;
+    position: relative;
+    z-index: 2;
+}
+
+.about-dm-text p {
+    padding: 0 65px;
+    font-size: 27px;
+    text-align: center;
+    color: black;
+    font-style: italic;
+    line-height: 48px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-dm-text img{
     background-size: cover;
+    width: 40px;
+    height: 40px;
+}
+
+.about-dm-pic-wrapper {
+    height: 100%;
+    background-color: #F5F7FA;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+}
+
+#about-dm-pic1{
+    background-image: url("/assets/images/pro-pc-pic2.jpg");
+    height: 35%;
+    width: 70%;
+    background-size: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    margin-top: 100px;
+    margin-left: 150px;
+    position: relative;
+    z-index: 2;
+}
+
+#about-dm-pic2{
+    background-image: url("/assets/images/pro-pc-pic.jpg");
+    height: 35%;
+    width: 70%;
+    background-size: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    margin-left: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#colorground{
+    margin-top: 50px;
+    height: 47rem;
+    width: 68rem;
+    background-color: #E3F2FD;
+    position: absolute;
+    z-index: 1;
+    left: -23rem;
+    border-radius: 10px;
+}
+
+/*-----------------------------------------End on the intro to DM-Science ---------------------------------*/
+
+
+
+/*-----------------------------------------Start on the intro to Services ---------------------------------*/
+
+#services{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.services-pic-wrapper{
+    background-color: #4A5A6A;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.services-text-wrapper{
+    height: 100%;
+    background-color: #4A5A6A;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 
-/*-----------------------------------------End on the intro to DM-Science ---------------------------------*/
+/*-----------------------------------------End on the intro to Services ---------------------------------*/
 
 
 
@@ -415,7 +512,7 @@ section {
 }
 /*den lille *required tekst*/
 .contact-formular p {
-    margin-left: 130px;
+    margin-left: 70px;
     margin-bottom: 10px;
 }
 /*alle boksene med label og input*/
