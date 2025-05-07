@@ -289,27 +289,34 @@ section {
 }
 /* === DIAGONALE LINJER I BAGGRUNDEN === */
 /* Øverste diagonale overlay */
+/*
 #case-presentation::before {
     content: "";
     position: absolute;
     top: 0; left: 0;
     width: 150%; height: 150%;
     background: rgba(255,255,255,0.8);
+
+ */
     /* Klipper en trekant ud, så den dækker skråt */
+/*
     clip-path: polygon(0 0, 100% 0, 0 100%);
     transform: translateY(-50%) rotate(45deg);
     pointer-events: none;
     z-index: 9;
-}
+}*/
 /* === DIAGONALE LINJER I BAGGRUNDEN === */
 /* Nederste diagonale overlay */
+/*
 #case-presentation::after {
     content: "";
     position: absolute;
     bottom: 0; right: 0;
     width: 150%; height: 150%;
     background: rgba(255,255,255,0.8);
-    /* Klipper en trekant ud, spejlet i bunden */
+
+
+    /* Klipper en trekant ud, spejlet i bunden *//*
     clip-path: polygon(100% 100%, 0 100%, 100% 0);
     transform: translateY(50%) rotate(45deg);
     pointer-events: none;
@@ -323,3 +330,131 @@ section {
     z-index: 9;
 }
 
+/* Laver selve 2 grids her med columns og 100vh for perfekt skærm view */
+#contact {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Det her er venstre side */
+.contact-side-banner {
+    background-color: #4A5A6A;
+    height: 100%; /*sikker at siden udfylder 1 grid*/
+    align-content: center;
+    border-bottom-left-radius: 10px; /*laver siderne afrundet*/
+    border-top-left-radius: 10px;
+
+}
+/* overskrift h2 */
+.contact-side-banner h2 {
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 47px;
+    color: #D9534F;
+    font-family: Serif;
+}
+/*teksten under overskriften*/
+.contact-side-banner p {
+    padding: 0 65px;
+    font-size: 27px;
+    text-align: center;
+    color: #F5F7FA;
+    font-style: italic;
+    line-height: 48px;
+}
+/*højre grid */
+.contact-formular {
+    background-color: #F5F7FA;
+    height: 100%; /*udfylder grid'et */
+    align-content: center; /*center elementerne i grid'et*/
+    border-bottom-right-radius: 10px; /*igen afrundet hjørner*/
+    border-top-right-radius: 10px;
+}
+/*overskriften h2*/
+.contact-formular h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 37px;
+    font-size: 47px;
+    font-family: Serif;
+}
+/*den lille *required tekst*/
+.contact-formular p {
+    margin-left: 130px;
+    margin-bottom: 10px;
+}
+/*alle boksene med label og input*/
+.form-boxes {
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* fokuser kun på input html delen her af boksene*/
+.form-boxes input {
+    width: 66%; /*sikker en vis længde på felterne, som kan skrives på*/
+    height: 45px; /*sikker en vis højde*/
+    padding-left: 122px; /*flytter der hvor man kan skrive fra labels'ne så de ikke er oven i hinanden*/
+    border: 0px; /* fjerne default borderen, så feltet ser "rent" ud*/
+    border-radius: 4px; /*afrunder lidt hjørner på felterne*/
+    font-size: 18px;
+}
+/*skifter style når man har mousen over*/
+.form-boxes input:hover {
+    border-bottom: 1px solid #D9534F; /*ændre den nedre kant til ny farve (rød)*/
+}
+/*skifter style når man har klikket på feltet og er inde i skrive mode*/
+.form-boxes input:focus {
+    outline: 0; /*fjerne default style som skaber en mørk linje rundt om feltet*/
+    border-bottom: 1px solid #2C8ED6; /*ændre det til kun at have en farve i bunden/nedre kant til blå*/
+}
+/*fokuser på at ændre labels html elementerne specifikt*/
+.form-boxes label {
+    position: absolute; /*gør at de er "løse" inde i div containeren og nu kan rykkes*/
+    font-size: 16px;
+    margin: 13px 20px; /*flytter dem så de står perfekt horisontalt og verticalt */
+}
+/*en textarea box som har meget ala style som input delene men med lidt ekstra*/
+#message-box textarea{
+    width: 66%;
+    /*med min og max sikker jeg mig at den ikke kan gøres større nede i træk/forstørrelse delen i nedre højre hjørne*/
+    min-width: 66%;
+    max-width: 66%;
+    min-height: 140px;
+    max-height: 140px;
+    padding-left: 122px;
+    padding-top: 12px;
+    border: 0px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+/*igen en skifter style når man har mousen over*/
+#message-box textarea:hover{
+    border-bottom: 1px solid #D9534F;
+}
+/*igen en skifter style når man har klikket på feltet og er inde i skrive mode*/
+#message-box textarea:focus{
+    outline: 0;
+    border-bottom: 1px solid #2C8ED6;
+}
+/*selve knappen nederst til at submit sin kontakt info*/
+#contact button {
+    font-size: 20px;
+    margin: 0 40%; /*prøver at holde den på midten/centreret*/
+    padding: 8px 40px; /*giver den "fyld"*/
+    background-color: #D9534F;
+    color: white;
+    border: 0; /*fjerner default border til ingenting for clean look*/
+    border-radius: 10px;/*afrunder hjørner*/
+    cursor: pointer; /*gør at når man har curseren over at den skifter til en pegende finger*/
+}
+/*skifter style når man har mousen over*/
+#contact button:hover {
+    background-color: #bd4945;
+    transform: translateY(-2px); /*når mousen er over så bevæger knappen sig meget lidt op*/
+    transition: 200ms; /*gør at bevæger sig og er helt oppe over 200ms*/
+}
+/*skifter style lige med det samme et click er lavet*/
+#contact button:active{
+    background-color: #a23f3b;
+    transform: translateY(0); /*får knappen tilbage på 0 hvor den stod originalt*/
+}
