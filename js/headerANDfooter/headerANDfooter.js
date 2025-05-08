@@ -5,6 +5,10 @@ function script() {
     loadComponent("headerANDfooter/header.html", "header-container", function () {
         loadNavLogic(); // denne function skal loades efter html filen er hentet
     });
+
+    loadComponent("headerANDfooter/footer.html", "footer-container", function () {
+
+    });
 }
 
 function loadComponent(url, containerID, callback){

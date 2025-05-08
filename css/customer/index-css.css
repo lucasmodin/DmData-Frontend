@@ -415,34 +415,27 @@ section {
 
 /* === DIAGONALE LINJER I BAGGRUNDEN === */
 /* Øverste diagonale overlay */
-/*
 #case-presentation::before {
     content: "";
     position: absolute;
     top: 0; left: 0;
     width: 150%; height: 150%;
     background: rgba(255,255,255,0.8);
-
- */
     /* Klipper en trekant ud, så den dækker skråt */
-/*
     clip-path: polygon(0 0, 100% 0, 0 100%);
     transform: translateY(-50%) rotate(45deg);
     pointer-events: none;
     z-index: 9;
-}*/
+}
 /* === DIAGONALE LINJER I BAGGRUNDEN === */
 /* Nederste diagonale overlay */
-/*
 #case-presentation::after {
     content: "";
     position: absolute;
     bottom: 0; right: 0;
     width: 150%; height: 150%;
     background: rgba(255,255,255,0.8);
-
-
-    /* Klipper en trekant ud, spejlet i bunden *//*
+    /* Klipper en trekant ud, spejlet i bunden */
     clip-path: polygon(100% 100%, 0 100%, 100% 0);
     transform: translateY(50%) rotate(45deg);
     pointer-events: none;
@@ -466,6 +459,7 @@ section {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 225px;
 }
 
 /* Det her er venstre side */
