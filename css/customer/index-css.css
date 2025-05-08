@@ -458,3 +458,17 @@ section {
     background-color: #a23f3b;
     transform: translateY(0); /*får knappen tilbage på 0 hvor den stod originalt*/
 }
+
+/* Utility til at skjule elementer - f.eks. vores fejlbesked */
+.hidden {
+    display: none !important;
+}
+
+/* Styling af fejlbesked */
+.captcha-error {
+    color: #c00;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+
