@@ -1,3 +1,5 @@
+
+/* global values that can be used everywhere in the document*/
 :root {
     --gap: 1rem;
     --card-radius: 0.5rem;
@@ -11,20 +13,48 @@ body {
     background: #f9f9f9;
 }
 
-header {
+/* === Cases Oversigt Titel === */
+.overview-title {
+    max-width: 1200px;
+    margin: 2rem auto 1.5rem;    /* luft over og under */
+    padding: 0 calc(var(--gap) * 2);
     text-align: center;
-    padding: var(--gap) 0;
 }
-header h1 {
+
+.overview-title h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1E2A38;              /* samme som dine headers */
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.overview-title p {
+    font-size: 1rem;
+    color: #555;                 /* en mere dæmpet undertone */
     margin: 0;
-    font-size: 2rem;
-    color: #1E2A38;
 }
+
+/* Horisontal linje mellem overview-title og cases */
+.divider {
+    border: none;
+    height: 2px;
+    width: 380px;               /* standardlængde */
+    max-width: 40%;            /* fylder max 40% af bredden */
+    background-color: rgba(0,0,0,0.1);
+    margin: calc(var(--gap)*1.5) auto;  /* luft over/under */
+}
+
+
 
 /* MASONRY-LIKE GRID */
 #cases-grid {
+    max-width: 1400px;
+    padding: 0 calc(var(--gap) * 2);
+    margin: 0 auto;
     column-count: 3;
     column-gap: var(--gap);
+    column-fill: balance /* might balance the height in the columns*/
 }
 
 @media (max-width: 900px) {
@@ -32,6 +62,10 @@ header h1 {
 }
 @media (max-width: 600px) {
     #cases-grid { column-count: 1; }
+    .divider {
+        width: 150px;             /* kortere på små skærme */
+        margin: var(--gap) auto;
+    }
 }
 
 /* CASE CARD */
@@ -46,8 +80,24 @@ header h1 {
     color: inherit;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    break-inside: avoid-column;    /* Chrome/Firefox/WebKit */
+    -webkit-column-break-inside: avoid;
 }
 
+/* 3) Tilføj lodrette forskydninger med nth-child */
+#cases-grid .case-card:nth-child(3n+1) { margin-top: 2rem; }
+#cases-grid .case-card:nth-child(3n+2) { margin-top: 1rem; }
+#cases-grid .case-card:nth-child(3n)   { margin-top: 0;     }
+
+/* 4) Variant højde på billede for lidt ekstra “masonry”-effekt */
+#cases-grid .case-card:nth-child(4n+1) .card-image { padding-top: 40%; }  /* mere squat */
+#cases-grid .case-card:nth-child(4n+2) .card-image { padding-top: 60%; }  /* mere portrait */
+#cases-grid .case-card:nth-child(4n+3) .card-image { padding-top: 50%; }
+#cases-grid .case-card:nth-child(4n)   .card-image { padding-top: 56%; }  /* default */
+
+
+/* CARD HOVERING EFFECT */
 .case-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
