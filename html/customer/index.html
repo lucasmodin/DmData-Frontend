@@ -135,6 +135,10 @@
                 <label for="message">Besked * :</label>
                 <textarea id="message" name="message" placeholder="Skriv bedsked her"></textarea>
             </div>
+            <!-- reCAPTCHA site key. Den er OK normal at have liggende hardcoded ifølge ChatGPT -->
+            <div class="g-recaptcha" data-sitekey="6Lc5XDIrAAAAANPtqzouB7I_tHTuYHcGI1PpfTcq">
+            </div>
+
             <button type="submit">Send</button>
         </form>
     </div>
@@ -144,6 +148,7 @@
 <script src="../../js/heroSection.js"></script>
 <script src="../../js/case-carousel.js"></script>
 <script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Google API call til CAPCHA V2-->
 <!-- ========== FOOTER SECTION ========== -->
 
 
