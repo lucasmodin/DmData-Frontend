@@ -2,6 +2,7 @@ import { loadCases } from "./cases-overview-api.js";
 
 
 const grid = document.getElementById('cases-grid')
+const loader = document.getElementById('loader');
 
 //dummy data
 const TEST_CASES = [
@@ -16,6 +17,11 @@ const TEST_CASES = [
 
 
 async function init() {
+    // 1) Vis loader, skjul grid
+    loader.classList.remove('hidden');
+    grid.classList.add  ('hidden');
+
+
     let cases = await loadCases();
     //fallback if something goes wrong
     if(!cases || !cases.length) {
@@ -23,6 +29,11 @@ async function init() {
         cases = TEST_CASES;
     }
     populateGrid(cases)
+
+    // 2) Når grid er fyldt, skjul loader og vis grid
+    loader.classList.add('hidden');
+    grid.classList.remove('hidden');
+
 }
 
 function populateGrid(cases) {

@@ -4,6 +4,11 @@
     --gap: 1rem;
     --card-radius: 0.5rem;
     --shadow: 0 4px 12px rgba(0,0,0,0.05);
+    --clr-accent: #2C8ED6;
+}
+/* Utility class til at skjule og vise */
+.hidden {
+    display: none !important;
 }
 
 body {
@@ -43,6 +48,22 @@ body {
     max-width: 40%;            /* fylder max 40% af bredden */
     background-color: rgba(0,0,0,0.1);
     margin: calc(var(--gap)*1.5) auto;  /* luft over/under */
+}
+
+/* Load spinner */
+.loader {
+    margin: 3rem auto;          /* centreret under divider */
+    width: 48px;
+    height: 48px;
+    border: 5px solid rgba(0,0,0,0.1);
+    border-top-color: var(--clr-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Keyframes til rotation */
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 
@@ -124,10 +145,12 @@ main {
     background-color: #E3F2FD;  /* Lys blå grundfarve */
     padding: calc(var(--gap)*2);
     overflow: hidden;
+    min-height: 100vh;
 }
 
 /* Første “rhombe-blob” i toppen til venstre */
 main::before {
+
     content: "";
     position: absolute;
     top: -10%;
