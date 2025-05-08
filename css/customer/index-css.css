@@ -1,9 +1,7 @@
-/* === Global styles === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
+/*-----------------------------------------Start on the GLOBAL Styles ----------------------------------*/
+
+
 
 html {
     /*scroll-snap-type: y mandatory;*/
@@ -13,6 +11,7 @@ html {
 
 body {
     overflow-y: scroll;
+    background-color: #1E2A38;
 }
 
 /* === Layout structure === */
@@ -25,8 +24,10 @@ section {
     justify-content: center;
 }
 
-/* === Hero Section === */
+/*-----------------------------------------End on the GLOBAL Styles ---------------------------------*/
 
+
+/*-----------------------------------------Start on the hero-section ---------------------------------*/
 
 /* Hero Section - Der hvor videoen afspilles*/
 
@@ -66,25 +67,146 @@ section {
 .overlay-text h1 {
     font-size: 2.5em;
 }
+/*-----------------------------------------End on the hero-section ---------------------------------*/
+
+
+
+/*-----------------------------------------Start on the intro to DM-Science ---------------------------------*/
+
+#intro {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about-dm-wrapper{
+    background-color: #F5F7FA;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    align-content: center;
+}
+
+.about-dm-text h2{
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 47px;
+    color: #246fb3;
+    font-family: Serif;
+    position: relative;
+    z-index: 2;
+}
+
+.about-dm-text p {
+    padding: 0 65px;
+    font-size: 27px;
+    text-align: center;
+    color: black;
+    font-style: italic;
+    line-height: 48px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-dm-text img{
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+}
+
+.about-dm-pic-wrapper {
+    height: 100%;
+    background-color: #F5F7FA;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+}
+
+#about-dm-pic1{
+    background-image: url("/assets/images/pro-pc-pic2.jpg");
+    height: 35%;
+    width: 70%;
+    background-size: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    margin-top: 100px;
+    margin-left: 150px;
+    position: relative;
+    z-index: 2;
+}
+
+#about-dm-pic2{
+    background-image: url("/assets/images/pro-pc-pic.jpg");
+    height: 35%;
+    width: 70%;
+    background-size: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    margin-left: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#colorground{
+    margin-top: 50px;
+    height: 85%;
+    width: 143%;
+    background-color: #E3F2FD;
+    position: absolute;
+    z-index: 1;
+    left: -23rem;
+    border-radius: 10px;
+}
+
+/*-----------------------------------------End on the intro to DM-Science ---------------------------------*/
+
+
+
+/*-----------------------------------------Start on the intro to Services ---------------------------------*/
+
+#services{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.services-pic-wrapper{
+    background-color: #4A5A6A;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.services-text-wrapper{
+    height: 100%;
+    background-color: #4A5A6A;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+/*-----------------------------------------End on the intro to Services ---------------------------------*/
+
+
+
+/*-----------------------------------------Start on the case-presentation ---------------------------------*/
 
 /* === CASE SECTION === */
 /* full‐screen*/
-#case-presentation {
-    height: 100vh;
+section {
+    height: 100vh; /* Each section takes up full viewport height */
     scroll-snap-align: start;
-    background-color: #E3F2FD; /* ved ikke helt om det skal være denne farve*/
+    padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 2rem 5%;
-    gap: 4rem;
-    position: relative;
-
 }
 
-/* === CASE SECTION === */
-/* === HEADER TEXT === */
+#case-presentation{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+}
+
 .case-header {
     align-self: center; /* placerer overskriften lodret øverst */
     text-align: left;
@@ -100,46 +222,45 @@ section {
 /* === PARAGRAPH SECTION === */
 /* left white‐transparent box */
 .case‐paragraph {
-    flex: 3;
-    min-width: 400px;
-    background: #ffffff;
+    min-width: 450px;
+    max-width: 450px;
+    background: #F5F7FA;
     box-shadow: 0 0 16px rgba(0,0,0,0.05);
     display: inline-block;
-    max-width: 600px;
     font-size: 1.2rem;
-    margin: 0;
-    padding: 4rem;
     border-radius: 10px;
-    border-left: 4px solid #2C8ED6
+    border-left: 4px solid #2C8ED6;
+    margin-left: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .case-paragraph h3 {
-    margin-bottom: 1rem;
     font-weight: 600;
+    margin: 0;
 }
 
 /* === CASE SECTION === */
 /* Wrapper til tekst+links */
 .case-content-wrapper {
     display: flex;
-    gap: 4rem;
-    width: 100%;
-    max-width: 1400px;
-    justify-content: space-between;
-    align-items: stretch;
-            /* Luft før carouselen */
+    flex-direction: column;
+    background-color: #E3F2FD;
+    height: 100%;
+    border-top-left-radius: 10px;
+    /* Luft før carouselen */
 }
 
 /* === CASE SECTION === */
 /* right links column */
 .case‐container {
-    flex: 2;
-    min-width: 350px;
+    height: 100%;
+    background-color: #E3F2FD;
     display: flex;
     flex-direction: column;
-    margin-left: 6rem;
     gap: 3rem;
     font-size: 25px;
+    border-top-right-radius: 10px;
 }
 /* === CASE SECTION === */
 /* individual links with underline */
@@ -154,9 +275,15 @@ section {
     border-bottom: 1.5px solid;
     padding-right: 0px;
     border-right-width: 20px;
-    max-width: none;
+    max-width: 650px;
     margin-bottom: 20px;
+    margin-left: 40px;
 }
+
+#pushed-case{
+    margin-top: 140px;
+}
+
 /* === CASE SECTION === */
 .case‐container a:hover {
     color: #2C8ED6;
@@ -180,6 +307,8 @@ section {
     /* Cursor & transition */
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-left: 40px;
+
 }
 /* === CASE SECTION === */
 /* Hover-state */
@@ -195,13 +324,11 @@ section {
 }
 /* === CASE SECTION === */
 .case-carousel-wrapper {
-    width: 100%;
-    max-width: 800px;
-    margin-top: 4rem;   /* afstand fra bokse til carousel */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-column: span 2;
     text-align: center;
+    background-color: #E3F2FD;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 /* === CASE SECTION === */
 .carousel-title {
@@ -212,13 +339,11 @@ section {
 }
 /* === CASE SECTION === */
 .case-carousel {
-    margin-top: 0rem;
     position: relative;
     display: inline-block;
     width: 100%;
     max-width: 800px;
-
-
+    bottom: 40px;
 }
 /* === CASE SECTION === */
 .carousel-track-container {
@@ -287,6 +412,7 @@ section {
     height: 1.2rem;
     color: #fff;
 }
+
 /* === DIAGONALE LINJER I BAGGRUNDEN === */
 /* Øverste diagonale overlay */
 /*
@@ -330,11 +456,17 @@ section {
     z-index: 9;
 }
 
+/*-----------------------------------------End on the case-presentation ---------------------------------*/
+
+
+/*-----------------------------------------Start on the contact formular ---------------------------------*/
+
 /* Laver selve 2 grids her med columns og 100vh for perfekt skærm view */
 #contact {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 225px;
 }
 
 /* Det her er venstre side */
@@ -381,7 +513,7 @@ section {
 }
 /*den lille *required tekst*/
 .contact-formular p {
-    margin-left: 130px;
+    margin-left: 70px;
     margin-bottom: 10px;
 }
 /*alle boksene med label og input*/
@@ -458,6 +590,7 @@ section {
     background-color: #a23f3b;
     transform: translateY(0); /*får knappen tilbage på 0 hvor den stod originalt*/
 }
+/*-----------------------------------------End on the contact formular ---------------------------------*/
 
 /* Utility til at skjule elementer - f.eks. vores fejlbesked */
 .hidden {
