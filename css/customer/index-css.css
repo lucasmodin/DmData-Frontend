@@ -186,7 +186,7 @@ section {
 .services-text h2{
     color: #D9534F;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
     font-size: 47px;
     font-family: Serif;
 }
@@ -196,6 +196,7 @@ section {
     line-height: 200%;
     font-size: 25px;
     font-style: italic;
+    text-decoration: underline 3px #246fb3;
 }
 .services-text ul{
     display: inline-block;
@@ -204,6 +205,8 @@ section {
 
 .serice-list {
     margin-left: 15%;
+    padding-bottom: 60px;
+    padding-top: 60px;
 }
 
 
