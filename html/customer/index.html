@@ -109,7 +109,7 @@
     <!--right side of page-->
     <div class="contact-formular">
         <h2>Kontakt</h2>
-        <form action="">
+        <form id="contact-form" action="">
             <p>*Required</p>
             <div class="form-boxes">
                 <label for="name">Navn * :</label>
@@ -136,10 +136,16 @@
                 <textarea id="message" name="message" placeholder="Skriv bedsked her"></textarea>
             </div>
             <!-- reCAPTCHA site key. Den er OK normal at have liggende hardcoded ifølge ChatGPT -->
-            <div class="g-recaptcha" data-sitekey="6Lc5XDIrAAAAANPtqzouB7I_tHTuYHcGI1PpfTcq">
-            </div>
+            <div class="g-recaptcha"
+                 data-sitekey="6Lc5XDIrAAAAANPtqzouB7I_tHTuYHcGI1PpfTcq"
+                 data-callback="onCaptchaSuccess"
+            ></div>
+            <!-- Fejlbesked som standard skjult -->
+            <p id="captcha-error" class="captcha-error hidden">
+                Du skal bekræfte, at du ikke er en robot, før du kan sende formularen.
+            </p>
 
-            <button type="submit">Send</button>
+            <button id="submit-btn" type="submit">Send</button>
         </form>
     </div>
 </section>
@@ -149,6 +155,8 @@
 <script src="../../js/case-carousel.js"></script>
 <script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Google API call til CAPCHA V2-->
+<script src="../../js/captcha.js"></script>
+
 <!-- ========== FOOTER SECTION ========== -->
 
 
