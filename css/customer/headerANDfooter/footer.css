@@ -2,20 +2,29 @@
     height: 30vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
+    border-top: 1px solid white;
 }
 
 .footer-contact {
     color: white;
     height: 100%;
     background-color: #1E2A38;
+    padding-left: 32px;
 }
+
+
 
 .footer-logo {
     height: 100%;
     background-color: #1E2A38;
+    align-content: center;
+    text-align: center;
 }
 
+.footer-logo img{
+    height: 120px;
+    width: 130px;
+}
 .footer-social {
     height: 100%;
     background-color: #1E2A38;
