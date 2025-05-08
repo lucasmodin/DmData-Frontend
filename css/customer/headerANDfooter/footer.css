@@ -1,18 +1,22 @@
-/* === FOOTER GENERAL === */
-{
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins', sans-serif;
-    box-sizing: border-box;
+.footer-section {
+    height: 30vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
 }
 
-/* === LOGO === */
-.logo {
-    background-color: transparent !important; /* sletning af farverne får logoet til at blende ind i baggrunden */
-    padding: 0 !important;
+.footer-contact {
+    color: white;
+    height: 100%;
+    background-color: #1E2A38;
 }
 
-.logo img { /* størrelsen på logoet*/
-    width: 100px;
-    height: 75px;
+.footer-logo {
+    height: 100%;
+    background-color: #1E2A38;
+}
+
+.footer-social {
+    height: 100%;
+    background-color: #1E2A38;
 }
