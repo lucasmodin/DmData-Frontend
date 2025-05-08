@@ -98,7 +98,47 @@
 </section>
 
 <!-- ========== CONTACT FORM SECTION ========== -->
-<section id="contact"></section>
+<section id="contact">
+    <!-- left side af of page -->
+    <div class="contact-side-banner">
+        <h2>Kom i kontakt med os</h2>
+        <p>Vi er altid klar til at tage imod spørgsmål, uanset hvad der er på linjen.
+            Lyst til at høre ang. projekter, muligheder eller priser, så skriv endelig.
+        Vi plejer at vender tilbage efter ca. 2 arbejds hverdage.</p>
+    </div>
+    <!--right side of page-->
+    <div class="contact-formular">
+        <h2>Kontakt</h2>
+        <form action="">
+            <p>*Required</p>
+            <div class="form-boxes">
+                <label for="name">Navn * :</label>
+                <input type="text" id="name" name="name" placeholder="Indtast venligst navn" required>
+            </div>
+            <div class="form-boxes">
+                <label for="email">Mail * :</label>
+                <input type="email" id="email" name="email" placeholder="Indtast venligst email" required>
+            </div>
+            <div class="form-boxes">
+                <label for="company">Firma :</label>
+                <input type="text" id="company" name="company" placeholder="Firma navn">
+            </div>
+            <div class="form-boxes">
+                <label for="cvr">CVR :</label>
+                <input type="text" id="cvr" name="cvr" placeholder="CVR nummer">
+            </div>
+            <div class="form-boxes">
+                <label for="phone-number">Tlf. Nr. :</label>
+                <input type="tel" id="phone-number" name="phone-number" value="+45 " pattern="\+45\s[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}">
+            </div>
+            <div class="form-boxes" id="message-box">
+                <label for="message">Besked * :</label>
+                <textarea id="message" name="message" placeholder="Skriv bedsked her"></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
 
 <!-- ========== JavaScript section ========== -->
 <script src="../../js/heroSection.js"></script>

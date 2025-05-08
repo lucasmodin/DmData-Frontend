@@ -1,11 +1,5 @@
 /* Alle CSS værdier her bruges kun i header sektionerne på html filerne */
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #ddd; /* light gray background */
-}
-
 .nav-bar { /* nav-bar er tekst elementerne på toppen af siden */
     background-color: transparent; /* or remove this line entirely */
     padding: 20px 0; /* padding betyder at elementerne ikke vises på kanten af skærmen*/
