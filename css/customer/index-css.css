@@ -147,8 +147,8 @@ section {
 
 #colorground{
     margin-top: 50px;
-    height: 47rem;
-    width: 68rem;
+    height: 85%;
+    width: 143%;
     background-color: #E3F2FD;
     position: absolute;
     z-index: 1;
