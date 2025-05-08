@@ -24,3 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+const video1 = document.getElementById("backgroundVideo1");
+const video2 = document.getElementById("backgroundVideo2");
+
+video1.addEventListener('ended', () => {
+    video1.style.display = "none";
+    video2.style.display = "block";
+    video2.currentTime = 0;
+    video2.play();
+});
+
+video2.addEventListener('ended', () => {
+    video2.style.display = "none";
+    video1.style.display = "block";
+    video1.currentTime = 0;
+    video1.play();
+});
