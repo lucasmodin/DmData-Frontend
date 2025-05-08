@@ -175,6 +175,16 @@ section {
     border-top-left-radius: 10px;
 }
 
+#services-pic1 {
+    background-image: url("/assets/images/cool-pc.jpg");
+    height: 55%;
+    width: 86%;
+    background-size: cover;
+    margin-top: 25%;
+    margin-left: 7%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
 .services-text-wrapper{
     height: 100%;
     background-color: #4A5A6A;
