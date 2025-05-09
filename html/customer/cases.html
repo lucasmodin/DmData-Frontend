@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../../css/customer/cases-css.css">
 </head>
 <body>
 
+<header>
+    <div id="header-container"></div> <!-- placeholder for header -->
+</header>
+
+    <main>
+        <div class="overview-title">
+            <h1>Oversigt over Cases</h1>
+            <p>Her kan du se et udpluk af vores tidligere projekter</p>
+        </div>
+        <!-- Divider mellem title og cases -->
+        <hr class="divider" />
+
+        <!-- Loader -->
+        <div id="loader" class="loader"></div>
+
+
+        <div id="cases-grid" class="hidden"></div>
+    </main>
+
+<script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
+<script type="module" src="../../js/case-overview.js"></script>
+<footer>
+    <div id="footer-container"></div> <!-- placeholder for footer -->
+</footer>
 </body>
 </html>
