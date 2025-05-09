@@ -169,10 +169,31 @@ section {
 }
 
 .services-pic-wrapper{
-    background-color: #4A5A6A;
+    background-color: #F5F7FA;
     height: 100%;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
+}
+
+.services-pic-wrapper hr{
+    background-color: #246fb3;
+    height: 3px;
+    width: 80%;
+}
+
+.services-pic-wrapper #pusher {
+    margin-top: 30%;
+}
+
+#services-pic1 {
+    background-image: url("/assets/images/cool-pc.jpg");
+    height: 55%;
+    width: 86%;
+    background-size: cover;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    margin-left: 7%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .services-text-wrapper{
@@ -180,6 +201,33 @@ section {
     background-color: #4A5A6A;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
+    align-content: center;
+}
+
+.services-text h2{
+    color: #D9534F;
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 47px;
+    font-family: Serif;
+}
+
+.services-text li{
+    color: #F5F7FA;
+    line-height: 200%;
+    font-size: 25px;
+    font-style: italic;
+    text-decoration: underline 3px #246fb3;
+}
+.services-text ul{
+    display: inline-block;
+    width: 38%;
+}
+
+.serice-list {
+    margin-left: 15%;
+    padding-bottom: 60px;
+    padding-top: 60px;
 }
 
 

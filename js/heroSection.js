@@ -24,3 +24,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+//henter de 2 video. den originale og derefter den video der er reversed
+const video1 = document.getElementById("backgroundVideo1");
+const video2 = document.getElementById("backgroundVideo2");
+//kører videoen til slut og starter video 2
+video1.addEventListener('ended', () => {
+    video1.style.display = "none";
+    video2.style.display = "block";
+    video2.currentTime = 0;
+    video2.play();
+});
+//gøre det omvendte af den ovenover og køre video 1 efter video 2 er færdig
+video2.addEventListener('ended', () => {
+    video2.style.display = "none";
+    video1.style.display = "block";
+    video1.currentTime = 0;
+    video1.play();
+});
