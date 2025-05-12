@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const name = document.getElementById('name').value.trim();
         const mail = document.getElementById('email').value.trim();
-        const number = document.getElementById('phone-number').value.trim();
+        const number = document.getElementById('phone-number').value.trim();  // Optional
+        const company = document.getElementById('company').value.trim();      // Optional
         const message = document.getElementById('message').value.trim();
 
         // JavaScript validering
@@ -18,12 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const payload = {
             name: name,
             mail: mail,
-            number: number || null, // tillader en null værdi (tomt felt)
+            number: number || null,  // Null er til tomme værdier
+            company: company || null,
             message: message
         };
-
-        //Husk at ændre fetch endpoint til en faktisk URL ved deployment
-        //Jeg er ret sikker på at man kan gemme web adressen i en miljø variable
 
         try {
             const response = await fetch("http://localhost:8080/saveMessage", {
@@ -38,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert("Din besked er sendt!");
                 form.reset();
             } else {
-                alert("Fejl ved afsendelse: " + error); //error er kun til debugging indtil live deployment
+                alert("Fejl ved afsendelse: " + error);  // error debugging
             }
 
         } catch (error) {
@@ -47,3 +46,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
