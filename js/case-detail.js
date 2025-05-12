@@ -33,6 +33,7 @@ async function init() {
     // Vis skeleton, skjul indhold
     skeleton.classList.remove("hidden");
     detail.classList.add("hidden");
+    imgSkeleton.classList.remove("hidden")
 
     let c;
     if (USE_DUMMY) {
