@@ -67,6 +67,7 @@ function renderSuccess(c) {
         imgContainer.classList.remove("hidden");
         caseDetail.classList.remove("no-image");
     } else {
+        //hvis admin ikke tilføjer billede
         imgContainer.classList.add("hidden");
         caseDetail.classList.add("no-image");
     }
