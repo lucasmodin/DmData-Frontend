@@ -2,34 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cases Oversigt</title>
     <link rel="stylesheet" href="../../css/customer/cases-css.css">
+    <!-- Skeleton-styles-->
+    <link rel="stylesheet" href="../../css/customer/cases-skeleton.css">
 </head>
 <body>
 
 <header>
-    <div id="header-container"></div> <!-- placeholder for header -->
+    <div id="header-container"></div>
 </header>
 
-    <main>
-        <div class="overview-title">
-            <h1>Oversigt over Cases</h1>
-            <p>Her kan du se et udpluk af vores tidligere projekter</p>
+<main>
+    <div class="overview-title">
+        <h1>Oversigt over Cases</h1>
+        <p>Her kan du se et udpluk af vores tidligere projekter</p>
+    </div>
+    <hr class="divider" />
+
+    <!-- Skeleton grid (vises indtil API-data kommer) -->
+    <div id="skeleton-grid">
+        <!-- Antal skeleton-cards svarer til forventet antal kolonner × rækker -->
+        <!-- Her 6 som i dit TEST_CASES -->
+        <div class="case-card skeleton-card">
+            <div class="card-image skeleton-image"></div>
+            <h2 class="card-title skeleton-title"></h2>
         </div>
-        <!-- Divider mellem title og cases -->
-        <hr class="divider" />
+        <div class="case-card skeleton-card">
+            <div class="card-image skeleton-image"></div>
+            <h2 class="card-title skeleton-title"></h2>
+        </div>
+        <div class="case-card skeleton-card">
+            <div class="card-image skeleton-image"></div>
+            <h2 class="card-title skeleton-title"></h2>
+        </div>
+        <div class="case-card skeleton-card">
+            <div class="card-image skeleton-image"></div>
+            <h2 class="card-title skeleton-title"></h2>
+        </div>
+        <div class="case-card skeleton-card">
+            <div class="card-image skeleton-image"></div>
+            <h2 class="card-title skeleton-title"></h2>
+        </div>
+        <div class="case-card skeleton-card">
+            <div class="card-image skeleton-image"></div>
+            <h2 class="card-title skeleton-title"></h2>
+        </div>
+    </div>
 
-        <!-- Loader -->
-        <div id="loader" class="loader"></div>
-
-
-        <div id="cases-grid" class="hidden"></div>
-    </main>
+    <!-- Den rigtige grid, skjult indtil data er loaded -->
+    <div id="cases-grid" class="hidden"></div>
+</main>
 
 <script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
 <script type="module" src="../../js/case-overview.js"></script>
+
 <footer>
-    <div id="footer-container"></div> <!-- placeholder for footer -->
+    <div id="footer-container"></div>
 </footer>
 </body>
 </html>

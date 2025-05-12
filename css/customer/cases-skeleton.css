@@ -1,0 +1,81 @@
+/* shimmer animation */
+@keyframes shimmer {
+    100% { transform: translateX(100%); }
+}
+
+/* selve skeleton-grid’en får samme column-layout som dine case-cards */
+#skeleton-grid {
+    max-width: 1400px;
+    padding: 0 calc(var(--gap) * 2);
+    margin: 0 auto 2rem;
+    column-count: 3;
+    column-gap: var(--gap);
+    column-fill: balance;
+}
+@media (max-width: 900px) { #skeleton-grid { column-count: 2; } }
+@media (max-width: 600px) { #skeleton-grid { column-count: 1; } }
+
+/* genbrug case-card strukturen */
+.skeleton-card {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 var(--gap);
+    background: #fff;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+    position: relative;
+}
+
+/* varierende margin-top & højde for ekstra “masonry”-fornemmelse */
+#skeleton-grid .skeleton-card:nth-child(3n+1) { margin-top: 2rem; }
+#skeleton-grid .skeleton-card:nth-child(3n+2) { margin-top: 1rem; }
+#skeleton-grid .skeleton-card:nth-child(3n)   { margin-top: 0;     }
+
+/* skeleton-image: 16:9 ratio og shimmer-overlay */
+.skeleton-image {
+    width: 100%;
+    padding-top: 56%;
+    background: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+}
+.skeleton-image::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    height: 100%; width: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.6),
+            transparent
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+/* skeleton-title: en grå blok, samme margin som card-title */
+.skeleton-title {
+    display: block;
+    height: 1.25rem;
+    width: 60%;
+    margin: var(--gap);
+    background: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--card-radius);
+}
+.skeleton-title::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    height: 100%; width: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.6),
+            transparent
+    );
+    animation: shimmer 1.5s infinite;
+}
