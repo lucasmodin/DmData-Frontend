@@ -590,7 +590,7 @@ section {
 /*fokuser på at ændre labels html elementerne specifikt*/
 .form-boxes label {
     position: absolute; /*gør at de er "løse" inde i div containeren og nu kan rykkes*/
-    font-size: 16px;
+    font-size: 18px;
     margin: 13px 20px; /*flytter dem så de står perfekt horisontalt og verticalt */
 }
 /*en textarea box som har meget ala style som input delene men med lidt ekstra*/
@@ -615,6 +615,11 @@ section {
 #message-box textarea:focus{
     outline: 0;
     border-bottom: 1px solid #2C8ED6;
+}
+
+/*Captcha block styling*/
+.captcha-block {
+    padding-left: 240px;
 }
 /*selve knappen nederst til at submit sin kontakt info*/
 #contact button {
