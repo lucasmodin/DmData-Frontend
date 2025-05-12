@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <title>Case Detail</title>
+    <link rel="stylesheet" href="../../css/customer/cases-css.css" />
+    <link rel="stylesheet" href="../../css/customer/case-css.css" />
 </head>
 <body>
+<header>
+    <div id="header-container"></div>
+</header>
 
+<main>
+    <div class="overview-title">
+        <button id="back-button">← Tilbage til oversigt</button>
+        <h1 id="case-title"></h1>
+        <p id="case-date"></p>
+    </div>
+    <hr class="divider" />
+
+    <!-- Skeleton-placerholdere -->
+    <div id="skeleton">
+        <div class="skeleton title-skeleton"></div>
+        <div class="skeleton date-skeleton"></div>
+        <hr class="divider skeleton-divider" />
+
+        <div class="skeleton image-skeleton hidden"></div>
+
+        <div class="detail-content">
+            <div class="skeleton text-skeleton line1"></div>
+            <div class="skeleton text-skeleton line2"></div>
+            <div class="skeleton text-skeleton line3"></div>
+        </div>
+    </div>
+
+    <!-- Rigtigt indhold -->
+    <div id="case-detail" class="hidden">
+        <div class="detail-image hidden" id="case-image"></div>
+        <div class="detail-content">
+            <p id="case-description"></p>
+        </div>
+    </div>
+</main>
+
+<script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
+<script type="module" src="../../js/case-detail.js"></script>
+
+<footer>
+    <div id="footer-container"></div>
+</footer>
 </body>
 </html>

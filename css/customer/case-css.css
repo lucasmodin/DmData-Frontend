@@ -1,0 +1,146 @@
+/* ── SKELETON WRAPPER (samme som #case-detail) ─────────────────── */
+
+#skeleton {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    padding: var(--gap);
+}
+
+/* ── SHIMMER / SKELETON LOADING ──────────────────────────────── */
+
+@keyframes shimmer {
+    100% { transform: translateX(100%); }
+}
+.skeleton {
+    position: relative;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    border-radius: var(--card-radius);
+}
+.skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    height: 100%; width: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.6),
+            transparent
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+/* Title: samme højde som H1, bredde som den endelige tekst */
+.title-skeleton {
+    height: 2.5rem;
+    width: 70%;               /* matcher “Demo Case: Rød Tråd” */
+    margin-bottom: var(--gap);
+}
+
+/* Dato: samme højde og ca. samme bredde som “11. maj 2025” */
+.date-skeleton {
+    height: 1rem;
+    width: 30%;
+    margin-bottom: var(--gap);
+}
+
+/* Divider: bruger samme bredde som din .divider */
+.skeleton-divider {
+    height: 2px;
+    width: 380px;
+    max-width: 40%;
+    background-color: #e0e0e0;
+    margin: calc(var(--gap)*1.5) auto;
+    border: none;
+}
+
+/* Billede: 16:9 ratio som .detail-image */
+.image-skeleton {
+    width: 100%;
+    padding-top: 56%;
+    margin-bottom: var(--gap);
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+
+/* Tre tekst-linjer med størrelser, der svarer til den rigtige beskrivelse */
+.text-skeleton {
+    height: 1rem;
+    margin-bottom: 0.75rem;
+}
+.text-skeleton.line1 { width: 94%; }
+.text-skeleton.line2 { width: 88%; }
+.text-skeleton.line3 { width: 65%; margin-bottom: var(--gap); }
+
+
+/* ── TILBAGE-KNAP & DETAIL-STYLES (uændrede) ─────────────────── */
+
+#back-button {
+    display: inline-block;
+    margin-bottom: var(--gap);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background: var(--clr-accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--card-radius);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+#back-button:hover {
+    background: rgba(44, 142, 214, 0.8);
+}
+
+#case-detail {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.detail-image {
+    width: 100%;
+    padding-top: 40%;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+
+.detail-content {
+    padding: var(--gap);
+}
+
+#case-description {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Vis/skjul skeleton vs. rigtigt indhold */
+#skeleton.hidden,
+#case-detail.hidden {
+    display: none !important;
+}
+
+/* Hvis .detail-image er skjult, skal selve wrapperen ikke efterlade tom plads */
+.detail-image.hidden {
+    display: none !important;
+}
+
+/* Flyt teksten op, når der ikke er billede */
+#case-detail.no-image .detail-content {
+    padding-top: var(--gap);
+}
+
+/* Skeleton */
+.image-skeleton.hidden {
+    display: none !important;
+}
+
+
