@@ -3,7 +3,7 @@
 import { loadCase } from "./case-detail-api.js";
 
 // Dummy‐data til demo
-const USE_DUMMY = true;
+const USE_DUMMY = false;
 const TEST_CASE = {
     id: "demo",
     title: "Demo Case: Rød Tråd",
