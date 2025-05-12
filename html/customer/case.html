@@ -12,21 +12,27 @@
 </header>
 
 <main>
+    <!-- OVERSKRIFT + BACK BUTTON -->
     <div class="overview-title">
         <button id="back-button">← Tilbage til oversigt</button>
-        <h1 id="case-title"></h1>
-        <p id="case-date"></p>
+
+        <!-- 1A: Overskrift-skeleton -->
+        <div id="overview-skeleton">
+            <div class="skeleton title-skeleton"></div>
+            <div class="skeleton date-skeleton"></div>
+        </div>
+
+        <!-- 1B: Den rigtige overskrift, skjult indtil loaded -->
+        <h1 id="case-title" class="hidden"></h1>
+        <p id="case-date" class="hidden"></p>
     </div>
+
     <hr class="divider" />
 
-    <!-- Skeleton-placerholdere -->
-    <div id="skeleton">
-        <div class="skeleton title-skeleton"></div>
-        <div class="skeleton date-skeleton"></div>
-        <hr class="divider skeleton-divider" />
-
-        <div class="skeleton image-skeleton hidden"></div>
-
+    <!-- RESTEN AF CASEN (BILLEDE + BESKRIVELSE) -->
+    <!-- 2A: Container-skeleton (hvid boks med shimmer) -->
+    <div id="content-skeleton">
+        <div class="skeleton image-skeleton"></div>
         <div class="detail-content">
             <div class="skeleton text-skeleton line1"></div>
             <div class="skeleton text-skeleton line2"></div>
@@ -34,9 +40,9 @@
         </div>
     </div>
 
-    <!-- Rigtigt indhold -->
+    <!-- 2B: Det rigtige indhold, skjult indtil loaded -->
     <div id="case-detail" class="hidden">
-        <div class="detail-image hidden" id="case-image"></div>
+        <div class="detail-image" id="case-image"></div>
         <div class="detail-content">
             <p id="case-description"></p>
         </div>

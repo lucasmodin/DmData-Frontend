@@ -2,84 +2,129 @@
 
 import { loadCase } from "./case-detail-api.js";
 
-// Dummy‐data til demo
+// — Toggle dummy-mode for testing —
 const USE_DUMMY = false;
 const TEST_CASE = {
     id: "demo",
     title: "Demo Case: Rød Tråd",
     dateCreated: "2025-05-11T15:30:00",
     imagePath: "https://placehold.co/800x450/2C8ED6/ffffff?text=Demo+Image",
-    description: `
-    Dette er en dummy‐beskrivelse, som viser layoutet på den endelige side.
-    Her kan du se, hvordan teksten og billedet vil fremstå, når dataen er indlæst.
-  `.trim()
+    description: `Dette er en dummy-beskrivelse til demo.`
 };
-const imgSkeleton = document.querySelector(".image-skeleton");
-const skeleton = document.getElementById("skeleton");
-const detail   = document.getElementById("case-detail");
-const backBtn  = document.getElementById("back-button");
-const titleEl  = document.getElementById("case-title");
-const dateEl   = document.getElementById("case-date");
-const imgEl    = document.getElementById("case-image");
-const descEl   = document.getElementById("case-description");
 
+// — Element-refs —
+const overviewSkel  = document.getElementById("overview-skeleton");
+const contentSkel   = document.getElementById("content-skeleton");
+const caseDetail    = document.getElementById("case-detail");
+const backBtn       = document.getElementById("back-button");
+const titleEl       = document.getElementById("case-title");
+const dateEl        = document.getElementById("case-date");
+const imgContainer  = document.getElementById("case-image").parentElement;
+const imgEl         = document.getElementById("case-image");
+// wrapper omkring indholdet i content-skeleton (hvid boks)
+const descContainer = document.querySelector("#content-skeleton .detail-content");
+
+// — Tilbage-knap —
 backBtn.addEventListener("click", () => window.history.back());
 
+// — Hent ?id= fra URL —
 function getCaseId() {
     return new URLSearchParams(window.location.search).get("id");
 }
 
-async function init() {
-    // Vis skeleton, skjul indhold
-    skeleton.classList.remove("hidden");
-    detail.classList.add("hidden");
-    imgSkeleton.classList.remove("hidden")
+// — Toggles for skeleton vs detail/overskrift —
+function showSkeleton() {
+    overviewSkel.classList.remove("hidden");
+    contentSkel.classList.remove("hidden");
+    caseDetail.classList.add("hidden");
+    titleEl.classList.add("hidden");
+    dateEl.classList.add("hidden");
+}
+function hideOverviewSkeleton() {
+    overviewSkel.classList.add("hidden");
+}
+function hideContentSkeleton() {
+    contentSkel.classList.add("hidden");
+}
+function showDetailHeader() {
+    titleEl.classList.remove("hidden");
+    dateEl.classList.remove("hidden");
+}
 
-    let c;
-    if (USE_DUMMY) {
-        // Simuler loading
-        await new Promise(r => setTimeout(r, 1000));
-        c = TEST_CASE;
-    } else {
-        const id = getCaseId();
-        if (!id) {
-            titleEl.textContent = "Case ikke fundet";
-            skeleton.classList.add("hidden");
-            return;
-        }
-        c = await loadCase(id);
-        if (!c) {
-            titleEl.textContent = "Kunne ikke indlæse case";
-            skeleton.classList.add("hidden");
-            return;
-        }
-    }
-
-    // Udfyld felter med data
+// — Render success —
+function renderSuccess(c) {
     titleEl.textContent = c.title;
     dateEl.textContent  = new Date(c.dateCreated)
         .toLocaleDateString("da-DK", {
-            year: "numeric", month: "long", day: "numeric"
+            year:  "numeric",
+            month: "long",
+            day:   "numeric"
         });
 
+    // billede
     if (c.imagePath) {
         imgEl.style.backgroundImage = `url('${c.imagePath}')`;
-        imgEl.parentElement.classList.remove("hidden");    // vis div.detail-image
-        imgSkeleton.classList.remove("hidden");            // vis skeleton-billedet
-        detail.classList.remove("no-image");               // fjern no-image-klasse
-        skeleton.classList.remove("no-image");
+        imgContainer.classList.remove("hidden");
+        caseDetail.classList.remove("no-image");
     } else {
-        imgEl.parentElement.classList.add("hidden");       // gem div.detail-image
-        imgSkeleton.classList.add("hidden");               // gem skeleton-billedet
-        detail.classList.add("no-image");                  // tilføj .no-image for ekstra padding-just
-        skeleton.classList.add("no-image");
+        imgContainer.classList.add("hidden");
+        caseDetail.classList.add("no-image");
     }
 
-    descEl.textContent = c.description;
+    // beskrivelse
+    const detailDesc = document.querySelector("#case-detail .detail-content");
+    detailDesc.innerHTML = `<p id="case-description">${c.description || ""}</p>`;
+}
 
-    // Skjul skeleton, vis indhold
-    skeleton.classList.add("hidden");
-    detail.classList.remove("hidden");
+// — Main init med success vs error i hvid boks —
+async function init() {
+    showSkeleton();
+
+    let ok   = false;
+    let data = null;
+
+    try {
+        if (USE_DUMMY) {
+            await new Promise(res => setTimeout(res, 1000));
+            data = TEST_CASE;
+        } else {
+            const id = getCaseId();
+            if (!id) throw new Error("Ingen case-id i URL");
+            data = await loadCase(id);
+            if (!data || data.error) throw new Error("Case ikke fundet");
+        }
+        ok = true;
+    } catch (e) {
+        console.error("Hentning af case mislykkedes:", e);
+    }
+
+    if (ok) {
+        // Succes: fjern alle skeletons, vis detail-sektionen OG overskrift
+        hideOverviewSkeleton();
+        hideContentSkeleton();
+        caseDetail.classList.remove("hidden");
+        renderSuccess(data);
+        showDetailHeader();
+    } else {
+        // Fejl: fjern kun overskrift-skeleton, behold content-skeleton som hvid boks
+        hideOverviewSkeleton();
+
+        // Skjul shimmer-elementerne
+        contentSkel.querySelectorAll('.skeleton').forEach(el => el.classList.add('hidden'));
+
+        // Sæt og vis overskrift med fejl
+        titleEl.textContent = "Ups — casen kunne ikke indlæses";
+        dateEl.textContent  = "";
+        showDetailHeader();
+
+        // Indsæt fejlmeddelelse i den hvide boks
+        descContainer.innerHTML = `
+          <div class="error-message">
+            <p>Der opstod en fejl ved indlæsningen af casen.</p>
+            <p>Prøv at genindlæse siden</p>
+          </div>
+        `;
+    }
 }
 
 document.addEventListener("DOMContentLoaded", init);
