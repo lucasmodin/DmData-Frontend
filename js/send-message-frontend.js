@@ -34,10 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             if (response.ok) {
-                alert("Din besked er sendt!");
+                const createdAt = new Date();
+                const localTime = createdAt.toLocaleString("da-DK", {
+                    dateStyle: "short",
+                    timeStyle: "short"
+                });
+
+                alert(`Din besked blev sendt d. ${localTime}.`);
                 form.reset();
             } else {
-                alert("Fejl ved afsendelse: " + error);  // error debugging
+                alert("Fejl ved afsendelse.");
             }
 
         } catch (error) {
@@ -46,4 +52,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
 
