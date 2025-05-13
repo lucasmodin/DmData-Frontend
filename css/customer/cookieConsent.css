@@ -19,9 +19,11 @@
 }
 
 .cookie-info-text {
-    min-height: 70px;
+    padding: 16px;
+    min-height: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: 10px;
 }
