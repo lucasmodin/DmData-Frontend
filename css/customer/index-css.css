@@ -11,7 +11,7 @@ html {
 
 body {
     overflow-y: scroll;
-    background-color: #1E2A38;
+    background-color: #F7F9FB;
 }
 
 /* === Layout structure === */
@@ -46,6 +46,7 @@ section {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* undertag til at styre hero-text*/
@@ -85,6 +86,7 @@ section {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     align-content: center;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 .about-dm-text h2{
@@ -120,6 +122,7 @@ section {
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     position: relative;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 #about-dm-pic1{
@@ -173,16 +176,31 @@ section {
     height: 100%;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
+    position: relative;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+#colorground2 {
+    margin-top: 130px;
+    height: 75%;
+    width: 120%;
+    left: 16rem;
+    background-color: HSL(226, 72%, 94%);
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
 }
 
 .services-pic-wrapper hr{
     background-color: #246fb3;
     height: 3px;
     width: 80%;
+    position: relative;
+    z-index: 2;
 }
 
 .services-pic-wrapper #pusher {
-    margin-top: 30%;
+    margin-top: 25%;
 }
 
 #services-pic1 {
@@ -194,30 +212,44 @@ section {
     margin-bottom: 4%;
     margin-left: 7%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
 }
 
 .services-text-wrapper{
     height: 100%;
-    background-color: #4A5A6A;
+    background-color: white;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     align-content: center;
+    position: relative;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 .services-text h2{
-    color: #D9534F;
+    color: #246fb3;
     text-align: center;
     margin-bottom: 70px;
+    margin-top: 0;
     font-size: 47px;
     font-family: Serif;
+    position: relative;
+    z-index: 2;
+}
+
+.services-text hr {
+    position: relative;
+    z-index: 2;
 }
 
 .services-text li{
-    color: #F5F7FA;
+    color: black;
     line-height: 200%;
     font-size: 25px;
     font-style: italic;
     text-decoration: underline 3px #246fb3;
+    position: relative;
+    z-index: 2;
 }
 .services-text ul{
     display: inline-block;
@@ -519,19 +551,19 @@ section {
 
 /* Det her er venstre side */
 .contact-side-banner {
-    background-color: #4A5A6A;
+    background-color: white;
     height: 100%; /*sikker at siden udfylder 1 grid*/
     align-content: center;
     border-bottom-left-radius: 10px; /*laver siderne afrundet*/
     border-top-left-radius: 10px;
-
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 /* overskrift h2 */
 .contact-side-banner h2 {
     text-align: center;
     margin-bottom: 70px;
     font-size: 47px;
-    color: #D9534F;
+    color: #246fb3;
     font-family: Serif;
 }
 /*teksten under overskriften*/
@@ -539,7 +571,7 @@ section {
     padding: 0 65px;
     font-size: 27px;
     text-align: center;
-    color: #F5F7FA;
+    color: black;
     font-style: italic;
     line-height: 48px;
 }
@@ -550,6 +582,7 @@ section {
     align-content: center; /*center elementerne i grid'et*/
     border-bottom-right-radius: 10px; /*igen afrundet hjørner*/
     border-top-right-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 /*overskriften h2*/
 .contact-formular h2 {
