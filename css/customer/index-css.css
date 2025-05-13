@@ -18,7 +18,7 @@ body {
 section {
     height: 100vh; /* Each section takes up full viewport height */
     scroll-snap-align: start;
-    padding: 2rem;
+    padding: 2rem 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,10 +31,9 @@ section {
 
 /* Hero Section - Der hvor videoen afspilles*/
 
-.hero-section {
-    position: relative;
-    height: 20vh;
-    overflow: hidden;
+#hero-section {
+    padding-bottom: 0px;
+    height: 45rem;
 }
 
 /* Undertag på video som styler den til at fylde siden */
@@ -81,7 +80,7 @@ section {
 }
 
 .about-dm-wrapper{
-    background-color: #F5F7FA;
+    background-color: white;
     height: 100%;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
@@ -99,9 +98,14 @@ section {
     z-index: 2;
 }
 
+.about-dm-text hr {
+    position: relative;
+    z-index: 2;
+}
+
 .about-dm-text p {
     padding: 0 65px;
-    font-size: 27px;
+    font-size: 25px;
     text-align: center;
     color: black;
     font-style: italic;
@@ -271,14 +275,7 @@ section {
 
 /* === CASE SECTION === */
 /* full‐screen*/
-section {
-    height: 100vh; /* Each section takes up full viewport height */
-    scroll-snap-align: start;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 #case-presentation{
     height: 100vh;
@@ -291,17 +288,19 @@ section {
     align-self: center; /* placerer overskriften lodret øverst */
     text-align: left;
     padding-bottom: 2rem;
-    padding-top: 1rem;        /* luft fra toppen af sektionen */
-    padding-left: 4rem;
-    font-size: 2rem;
+    padding-top: 5rem;        /* luft fra toppen af sektionen */
+    padding-left: 15rem;
+    font-size: 47px;
     width: 100%;
-
+    color: HSL(226, 72%, 75%);
+    position: relative;
+    z-index: 2;
 }
 
 /* === CASE SECTION === */
 /* === PARAGRAPH SECTION === */
 /* left white‐transparent box */
-.case‐paragraph {
+.case-paragraph {
     min-width: 450px;
     max-width: 450px;
     background: #F5F7FA;
@@ -313,11 +312,19 @@ section {
     margin-left: 40px;
     padding-left: 60px;
     padding-right: 60px;
+    position: relative;
+}
+
+.case-paragraph p {
+    position: relative;
+    z-index: 2;
 }
 
 .case-paragraph h3 {
     font-weight: 600;
     margin: 0;
+    position: relative;
+    z-index: 2;
 }
 
 /* === CASE SECTION === */
@@ -325,26 +332,40 @@ section {
 .case-content-wrapper {
     display: flex;
     flex-direction: column;
-    background-color: #E3F2FD;
+    background-color: white;
     height: 100%;
     border-top-left-radius: 10px;
     /* Luft før carouselen */
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* === CASE SECTION === */
 /* right links column */
-.case‐container {
+.case-container {
     height: 100%;
-    background-color: #E3F2FD;
+    background-color: #F5F7FA;
     display: flex;
     flex-direction: column;
     gap: 3rem;
     font-size: 25px;
     border-top-right-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
+
+#colorground3 {
+    margin-top: 12rem;
+    height: 75%;
+    width: 40%;
+    right: 26rem;
+    background-color: HSL(209, 83%, 95%);
+    position: absolute;
+    z-index: 1;
+    border-radius: 100%;
+}
+
 /* === CASE SECTION === */
 /* individual links with underline */
-.case‐container a {
+.case-container a {
     display: block;
     font-size: 1.5rem;
     text-decoration: none;
@@ -352,20 +373,22 @@ section {
     border-bottom: 1px solid #333;
     padding-bottom: 0.2rem;
     transition: color 0.3s ease;
-    border-bottom: 1.5px solid;
+    border-bottom: 1.5px solid HSL(226, 72%,70%);
     padding-right: 0px;
     border-right-width: 20px;
     max-width: 650px;
     margin-bottom: 20px;
     margin-left: 40px;
+    position: relative;
+    z-index: 2;
 }
 
 #pushed-case{
-    margin-top: 140px;
+    margin-top: 15rem;
 }
 
 /* === CASE SECTION === */
-.case‐container a:hover {
+.case-container a:hover {
     color: #2C8ED6;
 }
 
@@ -406,9 +429,13 @@ section {
 .case-carousel-wrapper {
     grid-column: span 2;
     text-align: center;
-    background-color: #E3F2FD;
+    background-color: #F5F7FA;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+
 }
 /* === CASE SECTION === */
 .carousel-title {
@@ -423,7 +450,7 @@ section {
     display: inline-block;
     width: 100%;
     max-width: 800px;
-    bottom: 40px;
+    bottom: 15px;
 }
 /* === CASE SECTION === */
 .carousel-track-container {
@@ -462,7 +489,7 @@ section {
 /* === CASE SECTION === */
 .carousel-button {
     position: absolute;
-    top: 50%;
+    top: 65%;
     transform: translateY(-50%);
 
     width: 3rem;
@@ -528,14 +555,6 @@ section {
     pointer-events: none;
     z-index: 9;
 }
-
-
-/* Positionering af indhold i section case-presentation*/
-#case-presentation > * {
-    position: relative;
-    z-index: 9;
-}
-
 /*-----------------------------------------End on the case-presentation ---------------------------------*/
 
 
@@ -546,7 +565,7 @@ section {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 225px;
+    margin-bottom: 4rem;
 }
 
 /* Det her er venstre side */

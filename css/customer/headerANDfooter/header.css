@@ -35,7 +35,6 @@
 }
 
 .nav-list li {
-    background-color: #ddd; /* keep if you want the boxes */
     padding: 10px 20px;
     border-radius: 4px;
 }
@@ -43,9 +42,9 @@
 .nav-list li a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
     position: relative;
     padding-bottom: 5px;
+    font-size: 25px;
 }
 
 .logo {
