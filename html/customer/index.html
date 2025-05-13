@@ -165,44 +165,45 @@
         <form id="contact-form" action="">
             <p>*Required</p>
             <div class="form-boxes">
-                <label for="name">Navn * :</label>
-                <input type="text" id="name" name="name" placeholder="Indtast venligst navn" required>
+                <label for="name"><strong>Navn</strong></label>
+                <input type="text" id="name" name="name" placeholder="Dit navn *" required>
             </div>
             <div class="form-boxes">
-                <label for="email">Mail * :</label>
-                <input type="email" id="email" name="email" placeholder="Indtast venligst email" required>
+                <label for="email"><strong>Email</strong></label>
+                <input type="email" id="email" name="email" placeholder="Din email *" required>
             </div>
             <div class="form-boxes">
-                <label for="company">Firma :</label>
+                <label for="company"><strong>Firma</strong></label>
                 <input type="text" id="company" name="company" placeholder="Firma navn">
             </div>
-            <!--
+
             <div class="form-boxes">
-                <label for="cvr">CVR :</label>
-                <input type="text" id="cvr" name="cvr" placeholder="CVR nummer">
-            </div>
-            -->
-            <div class="form-boxes">
-                <label for="phone-number">Tlf. Nr. :</label>
+
+          <div class="form-boxes">
+                <label for="phone-number"><strong>Tlf. Nr.</strong></label>
                 <!-- Fjernelse af +45 betyder at feltet er blankt og dermed kan sendes direkte-->
                 <input type="tel" id="phone-number" name="phone-number" placeholder="+45 12 34 56 78" pattern="\+45\s[0-9]{8}">
+            </div>      
 
-            </div>
+            
             <div class="form-boxes" id="message-box">
-                <label for="message">Besked * :</label>
-                <textarea id="message" name="message" placeholder="Skriv bedsked her"></textarea>
+                <label for="message"><strong>Besked</strong></label>
+                <textarea id="message" name="message" placeholder="Skriv besked her *" required></textarea >
             </div>
             <!-- reCAPTCHA site key. Den er OK normal at have liggende hardcoded ifølge ChatGPT -->
-            <div class="g-recaptcha"
-                 data-sitekey="6Lc5XDIrAAAAANPtqzouB7I_tHTuYHcGI1PpfTcq"
-                 data-callback="onCaptchaSuccess"
-            ></div>
+            <div class="captcha-block">
+                <div class="g-recaptcha"
+                     data-sitekey="6Lc5XDIrAAAAANPtqzouB7I_tHTuYHcGI1PpfTcq"
+                     data-callback="onCaptchaSuccess"
+                ></div>
+            </div>
             <!-- Fejlbesked som standard skjult -->
             <p id="captcha-error" class="captcha-error hidden">
                 Du skal bekræfte, at du ikke er en robot, før du kan sende formularen.
             </p>
 
             <button id="submit-btn" type="submit">Send</button>
+            </div>
         </form>
     </div>
 </section>
