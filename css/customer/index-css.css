@@ -356,7 +356,7 @@ section {
     margin-top: 12rem;
     height: 75%;
     width: 40%;
-    right: 26rem;
+    right: 21rem;
     background-color: HSL(209, 83%, 95%);
     position: absolute;
     z-index: 1;
@@ -577,6 +577,18 @@ section {
     border-top-left-radius: 10px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
+
+#colorground4 {
+    margin-top: -13rem;
+    height: 75%;
+    width: 40%;
+    background-color: HSL(209, 83%, 95%);
+    position: absolute;
+    z-index: 1;
+    border-radius: 100%;
+    left: 17rem ;
+}
+
 /* overskrift h2 */
 .contact-side-banner h2 {
     text-align: center;
@@ -584,6 +596,8 @@ section {
     font-size: 47px;
     color: #246fb3;
     font-family: Serif;
+    position: relative;
+    z-index: 2;
 }
 /*teksten under overskriften*/
 .contact-side-banner p {
@@ -593,6 +607,8 @@ section {
     color: black;
     font-style: italic;
     line-height: 48px;
+    position: relative;
+    z-index: 2;
 }
 /*højre grid */
 .contact-formular {
@@ -602,6 +618,8 @@ section {
     border-bottom-right-radius: 10px; /*igen afrundet hjørner*/
     border-top-right-radius: 10px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
 }
 /*overskriften h2*/
 .contact-formular h2 {
