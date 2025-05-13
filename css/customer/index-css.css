@@ -80,7 +80,7 @@ section {
 }
 
 .about-dm-wrapper{
-    background-color: white;
+    background-color: #F5F7FA;
     height: 100%;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
@@ -122,7 +122,7 @@ section {
 
 .about-dm-pic-wrapper {
     height: 100%;
-    background-color: #F5F7FA;
+    background-color: white;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     position: relative;
@@ -176,7 +176,7 @@ section {
 }
 
 .services-pic-wrapper{
-    background-color: #F5F7FA;
+    background-color: white;
     height: 100%;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
@@ -222,7 +222,7 @@ section {
 
 .services-text-wrapper{
     height: 100%;
-    background-color: white;
+    background-color: #F5F7FA;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     align-content: center;
@@ -303,7 +303,7 @@ section {
 .case-paragraph {
     min-width: 450px;
     max-width: 450px;
-    background: #F5F7FA;
+    background: white;
     box-shadow: 0 0 16px rgba(0,0,0,0.05);
     display: inline-block;
     font-size: 1.2rem;
@@ -332,7 +332,7 @@ section {
 .case-content-wrapper {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: #F5F7FA;
     height: 100%;
     border-top-left-radius: 10px;
     /* Luft før carouselen */
@@ -343,7 +343,7 @@ section {
 /* right links column */
 .case-container {
     height: 100%;
-    background-color: #F5F7FA;
+    background-color: white;
     display: flex;
     flex-direction: column;
     gap: 3rem;

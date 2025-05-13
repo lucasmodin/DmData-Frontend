@@ -5,6 +5,7 @@
     padding: 20px 0; /* padding betyder at elementerne ikke vises på kanten af skærmen*/
     display: flex;
     justify-content: center;
+    padding-bottom: 5px;
 }
 
 .nav-list {
@@ -44,7 +45,8 @@
     color: black;
     position: relative;
     padding-bottom: 5px;
-    font-size: 25px;
+    font-size: 22px;
+    text-transform: uppercase;
 }
 
 .logo {
@@ -53,8 +55,8 @@
 }
 
 .logo img { /* størrelsen på logoet*/
-    width: 100px;
-    height: 75px;
+    height: 90px;
+    width: 120px;
 }
 
 .logo a {
@@ -79,4 +81,9 @@
 .logo a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+#line{
+    width: 65%;
+    background-color: black;
 }
