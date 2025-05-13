@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <title>Case Detail</title>
+    <link rel="stylesheet" href="../../css/customer/cases-css.css" />
+    <link rel="stylesheet" href="../../css/customer/case-css.css" />
 </head>
 <body>
+<header>
+    <div id="header-container"></div>
+</header>
 
+<main>
+    <!-- OVERSKRIFT + BACK BUTTON -->
+    <div class="overview-title">
+        <button id="back-button">← Tilbage til oversigt</button>
+
+        <!-- 1A: Overskrift-skeleton -->
+        <div id="overview-skeleton">
+            <div class="skeleton title-skeleton"></div>
+            <div class="skeleton date-skeleton"></div>
+        </div>
+
+        <!-- 1B: Den rigtige overskrift, skjult indtil loaded -->
+        <h1 id="case-title" class="hidden"></h1>
+        <p id="case-date" class="hidden"></p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- RESTEN AF CASEN (BILLEDE + BESKRIVELSE) -->
+    <!-- 2A: Container-skeleton (hvid boks med shimmer) -->
+    <div id="content-skeleton">
+        <div class="skeleton image-skeleton"></div>
+        <div class="detail-content">
+            <div class="skeleton text-skeleton line1"></div>
+            <div class="skeleton text-skeleton line2"></div>
+            <div class="skeleton text-skeleton line3"></div>
+        </div>
+    </div>
+
+    <!-- 2B: Det rigtige indhold, skjult indtil loaded -->
+    <div id="case-detail" class="hidden">
+        <div class="detail-image" id="case-image"></div>
+        <div class="detail-content">
+            <p id="case-description"></p>
+        </div>
+    </div>
+</main>
+
+<script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
+<script type="module" src="../../js/case-detail.js"></script>
+
+<footer>
+    <div id="footer-container"></div>
+</footer>
 </body>
 </html>
