@@ -33,7 +33,7 @@ function loadNavLogic() {
     if (serviceLink) {
         serviceLink.addEventListener('click', function(event) {
             event.preventDefault(); // gør det muligt at selv programmere sidens adfærd
-            window.location.href = "case.html"; //hardcoded fil navn til navigation
+            window.location.href = "#intro"; //hardcoded fil navn til navigation
         });
     }
 
@@ -62,7 +62,7 @@ function loadNavLogic() {
     if (contactLink) {
         contactLink.addEventListener('click', function(event) {
             event.preventDefault();
-            window.location.href = "contact.html";
+            window.location.href = "#contact";
         });
     }
 }
