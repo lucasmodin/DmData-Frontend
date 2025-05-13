@@ -65,5 +65,34 @@ function loadNavLogic() {
             window.location.href = "contact.html";
         });
     }
+    // 🔥 Sticky Header Logic – deferred to ensure DOM is ready
+    requestAnimationFrame(() => {
+        const stickyHeader = document.getElementById("sticky-header");
+        if (!stickyHeader) {
+            console.warn("Sticky header not found in DOM yet.");
+            return;
+        }
+
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+            const scrollingUp = currentScrollY < lastScrollY;
+            const nearTop = currentScrollY <= 30;
+
+            if (scrollingUp && !nearTop) {
+                stickyHeader.classList.add("visible");
+                stickyHeader.classList.remove("large");
+                stickyHeader.classList.add("small");
+            } else if (nearTop) {
+                stickyHeader.classList.remove("visible");
+                stickyHeader.classList.remove("small");
+                stickyHeader.classList.add("large");
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    });
+
 }
 

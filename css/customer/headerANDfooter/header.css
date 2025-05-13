@@ -81,3 +81,41 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+/* sticky header section */
+
+#sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: white;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none; /* Makes it ignore mouse clicks when hidden */
+}
+
+/* Show sticky header */
+#sticky-header.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Size variants */
+#sticky-header.small .logo img {
+    width: 70px;
+    height: 50px;
+}
+#sticky-header.small .nav-bar {
+    padding: 10px 0;
+}
+
+#sticky-header.large .logo img {
+    width: 100px;
+    height: 75px;
+}
+#sticky-header.large .nav-bar {
+    padding: 20px 0;
+}
