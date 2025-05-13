@@ -176,11 +176,16 @@
                 <label for="company"><strong>Firma</strong></label>
                 <input type="text" id="company" name="company" placeholder="Firma navn">
             </div>
+            <!--
             <div class="form-boxes">
-                <label for="phone-number"><strong>Tlf. Nr.</strong></label>
-                <input type="tel" id="phone-number" name="phone-number" value="+45 " pattern="^\+45\s?\d{8}$" placeholder="+45 12 34 56 78"
-                       onfocus="if(this.value==='')this.value='+45 ';">
-            </div>
+
+          <div class="form-boxes">
+                <label for="phone-number">Tlf. Nr. :</label>
+                <!-- Fjernelse af +45 betyder at feltet er blankt og dermed kan sendes direkte-->
+                <input type="tel" id="phone-number" name="phone-number" placeholder="+45 12 34 56 78" pattern="\+45\s[0-9]{8}">
+            </div>      
+
+            
             <div class="form-boxes" id="message-box">
                 <label for="message"><strong>Besked</strong></label>
                 <textarea id="message" name="message" placeholder="Skriv besked her *" required></textarea >
@@ -205,6 +210,8 @@
 <!-- ========== JavaScript section ========== -->
 <script src="../../js/heroSection.js"></script>
 <script src="../../js/case-carousel.js"></script>
+<script src="../../js/send-message-frontend.js"></script>
+
 <script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Google API call til CAPCHA V2-->
