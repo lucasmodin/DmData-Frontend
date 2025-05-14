@@ -142,3 +142,46 @@ header{
 #sticky-header.large .nav-bar {
     padding: 20px 0;
 }
+
+/* mobil section */
+@media (max-width: 768px) {
+
+    header {
+        max-height: none;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-list li a {
+        font-size: 18px;
+        padding: 5px 0;
+    }
+
+    .logo img {
+        height: 60px;
+        width: 80px;
+    }
+
+    /* Sticky Header logo har samme størrelse så den ikke fylder hele mobil skærm */
+    #sticky-header.small .logo img,
+    #sticky-header.large .logo img {
+        width: 60px;
+        height: 45px;
+    }
+
+    #sticky-header.small .nav-bar,
+    #sticky-header.large .nav-bar {
+        padding: 10px 0;
+    }
+
+}
