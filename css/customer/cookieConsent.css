@@ -64,11 +64,21 @@
 @media(max-width: 1600px){
     .cookie-banner-container {
         width: 100%;
+        height: 15%;
     }
 }
 
 @media(max-width: 1024px) {
     .cookie-info-text {
         padding: 10px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .cookie-info-text button {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
     }
 }
