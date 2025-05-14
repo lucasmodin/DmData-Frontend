@@ -161,6 +161,11 @@ header{
 
 /* Mobil sektion */
 @media (max-width: 980px) {
+
+    .nav-bar .nav-list li a {
+        font-size: 18px
+    }
+
     /* Skjul navigationslisten som standard */
     .nav-list {
         display: none;
@@ -205,3 +210,55 @@ header{
         padding: 10px 0;
     }
 }
+
+
+/* Specifik styling for 850px eller mindre */
+@media (max-width: 850px) {
+
+    /* Juster nav-bar for mindre skærme */
+    .nav-bar {
+        gap: 5px;
+        padding: 5px 0;
+    }
+
+    /* Juster logo størrelse på meget små skærme */
+    .logo img {
+        width: 50px;
+        height: 33px;
+    }
+
+    .nav-list {
+        gap: 7px;
+        margin-top: 3px;
+    }
+
+    /* Juster sticky-header logo til 850px */
+    #sticky-header.small .logo img,
+    #sticky-header.large .logo img {
+        width: 50px;
+        height: 25px;
+    }
+
+    #sticky-header.small .nav-bar,
+    #sticky-header.large .nav-bar {
+        padding: 5px 0;
+    }
+
+    /* Øg specifikationen af CSS-reglen for font-størrelse */
+    .nav-bar .nav-list li a {
+        font-size: 18px !important;  /* Brug !important for at sikre at den anvendes */
+    }
+
+    /* Juster hamburger-menuen for mindre skærme */
+    .hamburger .bar {
+        width: 20px;   /* Reducer bredden på stængerne */
+        height: 2px;   /* Reducer højden på stængerne */
+        background-color: black;
+        border-radius: 5px;
+    }
+
+    .hamburger {
+        gap: 3px;  /* Reducer afstanden mellem stængerne */
+    }
+}
+
