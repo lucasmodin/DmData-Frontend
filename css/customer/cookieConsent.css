@@ -39,8 +39,8 @@
     padding: 8px 12px 8px 12px;
     font-size: 1rem;
     font-family: inherit;
-    border: 3px solid white;
-    background-color: black;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
 }
 
