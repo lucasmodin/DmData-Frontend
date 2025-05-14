@@ -6,6 +6,7 @@ function script() {
         loadNavLogic(); // denne function skal loades efter html filen er hentet
     });
 
+
     loadComponent("headerANDfooter/footer.html", "footer-container", function () {
 
     });
@@ -29,6 +30,20 @@ function loadNavLogic() {
     const indexLink = document.getElementById('logo');
     const aboutLink = document.getElementById('omos');
     const contactLink = document.getElementById('kontakt');
+
+
+    // Hamburger logic - toggle navigation menu
+    const hamburgerIcon = document.getElementById('hamburger-icon');  // Identificer hamburger-ikonet
+    const navList = document.querySelector('.nav-list');  // Identificer nav-list
+
+    // Tjek for mobilvisning, så vi kun tilføjer event listener til hamburger-ikonet på mobil
+    if (window.innerWidth <= 980 && hamburgerIcon) {
+        hamburgerIcon.addEventListener('click', function() {
+            navList.classList.toggle('show');  // Toggle visning af navigation
+        });
+    }
+
+
 
     if (serviceLink) {
         serviceLink.addEventListener('click', function(event) {
@@ -91,4 +106,3 @@ function loadNavLogic() {
     });
 
 }
-
