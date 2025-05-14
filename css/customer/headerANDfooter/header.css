@@ -86,7 +86,7 @@
 
 /* Static er toppen af siden */
 #sticky-header.static {
-    position: relative; /* Changes from fixed to normal flow */
+    position: relative; /* tillader at den skifter placering fra toppen */
     opacity: 1;
     transform: none;
     pointer-events: auto; /* tillader klik */
