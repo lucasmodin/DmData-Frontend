@@ -11,14 +11,14 @@ html {
 
 body {
     overflow-y: scroll;
-    background-color: #1E2A38;
+    background-color: #F7F9FB;
 }
 
 /* === Layout structure === */
 section {
     height: 100vh; /* Each section takes up full viewport height */
     scroll-snap-align: start;
-    padding: 2rem;
+    padding: 2rem 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,10 +31,9 @@ section {
 
 /* Hero Section - Der hvor videoen afspilles*/
 
-.hero-section {
-    position: relative;
-    height: 20vh;
-    overflow: hidden;
+#hero-section {
+    padding-bottom: 0px;
+    height: 45rem;
 }
 
 /* Undertag på video som styler den til at fylde siden */
@@ -46,6 +45,7 @@ section {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* undertag til at styre hero-text*/
@@ -85,6 +85,7 @@ section {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     align-content: center;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 .about-dm-text h2{
@@ -97,9 +98,14 @@ section {
     z-index: 2;
 }
 
+.about-dm-text hr {
+    position: relative;
+    z-index: 2;
+}
+
 .about-dm-text p {
     padding: 0 65px;
-    font-size: 27px;
+    font-size: 25px;
     text-align: center;
     color: black;
     font-style: italic;
@@ -116,10 +122,11 @@ section {
 
 .about-dm-pic-wrapper {
     height: 100%;
-    background-color: #F5F7FA;
+    background-color: white;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     position: relative;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 #about-dm-pic1{
@@ -169,20 +176,35 @@ section {
 }
 
 .services-pic-wrapper{
-    background-color: #F5F7FA;
+    background-color: white;
     height: 100%;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
+    position: relative;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+#colorground2 {
+    margin-top: 130px;
+    height: 75%;
+    width: 120%;
+    left: 16rem;
+    background-color: HSL(226, 72%, 94%);
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
 }
 
 .services-pic-wrapper hr{
     background-color: #246fb3;
     height: 3px;
     width: 80%;
+    position: relative;
+    z-index: 2;
 }
 
 .services-pic-wrapper #pusher {
-    margin-top: 30%;
+    margin-top: 25%;
 }
 
 #services-pic1 {
@@ -194,34 +216,49 @@ section {
     margin-bottom: 4%;
     margin-left: 7%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
 }
 
 .services-text-wrapper{
     height: 100%;
-    background-color: #4A5A6A;
+    background-color: #F5F7FA;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     align-content: center;
+    position: relative;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 .services-text h2{
-    color: #D9534F;
+    color: #246fb3;
     text-align: center;
     margin-bottom: 70px;
+    margin-top: 0;
     font-size: 47px;
     font-family: Serif;
+    position: relative;
+    z-index: 2;
+}
+
+.services-text hr {
+    position: relative;
+    z-index: 2;
+    width: 85%;
 }
 
 .services-text li{
-    color: #F5F7FA;
+    color: black;
     line-height: 200%;
     font-size: 25px;
     font-style: italic;
     text-decoration: underline 3px #246fb3;
+    position: relative;
+    z-index: 2;
 }
 .services-text ul{
     display: inline-block;
-    width: 38%;
+    width: 42%;
 }
 
 .serice-list {
@@ -239,14 +276,7 @@ section {
 
 /* === CASE SECTION === */
 /* full‐screen*/
-section {
-    height: 100vh; /* Each section takes up full viewport height */
-    scroll-snap-align: start;
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 #case-presentation{
     height: 100vh;
@@ -259,20 +289,22 @@ section {
     align-self: center; /* placerer overskriften lodret øverst */
     text-align: left;
     padding-bottom: 2rem;
-    padding-top: 1rem;        /* luft fra toppen af sektionen */
-    padding-left: 4rem;
-    font-size: 2rem;
+    padding-top: 5rem;        /* luft fra toppen af sektionen */
+    padding-left: 15rem;
+    font-size: 47px;
     width: 100%;
-
+    color: HSL(226, 72%, 75%);
+    position: relative;
+    z-index: 2;
 }
 
 /* === CASE SECTION === */
 /* === PARAGRAPH SECTION === */
 /* left white‐transparent box */
-.case‐paragraph {
+.case-paragraph {
     min-width: 450px;
     max-width: 450px;
-    background: #F5F7FA;
+    background: white;
     box-shadow: 0 0 16px rgba(0,0,0,0.05);
     display: inline-block;
     font-size: 1.2rem;
@@ -281,11 +313,19 @@ section {
     margin-left: 40px;
     padding-left: 60px;
     padding-right: 60px;
+    position: relative;
+}
+
+.case-paragraph p {
+    position: relative;
+    z-index: 2;
 }
 
 .case-paragraph h3 {
     font-weight: 600;
     margin: 0;
+    position: relative;
+    z-index: 2;
 }
 
 /* === CASE SECTION === */
@@ -293,26 +333,40 @@ section {
 .case-content-wrapper {
     display: flex;
     flex-direction: column;
-    background-color: #E3F2FD;
+    background-color: #F5F7FA;
     height: 100%;
     border-top-left-radius: 10px;
     /* Luft før carouselen */
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* === CASE SECTION === */
 /* right links column */
-.case‐container {
+.case-container {
     height: 100%;
-    background-color: #E3F2FD;
+    background-color: white;
     display: flex;
     flex-direction: column;
     gap: 3rem;
     font-size: 25px;
     border-top-right-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
+
+#colorground3 {
+    margin-top: 12rem;
+    height: 75%;
+    width: 40%;
+    right: 21rem;
+    background-color: HSL(209, 83%, 95%);
+    position: absolute;
+    z-index: 1;
+    border-radius: 100%;
+}
+
 /* === CASE SECTION === */
 /* individual links with underline */
-.case‐container a {
+.case-container a {
     display: block;
     font-size: 1.5rem;
     text-decoration: none;
@@ -320,20 +374,22 @@ section {
     border-bottom: 1px solid #333;
     padding-bottom: 0.2rem;
     transition: color 0.3s ease;
-    border-bottom: 1.5px solid;
+    border-bottom: 1.5px solid HSL(226, 72%,70%);
     padding-right: 0px;
     border-right-width: 20px;
-    max-width: 650px;
+    max-width: 30rem;
     margin-bottom: 20px;
     margin-left: 40px;
+    position: relative;
+    z-index: 2;
 }
 
 #pushed-case{
-    margin-top: 140px;
+    margin-top: 15rem;
 }
 
 /* === CASE SECTION === */
-.case‐container a:hover {
+.case-container a:hover {
     color: #2C8ED6;
 }
 
@@ -374,9 +430,13 @@ section {
 .case-carousel-wrapper {
     grid-column: span 2;
     text-align: center;
-    background-color: #E3F2FD;
+    background-color: #F5F7FA;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+
 }
 /* === CASE SECTION === */
 .carousel-title {
@@ -391,7 +451,7 @@ section {
     display: inline-block;
     width: 100%;
     max-width: 800px;
-    bottom: 40px;
+    bottom: 15px;
 }
 /* === CASE SECTION === */
 .carousel-track-container {
@@ -430,7 +490,7 @@ section {
 /* === CASE SECTION === */
 .carousel-button {
     position: absolute;
-    top: 50%;
+    top: 65%;
     transform: translateY(-50%);
 
     width: 3rem;
@@ -496,14 +556,6 @@ section {
     pointer-events: none;
     z-index: 9;
 }
-
-
-/* Positionering af indhold i section case-presentation*/
-#case-presentation > * {
-    position: relative;
-    z-index: 9;
-}
-
 /*-----------------------------------------End on the case-presentation ---------------------------------*/
 
 
@@ -514,34 +566,53 @@ section {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 225px;
+    margin-bottom: 4rem;
 }
 
 /* Det her er venstre side */
 .contact-side-banner {
-    background-color: #4A5A6A;
+    background-color: white;
     height: 100%; /*sikker at siden udfylder 1 grid*/
     align-content: center;
     border-bottom-left-radius: 10px; /*laver siderne afrundet*/
     border-top-left-radius: 10px;
-
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
+
+#colorground4 {
+    margin-top: -17rem;
+    height: 60%;
+    width: 80%;
+    background-color: HSL(25, 83%, 95%);
+    position: absolute;
+    z-index: 1;
+    border-radius: 100%;
+    left: 14rem ;
+}
+
 /* overskrift h2 */
 .contact-side-banner h2 {
     text-align: center;
     margin-bottom: 70px;
     font-size: 47px;
-    color: #D9534F;
+    color: #246fb3;
     font-family: Serif;
+    position: relative;
+    z-index: 2;
+    margin-top: -2rem;
 }
 /*teksten under overskriften*/
 .contact-side-banner p {
     padding: 0 65px;
     font-size: 27px;
     text-align: center;
-    color: #F5F7FA;
+    color: black;
     font-style: italic;
     line-height: 48px;
+    position: relative;
+    z-index: 2;
 }
 /*højre grid */
 .contact-formular {
@@ -550,6 +621,9 @@ section {
     align-content: center; /*center elementerne i grid'et*/
     border-bottom-right-radius: 10px; /*igen afrundet hjørner*/
     border-top-right-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
 }
 /*overskriften h2*/
 .contact-formular h2 {
@@ -590,7 +664,7 @@ section {
 /*fokuser på at ændre labels html elementerne specifikt*/
 .form-boxes label {
     position: absolute; /*gør at de er "løse" inde i div containeren og nu kan rykkes*/
-    font-size: 16px;
+    font-size: 18px;
     margin: 13px 20px; /*flytter dem så de står perfekt horisontalt og verticalt */
 }
 /*en textarea box som har meget ala style som input delene men med lidt ekstra*/
@@ -616,10 +690,18 @@ section {
     outline: 0;
     border-bottom: 1px solid #2C8ED6;
 }
+
+/*Captcha block styling*/
+.captcha-block {
+    display: flex;
+    justify-content: center;
+}
 /*selve knappen nederst til at submit sin kontakt info*/
 #contact button {
+    display: flex;
+    justify-content: center;
     font-size: 20px;
-    margin: 0 40%; /*prøver at holde den på midten/centreret*/
+    margin: 2% 40.5%; /*prøver at holde den på midten/centreret*/
     padding: 8px 40px; /*giver den "fyld"*/
     background-color: #D9534F;
     color: white;

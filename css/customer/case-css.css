@@ -1,0 +1,147 @@
+/* ── SHIMMER ANIMATION ─────────────────────────────────────── */
+@keyframes shimmer {
+    to { transform: translateX(100%); }
+}
+
+.skeleton {
+    position: relative;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    border-radius: var(--card-radius);
+}
+.skeleton::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+/* ── WRAPPERS TIL OVERSKRIFT + INDHOLD ─────────────────────── */
+#overview-skeleton {
+    margin-top: var(--gap);
+}
+#content-skeleton {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    padding: var(--gap);
+}
+
+/* ── DIMENSIONER PÅ SKELETON-ELEMENTER ────────────────────── */
+.title-skeleton {
+    height: 2.5rem;
+    width: 70%;
+    margin-bottom: var(--gap);
+}
+.date-skeleton {
+    height: 1rem;
+    width: 30%;
+    margin-bottom: var(--gap);
+}
+.skeleton-divider {
+    height: 2px;
+    width: 380px;
+    max-width: 40%;
+    background-color: #e0e0e0;
+    margin: calc(var(--gap)*1.5) auto;
+    border: none;
+}
+.image-skeleton {
+    width: 100%;
+    padding-top: 56%;
+    margin-bottom: var(--gap);
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+.text-skeleton {
+    height: 1rem;
+    margin-bottom: 0.75rem;
+}
+.text-skeleton.line1 { width: 94%; }
+.text-skeleton.line2 { width: 88%; }
+.text-skeleton.line3 { width: 65%; margin-bottom: var(--gap); }
+
+/* ── SKJUL SKELETON NÅR LOADET ───────────────────────────── */
+#overview-skeleton.hidden,
+#content-skeleton.hidden {
+    display: none !important;
+}
+
+/* ── TILBAGE-KNAP ─────────────────────────────────────────── */
+#back-button {
+    display: inline-block;
+    margin-bottom: var(--gap);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background: var(--clr-accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--card-radius);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+#back-button:hover {
+    background: rgba(44, 142, 214, 0.8);
+}
+
+/* ── CASE DETAIL WRAPPER ──────────────────────────────────── */
+#case-detail {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    padding: var(--gap);
+}
+#case-detail.hidden {
+    display: none !important;
+}
+
+/* ── DETAIL IMAGE ─────────────────────────────────────────── */
+.detail-image {
+    width: 100%;
+    padding-top: 40%;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+.detail-image.hidden {
+    display: none !important;
+}
+
+/* ── DETAIL CONTENT ───────────────────────────────────────── */
+.detail-content {
+    padding: var(--gap);
+}
+#case-description {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* ── JUSTÉR PADDING HVIS INGEN BILLEDE ───────────────────── */
+#case-detail.no-image .detail-content {
+    padding-top: var(--gap);
+}
+#overview-skeleton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap);
+}
+
+/* Fejlmeddelelse */
+.error-message {
+    background-color: #FFE5E5;
+    color: #B00020;
+    padding: var(--gap);
+    border-radius: var(--card-radius);
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-top: var(--gap);
+}
