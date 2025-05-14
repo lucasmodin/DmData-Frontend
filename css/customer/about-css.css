@@ -2,6 +2,54 @@ body{
     background-color: #F7F9FB;
 }
 
-section{
+#about-us {
     height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 8rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-us-text-wrapper{
+    background-color: #E3F2FD;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    align-content: center;
+}
+
+.about-us-text-wrapper h2{
+    padding: 0 2rem;
+    font-size: 33px;
+}
+
+
+.about-us-text-wrapper p{
+    max-width: 80%;
+    padding: 0 2rem;
+    font-size: 20px;
+}
+
+
+.about-us-pic-wrapper{
+    background-color: #F5F7FA;
+    height: 100%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    align-content: center;
+}
+
+.about-us-pic-wrapper h3{
+    padding: 0 2rem;
+    font-size: 23px;
+}
+
+
+.about-us-pic-wrapper p{
+    max-width: 80%;
+    padding: 0 2rem;
+    font-size: 20px;
 }
