@@ -30,3 +30,29 @@
     height: 100%;
     background-color: #F5F7FA;
 }
+
+/* Mobil */
+@media (max-width: 768px) {
+    .footer-section {
+        display: block;
+        height: auto;
+        padding: 16px;
+    }
+
+    .footer-contact,
+    .footer-logo,
+    .footer-social {
+        height: auto;
+        padding: 16px;
+        text-align: center;
+    }
+
+    .footer-logo img {
+        height: 80px;
+        width: auto;
+    }
+
+    .footer-contact {
+        padding-left: 0; /* fjernelse af padding fra venstre side*/
+    }
+}
