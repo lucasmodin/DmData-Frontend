@@ -106,15 +106,16 @@ header{
 
 /* Sticky header state er når man scroller ned */
 #sticky-header.sticky {
-    position: fixed; /* fixed position på siden mens man scroller*/
+    position: fixed;
     top: 0;
-    width: 100%; /* hele skærmen bredde*/
+    width: 100%;
     z-index: 9999;
-    background-color: white; /* Kan måske godt argumentere for at fjerne baggrundsfarven*/
+    background-color: rgba(1, 1, 1, 0.05); /* ← Matches static header */
+    backdrop-filter: blur(2px); /* optional: adds a smooth visual effect */
     opacity: 1;
     transform: translateY(0);
     transition: transform 0.3s ease, opacity 0.3s ease;
-    pointer-events: auto; /* klik functionalitet */
+    pointer-events: auto;
 }
 
 #sticky-header.visible {
