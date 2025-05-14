@@ -65,5 +65,30 @@ function loadNavLogic() {
             window.location.href = "#contact";
         });
     }
+    // Sticky Header logikken skal hænger sammen med navigations logikken
+    // Sticky header skal loades senere efter selve headeren for at bevare navigering
+    const stickyHeader = document.getElementById("sticky-header"); // div i header.html
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", () => {
+        if (!stickyHeader) return; //hvis den sticky header IKKE skal loades
+
+        const currentScrollY = window.scrollY;
+
+        // når man scroller ned
+        if (currentScrollY > lastScrollY) {
+            stickyHeader.classList.remove("static"); //static er en css klasse til toppen af sticky header
+            stickyHeader.classList.add("sticky"); //css styling klasse
+        } else {
+            // scroller op eller nær toppen af siden
+            if (currentScrollY <= 30) {
+                stickyHeader.classList.remove("sticky");
+                stickyHeader.classList.add("static");
+            }
+        }
+
+        lastScrollY = currentScrollY;
+    });
+
 }
 
