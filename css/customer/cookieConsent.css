@@ -1,10 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 .cookie-banner-container {
     width: 1600px;
     margin: auto;
 }
 
 .cookie-banner-subcontainer {
-    width: 85%;
+    width: 95%;
     margin: auto;
 }
 
@@ -14,7 +19,7 @@
     bottom: 0;
     color: white;
     background-color: rgba(0,0,0, 0.7);
-    z-index: 1;
+    z-index: 9999;
     /*display: none;*/
 }
 
@@ -40,10 +45,22 @@
     font-size: 1rem;
     font-family: inherit;
     border: 2px solid white;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.0);
     color: white;
+    cursor: pointer;
 }
 
+.cookie-info-text button:hover {
+    background-color: #020000;
+}
+
+#accept-cookies {
+    background-color: #228b22;
+}
+
+#accept-cookies:hover {
+    background-color: #008000;
+}
 @media(max-width: 1600px){
     .cookie-banner-container {
         width: 100%;
