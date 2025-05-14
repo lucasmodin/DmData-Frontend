@@ -1,10 +1,16 @@
 /* Alle CSS værdier her bruges kun i header sektionerne på html filerne */
 
+header{
+    background-color: rgba(1, 1, 1, 0.05);
+    max-height: 8rem;
+}
+
 .nav-bar { /* nav-bar er tekst elementerne på toppen af siden */
     background-color: transparent; /* or remove this line entirely */
     padding: 20px 0; /* padding betyder at elementerne ikke vises på kanten af skærmen*/
     display: flex;
     justify-content: center;
+    padding-bottom: 5px;
 }
 
 .nav-list {
@@ -35,7 +41,6 @@
 }
 
 .nav-list li {
-    background-color: #ddd; /* keep if you want the boxes */
     padding: 10px 20px;
     border-radius: 4px;
 }
@@ -43,9 +48,10 @@
 .nav-list li a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
     position: relative;
     padding-bottom: 5px;
+    font-size: 22px;
+    text-transform: uppercase;
 }
 
 .logo {
@@ -54,8 +60,8 @@
 }
 
 .logo img { /* størrelsen på logoet*/
-    width: 100px;
-    height: 75px;
+    height: 90px;
+    width: 120px;
 }
 
 .logo a {
@@ -80,4 +86,9 @@
 .logo a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+#line{
+    width: 65%;
+    background-color: black;
 }
