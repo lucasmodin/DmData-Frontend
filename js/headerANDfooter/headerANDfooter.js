@@ -33,7 +33,7 @@ function loadNavLogic() {
     if (serviceLink) {
         serviceLink.addEventListener('click', function(event) {
             event.preventDefault(); // gør det muligt at selv programmere sidens adfærd
-            window.location.href = "#intro"; //hardcoded fil navn til navigation
+            window.location.href = "#services"; //hardcoded fil navn til navigation
         });
     }
 

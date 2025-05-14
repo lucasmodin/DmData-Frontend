@@ -244,6 +244,7 @@ section {
 .services-text hr {
     position: relative;
     z-index: 2;
+    width: 85%;
 }
 
 .services-text li{
@@ -257,7 +258,7 @@ section {
 }
 .services-text ul{
     display: inline-block;
-    width: 38%;
+    width: 42%;
 }
 
 .serice-list {
