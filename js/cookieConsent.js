@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const banner = document.getElementById('cookie-banner');
     const acceptBtn = document.getElementById('accept-cookies');
+    const acceptEssentialBtn = document.getElementById('accept-essential-cookies');
     const denyBtn = document.getElementById('deny-cookies');
 
     if (!localStorage.getItem('cookieConsent')) {
@@ -11,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('cookieConsent', 'accepted');
         banner.style.display = 'none';
         // initialize non-essential cookies here (e.g., Google Analytics)
+    });
+
+    acceptEssentialBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'essential-only');
+        banner.style.display = 'none';
+        //Only run essential cookies
     });
 
     denyBtn.addEventListener('click', () => {
