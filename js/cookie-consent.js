@@ -1,65 +1,74 @@
-import { fetchConsent, updateConsent} from "./cookie-consent-api.js";
+import { fetchConsent, updateConsent, logVisit } from "./cookie-consent-api.js";
 
-const banner = document.getElementById("cookie-banner")
-const acceptBtn = document.getElementById("accept-cookies")
-const acceptEssentialBtn = document.getElementById('accept-essential-cookies');
-const denyBtn = document.getElementById("deny-cookies")
-
-
+const banner               = document.getElementById("cookie-banner");
+const acceptBtn            = document.getElementById("accept-cookies");
+const acceptEssentialBtn   = document.getElementById("accept-essential-cookies");
+const denyBtn              = document.getElementById("deny-cookies");
 
 async function initConsent() {
+    // 1) Hent samtykke fra localStorage eller fra backend
     let consent = null;
-    const stored = localStorage.getItem("cookieConsent")
-    if(stored) {
-        consent = JSON.parse(stored)
+    const stored = localStorage.getItem("cookieConsent");
+    if (stored) {
+        consent = JSON.parse(stored);
     } else {
-        const consent = await fetchConsent();
-        if (consent) {
-            localStorage.setItem("cookieConsent", JSON.stringify(consent))
+        const fetched = await fetchConsent();
+        if (fetched) {
+            localStorage.setItem("cookieConsent", JSON.stringify(fetched));
+            consent = fetched;
         }
     }
 
+    // 2) Vis eller skjul banner
     if (!consent) {
-        banner.style.display = "block"
+        banner.style.display = "block";
     } else {
-        banner.style.display = "none"
-        //hvis brugeren siger ja til alle cookies
-        if(consent.analyticsAccepted) {
+        banner.style.display = "none";
+
+        // 3) Hvis analytics er accepteret OG vi aldrig har logget visit før → logVisit()
+        if (consent.analyticsAccepted && !localStorage.getItem("visitLogged")) {
             await logVisit();
+            localStorage.setItem("visitLogged", "true");
         }
     }
 }
 
-//acceptering af alle cookies knap
-acceptBtn.addEventListener("click", async () =>{
+// “Accept all” knap
+acceptBtn.addEventListener("click", async () => {
     const ok = await updateConsent(true, true);
-    if (ok) {
-        const consent = { analyticsAccepted: true, marketingAccepted: true}
-        localStorage.setItem("cookieConsent", JSON.stringify(consent))
-        banner.style.display = "none"
+    if (!ok) return;  // fejl? abort
+
+    const consent = { analyticsAccepted: true, marketingAccepted: true };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
+    banner.style.display = "none";
+
+    // Log kun første gang
+    if (!localStorage.getItem("visitLogged")) {
         await logVisit();
-    }
-})
-
-//kun essentielle cookies
-acceptEssentialBtn.addEventListener('click', async () => {
-    const ok = await updateConsent(true, false)
-    if (ok) {
-        const consent = { analyticsAccepted: true, marketingAccepted: false}
-        localStorage.setItem("cookieConsent", JSON.stringify(consent));
-        banner.style.display = 'none';
-
+        localStorage.setItem("visitLogged", "true");
     }
 });
 
-//afvisnings knap
-denyBtn.addEventListener("click", async () => {
-    const ok = await updateConsent(false, false)
-    if (ok) {
-        const consent = { analyticsAccepted: false, marketingAccepted: false}
-        localStorage.setItem("cookieConsent", JSON.stringify(consent))
-        banner.style.display = "none"
-    }
-})
+// “Kun essentielle” knap
+acceptEssentialBtn.addEventListener("click", async () => {
+    const ok = await updateConsent(false, false);
+    if (!ok) return;
 
-document.addEventListener("DOMContentLoaded", initConsent)
+    const consent = { analyticsAccepted: false, marketingAccepted: false };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
+    banner.style.display = "none";
+    // ingen logVisit, da analytics ikke er godkendt
+});
+
+// “Deny all” knap
+denyBtn.addEventListener("click", async () => {
+    const ok = await updateConsent(false, false);
+    if (!ok) return;
+
+    const consent = { analyticsAccepted: false, marketingAccepted: false };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
+    banner.style.display = "none";
+    // heller ikke her logVisit
+});
+
+document.addEventListener("DOMContentLoaded", initConsent);

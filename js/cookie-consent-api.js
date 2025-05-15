@@ -19,3 +19,9 @@ export async function updateConsent(analyticsAccepted, marketingAccepted) {
     return res.ok
 }
 
+export async function logVisit() {
+    await fetch(`${baseUrl}/api/visits`, {
+        method: "POST",
+        credentials: "include"
+    })
+}
