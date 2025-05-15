@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", script)
 // loadComponent er en function til at hente et bestemt HTML element efter elemtentet er blevet stylet
 function script() {
     loadComponent("headerANDfooter/header.html", "header-container", function () {
+
         loadNavLogic(); // denne function skal loades efter html filen er hentet
     });
 
@@ -12,16 +13,21 @@ function script() {
     });
 }
 
-function loadComponent(url, containerID, callback){
+function loadComponent(url, containerID, callback) {
     fetch(url)
         .then(response => response.text())
-        .then(data =>{document.getElementById(containerID).innerHTML = data;
-        if (callback){
-            callback();
-        }
+        .then(data => {
+            document.getElementById(containerID).innerHTML = data;
+
+            // Kald callback efter DOM-opdatering er fuldt færdig
+            if (callback) {
+                // Sørg for at DOM'en er opdateret før vi tilføjer event listeners
+                requestAnimationFrame(() => callback());
+            }
         })
-        .catch(error => console.log("error in loading" + url))
+        .catch(error => console.log("error in loading " + url));
 }
+
 
 //Id i denne function er baseret på html siden header.html
 function loadNavLogic() {
@@ -37,11 +43,12 @@ function loadNavLogic() {
     const navList = document.querySelector('.nav-list');  // Identificer nav-list
 
     // Tjek for mobilvisning, så vi kun tilføjer event listener til hamburger-ikonet på mobil
-    if (window.innerWidth <= 980 && hamburgerIcon) {
-        hamburgerIcon.addEventListener('click', function() {
-            navList.classList.toggle('show');  // Toggle visning af navigation
+    if (hamburgerIcon && navList) {
+        hamburgerIcon.addEventListener('click', function () {
+            navList.classList.toggle('show');
         });
     }
+
 
 
 
