@@ -12,21 +12,47 @@ function script() {
 
     });
 }
-
 function loadComponent(url, containerID, callback) {
     fetch(url)
         .then(response => response.text())
         .then(data => {
-            document.getElementById(containerID).innerHTML = data;
+            const container = document.getElementById(containerID);
+            container.innerHTML = data;
 
-            // Kald callback efter DOM-opdatering er fuldt færdig
+            // Apply styles directly after content is loaded
+            if (window.innerWidth <= 850) {
+                // Example style changes — adjust selectors as needed
+                const header = container.querySelector('header');
+                if (header) {
+                    header.style.maxHeight = '5rem';
+                }
+
+                const navBar = container.querySelector('.nav-bar');
+                if (navBar) {
+                    navBar.style.padding = '5px 0';
+                    navBar.style.gap = '5px';
+                }
+
+                const navLinks = container.querySelectorAll('.nav-list li a');
+                navLinks.forEach(link => {
+                    link.style.fontSize = '16px';
+                });
+
+                const logoImg = container.querySelector('.logo img');
+                if (logoImg) {
+                    logoImg.style.width = '50px';
+                    logoImg.style.height = '30px';
+                }
+            }
+
+            // Call callback after DOM update
             if (callback) {
-                // Sørg for at DOM'en er opdateret før vi tilføjer event listeners
                 requestAnimationFrame(() => callback());
             }
         })
         .catch(error => console.log("error in loading " + url));
 }
+
 
 
 //Id i denne function er baseret på html siden header.html
