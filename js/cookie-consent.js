@@ -1,28 +1,65 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('accept-cookies');
-    const acceptEssentialBtn = document.getElementById('accept-essential-cookies');
-    const denyBtn = document.getElementById('deny-cookies');
+import { fetchConsent, updateConsent} from "./cookie-consent-api.js";
 
-    if (!localStorage.getItem('cookieConsent')) {
-        banner.style.display = 'block';
+const banner = document.getElementById("cookie-banner")
+const acceptBtn = document.getElementById("accept-cookies")
+const acceptEssentialBtn = document.getElementById('accept-essential-cookies');
+const denyBtn = document.getElementById("deny-cookies")
+
+
+
+async function initConsent() {
+    let consent = null;
+    const stored = localStorage.getItem("cookieConsent")
+    if(stored) {
+        consent = JSON.parse(stored)
+    } else {
+        const consent = await fetchConsent();
+        if (consent) {
+            localStorage.setItem("cookieConsent", JSON.stringify(consent))
+        }
     }
 
-    acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'accepted');
-        banner.style.display = 'none';
-        // initialize non-essential cookies here (e.g., Google Analytics)
-    });
+    if (!consent) {
+        banner.style.display = "block"
+    } else {
+        banner.style.display = "none"
+        //hvis brugeren siger ja til alle cookies
+        if(consent.analyticsAccepted) {
+            await logVisit();
+        }
+    }
+}
 
-    acceptEssentialBtn.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'essential-only');
-        banner.style.display = 'none';
-        //Only run essential cookies
-    });
+//acceptering af alle cookies knap
+acceptBtn.addEventListener("click", async () =>{
+    const ok = await updateConsent(true, true);
+    if (ok) {
+        const consent = { analyticsAccepted: true, marketingAccepted: true}
+        localStorage.setItem("cookieConsent", JSON.stringify(consent))
+        banner.style.display = "none"
+        await logVisit();
+    }
+})
 
-    denyBtn.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'denied');
+//kun essentielle cookies
+acceptEssentialBtn.addEventListener('click', async () => {
+    const ok = await updateConsent(true, false)
+    if (ok) {
+        const consent = { analyticsAccepted: true, marketingAccepted: false}
+        localStorage.setItem("cookieConsent", JSON.stringify(consent));
         banner.style.display = 'none';
-        // don't run any non-essential cookies
-    });
+
+    }
 });
+
+//afvisnings knap
+denyBtn.addEventListener("click", async () => {
+    const ok = await updateConsent(false, false)
+    if (ok) {
+        const consent = { analyticsAccepted: false, marketingAccepted: false}
+        localStorage.setItem("cookieConsent", JSON.stringify(consent))
+        banner.style.display = "none"
+    }
+})
+
+document.addEventListener("DOMContentLoaded", initConsent)
