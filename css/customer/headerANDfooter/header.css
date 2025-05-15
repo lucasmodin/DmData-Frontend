@@ -144,6 +144,9 @@ header{
 }
 
 
+
+/* Mobil sektion */
+
 /* Hamburger */
 .hamburger {
     display: none; /* Skjul som standard */
@@ -238,6 +241,4 @@ header{
         height: 30px !important;
     }
 }
-
-
 
