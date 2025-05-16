@@ -1,28 +1,74 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('accept-cookies');
-    const acceptEssentialBtn = document.getElementById('accept-essential-cookies');
-    const denyBtn = document.getElementById('deny-cookies');
+import { fetchConsent, updateConsent, logVisit } from "./cookie-consent-api.js";
 
-    if (!localStorage.getItem('cookieConsent')) {
-        banner.style.display = 'block';
+const banner               = document.getElementById("cookie-banner");
+const acceptBtn            = document.getElementById("accept-cookies");
+const acceptEssentialBtn   = document.getElementById("accept-essential-cookies");
+const denyBtn              = document.getElementById("deny-cookies");
+
+async function initConsent() {
+    // 1) Hent samtykke fra localStorage eller fra backend
+    let consent = null;
+    const stored = localStorage.getItem("cookieConsent");
+    if (stored) {
+        consent = JSON.parse(stored);
+    } else {
+        const fetched = await fetchConsent();
+        if (fetched) {
+            localStorage.setItem("cookieConsent", JSON.stringify(fetched));
+            consent = fetched;
+        }
     }
 
-    acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'accepted');
-        banner.style.display = 'none';
-        // initialize non-essential cookies here (e.g., Google Analytics)
-    });
+    // 2) Vis eller skjul banner
+    if (!consent) {
+        banner.style.display = "block";
+    } else {
+        banner.style.display = "none";
 
-    acceptEssentialBtn.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'essential-only');
-        banner.style.display = 'none';
-        //Only run essential cookies
-    });
+        // 3) Hvis analytics er accepteret OG vi aldrig har logget visit før → logVisit()
+        if (consent.analyticsAccepted && !localStorage.getItem("visitLogged")) {
+            await logVisit();
+            localStorage.setItem("visitLogged", "true");
+        }
+    }
+}
 
-    denyBtn.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'denied');
-        banner.style.display = 'none';
-        // don't run any non-essential cookies
-    });
+// “Accept all” knap
+acceptBtn.addEventListener("click", async () => {
+    const ok = await updateConsent(true, true);
+    if (!ok) return;  // fejl? abort
+
+    const consent = { analyticsAccepted: true, marketingAccepted: true };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
+    banner.style.display = "none";
+
+    // Log kun første gang
+    if (!localStorage.getItem("visitLogged")) {
+        await logVisit();
+        localStorage.setItem("visitLogged", "true");
+    }
 });
+
+// “Kun essentielle” knap
+acceptEssentialBtn.addEventListener("click", async () => {
+    const ok = await updateConsent(false, false);
+    if (!ok) return;
+
+    const consent = { analyticsAccepted: false, marketingAccepted: false };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
+    banner.style.display = "none";
+    // ingen logVisit, da analytics ikke er godkendt
+});
+
+// “Deny all” knap
+denyBtn.addEventListener("click", async () => {
+    const ok = await updateConsent(false, false);
+    if (!ok) return;
+
+    const consent = { analyticsAccepted: false, marketingAccepted: false };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
+    banner.style.display = "none";
+    // heller ikke her logVisit
+});
+
+document.addEventListener("DOMContentLoaded", initConsent);
