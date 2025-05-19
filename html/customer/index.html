@@ -5,7 +5,6 @@
     <title>Title</title>
     <link rel="stylesheet" href="../../css/customer/index-css.css">
     <link rel="stylesheet" href="../../css/customer/cookie-consent.css">
-    <link rel="stylesheet" href="../../css/customer/index-mobile.css">
 </head>
 <body>
 
@@ -205,9 +204,6 @@
             <p id="captcha-error" class="captcha-error hidden">
                 Du skal bekræfte, at du ikke er en robot, før du kan sende formularen.
             </p>
-                <p id="captcha-instruction" class="captcha-instruction">
-                    Udfyld venligst captcha først for at kunne sende.
-                </p>
 
             <button id="submit-btn" type="submit">Send</button>
             </div>
@@ -224,7 +220,7 @@
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Google API call til CAPCHA V2-->
 <script type="module" src="../../js/captcha.js"></script>
-<script src="../../js/cookie-consent.js"></script>
+<script type="module" src="../../js/cookie-consent.js"></script>
 
 <!-- ========== FOOTER SECTION ========== -->
 <footer>
