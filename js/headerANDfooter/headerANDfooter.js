@@ -84,7 +84,6 @@ function loadNavLogic() {
         });
     });
 
-
     if (serviceLink) {
         serviceLink.addEventListener('click', function(event) {
             event.preventDefault(); // gør det muligt at selv programmere sidens adfærd

@@ -79,6 +79,7 @@ header{
         position: absolute;
         left: 1rem;
         top: 0rem;
+        z-index: 4;
     }
 }
 
@@ -196,54 +197,28 @@ header{
     .nav-bar .nav-list li a {
         font-size: 18px
     }
+    body.no-scroll {
+        overflow: hidden;
+        height: 100vh;
+    }
 
-    /* Skjul navigationslisten som standard */
-    /*.nav-list {*/
-    /*    display: none;*/
-    /*    flex-direction: column;*/
-    /*    gap: 15px;*/
-    /*    margin-top: 10px;*/
-    /*    width: 100%;*/
-    /*    align-items: center;*/
-    /*}*/
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 101vw;
+        background-color: lightblue;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%); /* Skub den udenfor skærmen til højre */
+        transition: transform 0.4s ease-in-out;
+        z-index: 3;
+    }
 
-    /*!* Vis navigationen, når .show er tilføjet *!*/
-    /*.nav-list.show {*/
-    /*    display: flex;*/
-    /*    height: 101vh;*/
-    /*    width: 101vw;*/
-    /*    position: absolute;*/
-    /*    left: -1%;*/
-    /*    top: -1%;*/
-    /*    z-index: 4;*/
-    /*    background-color: lightblue;*/
-    /*}*/
-
-    @media (max-width: 980px) {
-
-        body.no-scroll {
-            overflow: hidden;
-            height: 100vh;
-        }
-
-        .nav-list {
-            position: fixed;
-            top: 0;
-            right: 0;
-            height: 100vh;
-            width: 100vw;
-            background-color: lightblue;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform: translateX(100%); /* Skub den udenfor skærmen til højre */
-            transition: transform 0.4s ease-in-out;
-            z-index: 4;
-        }
-
-        .nav-list.show {
-            transform: translateX(0); /* Glider ind */
-        }
+    .nav-list.show {
+        transform: translateX(0); /* Glider ind */
     }
 
     /* Gør hamburger-menuen synlig på mobil */
