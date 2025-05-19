@@ -165,8 +165,7 @@ header{
 /* Sticky header state er når man scroller ned */
 #sticky-header.sticky {
     position: fixed;
-    top: 0;
-    width: 100%;
+    width: 99%;
     z-index: 9999;
     background-color: rgba(1, 1, 1, 0.05); /* ← Matches static header */
     backdrop-filter: blur(2px); /* optional: adds a smooth visual effect */
