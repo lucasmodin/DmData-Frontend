@@ -50,7 +50,12 @@ header{
 .nav-list li {
     padding: 10px 20px;
     border-radius: 4px;
-    margin-left: 5%;
+}
+
+@media(max-width: 980px){
+    .nav-list li {
+        margin-left: 5%;
+    }
 }
 
 .nav-list li a {
@@ -102,6 +107,15 @@ header{
         z-index: 4;
         margin-left: 8%;
     }
+
+    #logo2{
+        display: inline-block;
+        position: relative;
+        padding-bottom: 5px;
+        height: 100%;
+        width: 100%;
+    }
+
 }
 
 
@@ -111,14 +125,6 @@ header{
     padding-bottom: 5px;
     height: 80px;
     width: 110px;
-}
-
-#logo2{
-    display: inline-block;
-    position: relative;
-    padding-bottom: 5px;
-    height: 100%;
-    width: 100%;
 }
 
 
