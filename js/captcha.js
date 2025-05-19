@@ -1,21 +1,26 @@
+// captcha.js
 
+window.captchaToken = null;
 
-// dette er callback fra reCAPTCHA, når brugeren har løst det
-function onCaptchaSuccess(token) {
-    document.getElementById('captcha-error').classList.add('hidden');
-    document.getElementById('submit-btn').disabled = false;
-}
+// al DOM-init herinde
+document.addEventListener("DOMContentLoaded", () => {
+    const errorEl        = document.getElementById('captcha-error');
+    const submitBtn      = document.getElementById('submit-btn');
+    const captchaInstrEl = document.getElementById('captcha-instruction');
 
+    // Start-state: knap deaktiveret, vis instruktion
+    submitBtn.disabled = true;
+    captchaInstrEl.classList.remove('hidden');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const form    = document.getElementById('contact-form');
-    const errorEl = document.getElementById('captcha-error');
+    // Når captcha er løst, kaldes denne global
+    window.onCaptchaSuccess = function(token) {
+        window.captchaToken = token;
 
-    form.addEventListener('submit', function(e) {
-        const response = grecaptcha.getResponse();
-        if (!response) {
-            e.preventDefault();
-            errorEl.classList.remove('hidden');
-        }
-    });
+        // Skjul fejl og instruktion, aktiver knap
+        errorEl.classList.add('hidden');
+        captchaInstrEl.classList.add('hidden');
+
+        submitBtn.disabled = false;
+        submitBtn.classList.add('enabled');
+    };
 });

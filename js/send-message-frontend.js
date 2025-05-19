@@ -1,56 +1,70 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contact-form');
+// send-message-frontend.js
 
-    form.addEventListener('submit', async function (event) {
+document.addEventListener('DOMContentLoaded', () => {
+    const form      = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const errorEl   = document.getElementById('captcha-error');
+
+    form.addEventListener('submit', async function(event) {
         event.preventDefault();
 
-        const name = document.getElementById('name').value.trim();
-        const mail = document.getElementById('email').value.trim();
-        const number = document.getElementById('phone-number').value.trim();  // Optional
-        const company = document.getElementById('company').value.trim();      // Optional
-        const message = document.getElementById('message').value.trim();
-
-        // JavaScript validering
-        if (!name || !mail || !message) {
+        // 1) almindelig felt-validering
+        const { name, email, message } = form;
+        if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
             alert("Felter markeret med * skal udfyldes.");
             return;
         }
 
+        // 2) captcha-token SKAL være sat
+        if (!window.captchaToken) {
+            errorEl.classList.remove('hidden');
+            return;
+        }
+
+        // 3) verify-captcha
+        const verifyRes = await fetch("http://localhost:8080/verify-captcha", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `g-recaptcha-response=${encodeURIComponent(window.captchaToken)}`
+        });
+        if (!verifyRes.ok) {
+            alert("Captcha validering fejlede. Prøv igen.");
+            grecaptcha.reset();
+            window.captchaToken = null;
+            submitBtn.disabled = true;
+            return;
+        }
+
+        // 4) send besked
         const payload = {
-            name: name,
-            mail: mail,
-            number: number || null,  // Null er til tomme værdier
-            company: company || null,
-            message: message
+            name:    name.value.trim(),
+            mail:    email.value.trim(),
+            number:  form['phone-number'].value.trim() || null,
+            company: form.company.value.trim()       || null,
+            message: message.value.trim()
         };
 
         try {
-            const response = await fetch("http://localhost:8080/saveMessage", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(payload)
+            const res = await fetch("http://localhost:8080/saveMessage", {
+                method:  "POST",
+                headers: { "Content-Type": "application/json" },
+                body:    JSON.stringify(payload)
             });
-
-            if (response.ok) {
-                const createdAt = new Date();
-                const localTime = createdAt.toLocaleString("da-DK", {
-                    dateStyle: "short",
-                    timeStyle: "short"
+            if (res.ok) {
+                const now = new Date().toLocaleString("da-DK", {
+                    dateStyle: "short", timeStyle: "short"
                 });
-
-                alert(`Din besked blev sendt d. ${localTime}.`);
+                alert(`Din besked blev sendt d. ${now}.`);
                 form.reset();
+                grecaptcha.reset();
+                window.captchaToken = null;
+                submitBtn.disabled = true;
             } else {
                 alert("Fejl ved afsendelse.");
             }
-
-        } catch (error) {
-            console.error("Fejl ved afsendelse:", error);
-            alert("Fejl ved afsendelse:", error);
+        } catch (err) {
+            console.error("Fejl ved afsendelse:", err);
+            alert("Fejl ved afsendelse.");
         }
     });
 });
-
-

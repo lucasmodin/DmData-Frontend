@@ -720,6 +720,15 @@ section {
     background-color: #a23f3b;
     transform: translateY(0); /*får knappen tilbage på 0 hvor den stod originalt*/
 }
+
+#contact button:disabled{
+    background-color: #ccc;       /* grå baggrund */
+    color: #666;                  /* mørk grå tekst */
+    cursor: not-allowed;
+    transition: background-color 0.3s;
+}
+
+
 /*-----------------------------------------End on the contact formular ---------------------------------*/
 
 /* Utility til at skjule elementer - f.eks. vores fejlbesked */
@@ -732,6 +741,14 @@ section {
     color: #c00;
     font-size: 0.9rem;
     margin-top: 0.5rem;
+}
+
+/* Instruktion under captcha */
+.captcha-instruction {
+    display: block;
+    font-size: 0.9rem;
+    color: #b71c1c;   /* rød farve */
+    margin-top: 0.5em;
 }
 
 
