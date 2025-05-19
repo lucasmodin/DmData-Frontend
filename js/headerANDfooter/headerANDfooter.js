@@ -60,6 +60,7 @@ function loadNavLogic() {
     const serviceLink = document.getElementById('ydelser');
     const casesLink = document.getElementById('cases');
     const indexLink = document.getElementById('logo');
+    const indexLink2 = document.getElementById('logo2');
     const aboutLink = document.getElementById('omos');
     const contactLink = document.getElementById('kontakt');
 
@@ -97,6 +98,17 @@ function loadNavLogic() {
 
     if (indexLink) {
         indexLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            if(isOnIndex){
+                window.location.href = "#header-container"
+            } else {
+                window.location.href = "index.html";
+            }
+        });
+    }
+
+    if (indexLink2) {
+        indexLink2.addEventListener('click', function(event) {
             event.preventDefault();
             if(isOnIndex){
                 window.location.href = "#header-container"

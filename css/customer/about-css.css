@@ -24,6 +24,14 @@ body{
     overflow: hidden;
 }
 
+@media(max-width: 980px){
+    #about-us {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+        padding: 2rem  1rem;
+    }
+}
+
 .about-us-text-wrapper{
     background-color: #E3F2FD;
     height: 100%;
