@@ -24,6 +24,12 @@ section {
     justify-content: center;
 }
 
+@media (max-width: 980px){
+    section {
+        padding: 2rem  1rem;
+    }
+}
+
 /*-----------------------------------------End on the GLOBAL Styles ---------------------------------*/
 
 
@@ -34,6 +40,13 @@ section {
 #hero-section {
     padding-bottom: 10rem;
     height: 45rem;
+}
+
+@media (max-width: 980px){
+    #hero-section{
+        height: 100vh;
+        padding-bottom: 2rem;
+    }
 }
 
 /* Undertag på video som styler den til at fylde siden */
@@ -77,6 +90,13 @@ section {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+@media(max-width: 980px){
+    #intro{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
 }
 
 .about-dm-wrapper{
@@ -129,6 +149,10 @@ section {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
+@media(max-width: 980px){
+    overflow: hidden;
+}
+
 #about-dm-pic1{
     background-image: url("/assets/images/pro-pc-pic2.jpg");
     height: 35%;
@@ -139,6 +163,15 @@ section {
     margin-left: 150px;
     position: relative;
     z-index: 2;
+}
+
+@media(max-width: 980px){
+    #about-dm-pic1{
+        height: 45%;
+        width: 55%;
+        margin-top: 0;
+        margin-left: 25%
+    }
 }
 
 #about-dm-pic2{
@@ -152,6 +185,14 @@ section {
     z-index: 2;
 }
 
+@media(max-width: 980px){
+    #about-dm-pic2{
+        height: 45%;
+        width: 55%;
+        margin-left: 10%;
+    }
+}
+
 #colorground{
     margin-top: 50px;
     height: 85%;
@@ -161,6 +202,19 @@ section {
     z-index: 1;
     left: -23rem;
     border-radius: 10px;
+}
+
+@media(max-width: 980px){
+    #colorground{
+        margin-top: 50px;
+        height: 85%;
+        width: 75%;
+        background-color: #E3F2FD;
+        position: absolute;
+        z-index: 1;
+        left: 7rem;
+        border-radius: 10px;
+    }
 }
 
 /*-----------------------------------------End on the intro to DM-Science ---------------------------------*/
@@ -175,6 +229,13 @@ section {
     grid-template-columns: 1fr 1fr;
 }
 
+@media(max-width: 980px){
+    #services{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
 .services-pic-wrapper{
     background-color: white;
     height: 100%;
@@ -182,6 +243,12 @@ section {
     border-top-left-radius: 10px;
     position: relative;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media(max-width: 980px){
+    .services-pic-wrapper{
+        width: 58rem;
+    }
 }
 
 #colorground2 {
@@ -193,6 +260,19 @@ section {
     position: absolute;
     z-index: 1;
     border-radius: 10px;
+}
+
+@media(max-width: 980px){
+    #colorground2 {
+        margin-top: 38%;
+        height: 90%;
+        width: 88%;
+        left: 6rem;
+        background-color: HSL(226, 72%, 94%);
+        position: absolute;
+        z-index: 1;
+        border-radius: 10px;
+    }
 }
 
 .services-pic-wrapper hr{
@@ -228,6 +308,12 @@ section {
     align-content: center;
     position: relative;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media(max-width: 980px){
+    .services-text{
+        margin-top: -10%;
+    }
 }
 
 .services-text h2{
@@ -285,6 +371,13 @@ section {
     grid-template-rows: 1fr auto;
 }
 
+@media(max-width: 980px){
+    #case-presentation{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
 .case-header {
     align-self: center; /* placerer overskriften lodret øverst */
     text-align: left;
@@ -296,6 +389,12 @@ section {
     color: HSL(226, 72%, 75%);
     position: relative;
     z-index: 2;
+}
+
+@media(max-width: 980px){
+    .case-header {
+        width: 80%;
+    }
 }
 
 /* === CASE SECTION === */
@@ -314,6 +413,14 @@ section {
     padding-left: 60px;
     padding-right: 60px;
     position: relative;
+}
+
+@media(max-width: 980px){
+    .case-paragraph {
+        margin-left: 17%;
+        margin-bottom: 4%;
+        padding: 3% 10%;
+    }
 }
 
 .case-paragraph p {
@@ -340,6 +447,12 @@ section {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
+@media(max-width: 980px){
+    .case-content-wrapper {
+        width: 58rem;
+    }
+}
+
 /* === CASE SECTION === */
 /* right links column */
 .case-container {
@@ -353,6 +466,12 @@ section {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
+@media(max-width: 980px){
+    .case-container {
+        align-items: center;
+    }
+}
+
 #colorground3 {
     margin-top: 12rem;
     height: 75%;
@@ -362,6 +481,19 @@ section {
     position: absolute;
     z-index: 1;
     border-radius: 100%;
+}
+
+@media(max-width: 980px){
+    #colorground3 {
+        margin-top: -37%;
+        height: 37%;
+        width: 55%;
+        right: 42%;
+        background-color: HSL(209, 83%, 95%);
+        position: absolute;
+        z-index: 1;
+        border-radius: 100%;
+    }
 }
 
 /* === CASE SECTION === */
@@ -382,6 +514,12 @@ section {
     margin-left: 40px;
     position: relative;
     z-index: 2;
+}
+
+@media(max-width: 980px){
+    .case-container a {
+        width: 60%;
+    }
 }
 
 #pushed-case{
@@ -412,8 +550,17 @@ section {
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
     margin-left: 40px;
-
 }
+
+@media(max-width: 980px){
+    .case-button {
+        align-self: auto;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 5%;
+    }
+}
+
 /* === CASE SECTION === */
 /* Hover-state */
 .case-button:hover {
@@ -436,8 +583,14 @@ section {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 2;
-
 }
+
+@media(max-width: 980px){
+    .case-carousel-wrapper {
+        grid-column: span 1;
+    }
+}
+
 /* === CASE SECTION === */
 .carousel-title {
     margin-bottom: 1.5rem;
@@ -569,6 +722,13 @@ section {
     margin-bottom: 4rem;
 }
 
+@media(max-width: 980px){
+    #contact {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
 /* Det her er venstre side */
 .contact-side-banner {
     background-color: white;
@@ -591,6 +751,17 @@ section {
     border-radius: 100%;
     left: 14rem ;
 }
+
+@media(max-width: 980px){
+    #colorground4 {
+        margin-top: -10%;
+        height: 69%;
+        width: 60%;
+        left: 37%;
+    }
+}
+
+
 
 /* overskrift h2 */
 .contact-side-banner h2 {

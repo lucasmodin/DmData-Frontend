@@ -92,11 +92,17 @@ function loadNavLogic() {
         });
     }
 
+    const path = window.location.pathname;
+    const isOnIndex = path.endsWith("index.html") || path === "/" || path === "/index";
+
     if (indexLink) {
         indexLink.addEventListener('click', function(event) {
             event.preventDefault();
-            window.location.href = "index.html";
-
+            if(isOnIndex){
+                window.location.href = "#header-container"
+            } else {
+                window.location.href = "index.html";
+            }
         });
     }
 
