@@ -220,7 +220,9 @@ header{
         text-transform: uppercase;
         font-weight: bold;
         color: whitesmoke;
+        font-family: Serif;
     }
+
     body.no-scroll {
         overflow: hidden;
         height: 100vh;
