@@ -73,10 +73,16 @@ function loadNavLogic() {
     if (hamburgerIcon && navList) {
         hamburgerIcon.addEventListener('click', function () {
             navList.classList.toggle('show');
+            document.body.classList.toggle("no-scroll")
         });
     }
 
-
+    document.querySelectorAll('.nav-list a').forEach(link => {
+        link.addEventListener('click', () => {
+            navList.classList.remove('show');
+            document.body.classList.remove('no-scroll');
+        });
+    });
 
 
     if (serviceLink) {
