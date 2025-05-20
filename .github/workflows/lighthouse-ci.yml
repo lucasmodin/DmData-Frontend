@@ -1,17 +1,10 @@
-# .github/workflows/lighthouse-ci.yml
 name: Lighthouse CI
-
-permissions:
-  contents: read        # læse kildekode
-  actions: read         # hente action-metadata
-  packages: read        # hvis du udpakker pakker
-  id-token: write       # kun hvis du autentificerer mod eksterne systemer
 
 on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]    # <-- her siger vi, at PRs imod main også må trigge jobbet
+    branches: [ main ]
 
 jobs:
   lighthouse:
@@ -20,7 +13,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Set up Node.js (kun til LHCI-CLI)
         uses: actions/setup-node@v3
         with:
           node-version: '18'
@@ -43,7 +36,7 @@ jobs:
             --upload.target=filesystem
 
       - name: Upload Lighthouse report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v1
         with:
           name: lighthouse-report
           path: ./.lighthouseci/output/
