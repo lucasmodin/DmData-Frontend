@@ -1,6 +1,12 @@
 # .github/workflows/lighthouse-ci.yml
 name: Lighthouse CI
 
+permissions:
+  contents: read        # læse kildekode
+  actions: read         # hente action-metadata
+  packages: read        # hvis du udpakker pakker
+  id-token: write       # kun hvis du autentificerer mod eksterne systemer
+
 on:
   push:
     branches: [ main ]
