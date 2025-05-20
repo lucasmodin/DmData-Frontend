@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+
+        if (number && !/^\+45\s\d{8}$/.test(number)) {
+            alert("Telefonnummer skal være i formatet: +45 12345678.");
+            return;
+        }
+
+
         const payload = {
             name: name,
             mail: mail,
