@@ -22,6 +22,16 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        if (!message.trim()) {
+            alert("Beskeden må ikke være tom eller kun indeholde mellemrum.");
+            return;
+        }
+
+        if (message.length < 10 || message.length > 500) {
+            alert("Besked skal være mellem 10 og 500 tegn.");
+            return;
+        }
+
 
         const payload = {
             name: name,
