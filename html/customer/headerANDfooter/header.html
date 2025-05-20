@@ -10,22 +10,37 @@
 
 <div id="sticky-header" class="large"> <!-- bruges kun til sticky header CSS og JavaSript. Diven omkredser hele headeren -->
 
-<div class="nav-bar"> <!-- Denne div bruges som et element der sættes ind i alle sider -->
+    <div class="nav-bar"> <!-- Denne div bruges som et element der sættes ind i alle sider -->
     <!-- id er kun i brug til JavaScript. Stylingen foregår via html elementer-->
     <!-- href overskrives i JavaScript til at give navigation-->
 
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger" id="hamburger-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
     <nav>
+        <div id="medialogo"><a id="logo2" href="#"></a></div>
         <ul class="nav-list">
+            <hr class="mobile-liner">
             <li><a id="ydelser" href="#">Ydelser</a></li>
+            <hr class="mobile-liner">
             <li><a id="cases" href="#">Cases</a></li>
+            <hr class="mobile-liner">
             <li class="logo">
                 <a id="logo" href="#">
-                    <img src="/assets/images/Bedre logo.png" alt="Logo">
                 </a>
             </li>
             <li><a id="omos" href="#">Om os</a></li>
+            <hr class="mobile-liner">
             <li><a id="kontakt" href="#">Kontakt</a></li>
+            <hr class="mobile-liner">
         </ul>
+
+
+
     </nav>
 </div>
 </div>

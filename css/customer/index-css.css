@@ -24,6 +24,12 @@ section {
     justify-content: center;
 }
 
+@media (max-width: 980px){
+    section {
+        padding: 2rem  1rem;
+    }
+}
+
 /*-----------------------------------------End on the GLOBAL Styles ---------------------------------*/
 
 
@@ -34,6 +40,13 @@ section {
 #hero-section {
     padding-bottom: 10rem;
     height: 45rem;
+}
+
+@media (max-width: 980px){
+    #hero-section{
+        height: 100vh;
+        padding-bottom: 2rem;
+    }
 }
 
 /* Undertag på video som styler den til at fylde siden */
@@ -63,6 +76,13 @@ section {
     max-width: 90%;
 }
 
+@media(max-width: 980px){
+    .overlay-text{
+        left: 42%;
+        font-size: 38px;
+    }
+}
+
 /* tekst størrelse styres af det her i catch phrase*/
 .overlay-text h1 {
     font-size: 2.5em;
@@ -77,6 +97,13 @@ section {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+@media(max-width: 980px){
+    #intro{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
 }
 
 .about-dm-wrapper{
@@ -98,6 +125,12 @@ section {
     z-index: 2;
 }
 
+@media(max-width: 980px){
+    .about-dm-text h2{
+        font-size: 70px;
+    }
+}
+
 .about-dm-text hr {
     position: relative;
     z-index: 2;
@@ -112,6 +145,12 @@ section {
     line-height: 48px;
     position: relative;
     z-index: 2;
+}
+
+@media(max-width: 980px){
+    .about-dm-text p {
+        font-size: 40px;
+    }
 }
 
 .about-dm-text img{
@@ -129,6 +168,10 @@ section {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
+@media(max-width: 980px){
+    overflow: hidden;
+}
+
 #about-dm-pic1{
     background-image: url("/assets/images/pro-pc-pic2.jpg");
     height: 35%;
@@ -139,6 +182,15 @@ section {
     margin-left: 150px;
     position: relative;
     z-index: 2;
+}
+
+@media(max-width: 980px){
+    #about-dm-pic1{
+        height: 45%;
+        width: 55%;
+        margin-top: 0;
+        margin-left: 25%
+    }
 }
 
 #about-dm-pic2{
@@ -152,6 +204,14 @@ section {
     z-index: 2;
 }
 
+@media(max-width: 980px){
+    #about-dm-pic2{
+        height: 45%;
+        width: 55%;
+        margin-left: 10%;
+    }
+}
+
 #colorground{
     margin-top: 50px;
     height: 85%;
@@ -161,6 +221,19 @@ section {
     z-index: 1;
     left: -23rem;
     border-radius: 10px;
+}
+
+@media(max-width: 980px){
+    #colorground{
+        margin-top: 50px;
+        height: 85%;
+        width: 75%;
+        background-color: #E3F2FD;
+        position: absolute;
+        z-index: 1;
+        left: 7rem;
+        border-radius: 10px;
+    }
 }
 
 /*-----------------------------------------End on the intro to DM-Science ---------------------------------*/
@@ -175,6 +248,13 @@ section {
     grid-template-columns: 1fr 1fr;
 }
 
+@media(max-width: 980px){
+    #services{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
 .services-pic-wrapper{
     background-color: white;
     height: 100%;
@@ -182,6 +262,12 @@ section {
     border-top-left-radius: 10px;
     position: relative;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media(max-width: 980px){
+    .services-pic-wrapper{
+        width: 58rem;
+    }
 }
 
 #colorground2 {
@@ -193,6 +279,19 @@ section {
     position: absolute;
     z-index: 1;
     border-radius: 10px;
+}
+
+@media(max-width: 980px){
+    #colorground2 {
+        margin-top: 38%;
+        height: 90%;
+        width: 88%;
+        left: 6rem;
+        background-color: HSL(226, 72%, 94%);
+        position: absolute;
+        z-index: 1;
+        border-radius: 10px;
+    }
 }
 
 .services-pic-wrapper hr{
@@ -230,6 +329,12 @@ section {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
+@media(max-width: 980px){
+    .services-text{
+        margin-top: -10%;
+    }
+}
+
 .services-text h2{
     color: #246fb3;
     text-align: center;
@@ -239,6 +344,12 @@ section {
     font-family: Serif;
     position: relative;
     z-index: 2;
+}
+
+@media(max-width: 980px){
+    .services-text h2{
+        font-size: 70px;
+    }
 }
 
 .services-text hr {
@@ -256,6 +367,13 @@ section {
     position: relative;
     z-index: 2;
 }
+
+@media(max-width: 980px){
+    .services-text li{
+        font-size: 38px;
+    }
+}
+
 .services-text ul{
     display: inline-block;
     width: 42%;
@@ -265,6 +383,12 @@ section {
     margin-left: 15%;
     padding-bottom: 60px;
     padding-top: 60px;
+}
+
+@media(max-width: 980px){
+    .serice-list {
+        margin-left: 9%;
+    }
 }
 
 
@@ -285,6 +409,14 @@ section {
     grid-template-rows: 1fr auto;
 }
 
+@media(max-width: 980px){
+    #case-presentation{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-bottom: 30%;
+    }
+}
+
 .case-header {
     align-self: center; /* placerer overskriften lodret øverst */
     text-align: left;
@@ -296,6 +428,13 @@ section {
     color: HSL(226, 72%, 75%);
     position: relative;
     z-index: 2;
+}
+
+@media(max-width: 980px){
+    .case-header {
+        width: 80%;
+        font-size: 70px;
+    }
 }
 
 /* === CASE SECTION === */
@@ -316,9 +455,26 @@ section {
     position: relative;
 }
 
+@media(max-width: 980px){
+    .case-paragraph {
+        margin-left: 4%;
+        margin-bottom: 4%;
+        padding: 3% 10%;
+        font-size: 31px;
+        max-width: 71%;
+    }
+}
+
 .case-paragraph p {
     position: relative;
     z-index: 2;
+}
+
+@media(max-width: 980px){
+    .case-paragraph p {
+        font-size: 35px;
+        width: 100%;
+    }
 }
 
 .case-paragraph h3 {
@@ -340,6 +496,12 @@ section {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
+@media(max-width: 980px){
+    .case-content-wrapper {
+        width: 58rem;
+    }
+}
+
 /* === CASE SECTION === */
 /* right links column */
 .case-container {
@@ -353,6 +515,12 @@ section {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
+@media(max-width: 980px){
+    .case-container {
+        align-items: center;
+    }
+}
+
 #colorground3 {
     margin-top: 12rem;
     height: 75%;
@@ -362,6 +530,13 @@ section {
     position: absolute;
     z-index: 1;
     border-radius: 100%;
+}
+
+@media(max-width: 980px){
+    #colorground3 {
+        width: 0;
+        height: 0;
+    }
 }
 
 /* === CASE SECTION === */
@@ -382,6 +557,13 @@ section {
     margin-left: 40px;
     position: relative;
     z-index: 2;
+}
+
+@media(max-width: 980px){
+    .case-container a {
+        width: 60%;
+        font-size: 40px;
+    }
 }
 
 #pushed-case{
@@ -412,8 +594,20 @@ section {
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
     margin-left: 40px;
-
 }
+
+@media(max-width: 980px){
+    .case-button {
+        align-self: auto;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 5%;
+        font-size: 30px;
+        padding: 10px 30px;
+        border-radius: 20px;
+    }
+}
+
 /* === CASE SECTION === */
 /* Hover-state */
 .case-button:hover {
@@ -436,8 +630,14 @@ section {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 2;
-
 }
+
+@media(max-width: 980px){
+    .case-carousel-wrapper {
+        grid-column: span 1;
+    }
+}
+
 /* === CASE SECTION === */
 .carousel-title {
     margin-bottom: 1.5rem;
@@ -445,6 +645,13 @@ section {
     color: #1E2A38;
     text-align: center;
 }
+
+@media(max-width: 980px){
+    .carousel-title {
+        font-size: 40px;
+    }
+}
+
 /* === CASE SECTION === */
 .case-carousel {
     position: relative;
@@ -453,6 +660,14 @@ section {
     max-width: 800px;
     bottom: 15px;
 }
+
+@media(max-width: 980px){
+    .case-carousel {
+        width: 65%;
+    }
+}
+
+
 /* === CASE SECTION === */
 .carousel-track-container {
     overflow: hidden;
@@ -487,6 +702,16 @@ section {
     object-fit: contain;
     display: block;
 }
+
+@media(max-width: 980px){
+    .carousel-slide img {
+        height: 120%;
+        width: 120%;
+        max-width: 120%;
+        max-height: 120%;
+    }
+}
+
 /* === CASE SECTION === */
 .carousel-button {
     position: absolute;
@@ -506,18 +731,26 @@ section {
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     z-index: 5;
 }
+
+@media(max-width: 980px){
+    .carousel-button {
+        width: 12%;
+        height: 40%;
+    }
+}
+
 /* === CASE SECTION === */
 .carousel-button.prev {
-    left: -50px;
+    left: -80px;
 }
 /* === CASE SECTION === */
 .carousel-button.next {
-    right: -50px;
+    right: -80px;
 }
 /* === CASE SECTION === */
 .carousel-button svg {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     color: #fff;
 }
 
@@ -569,6 +802,13 @@ section {
     margin-bottom: 4rem;
 }
 
+@media(max-width: 980px){
+    #contact {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
 /* Det her er venstre side */
 .contact-side-banner {
     background-color: white;
@@ -592,6 +832,15 @@ section {
     left: 14rem ;
 }
 
+@media(max-width: 980px){
+    #colorground4 {
+        margin-top: -10%;
+        height: 69%;
+        width: 60%;
+        left: 37%;
+    }
+}
+
 /* overskrift h2 */
 .contact-side-banner h2 {
     text-align: center;
@@ -603,6 +852,13 @@ section {
     z-index: 2;
     margin-top: -2rem;
 }
+
+@media(max-width: 980px){
+    .contact-side-banner h2 {
+        font-size: 70px;
+    }
+}
+
 /*teksten under overskriften*/
 .contact-side-banner p {
     padding: 0 65px;
@@ -614,6 +870,13 @@ section {
     position: relative;
     z-index: 2;
 }
+
+@media(max-width: 980px){
+    .contact-side-banner p {
+        font-size: 40px;
+    }
+}
+
 /*højre grid */
 .contact-formular {
     background-color: #F5F7FA;
@@ -633,16 +896,37 @@ section {
     font-size: 47px;
     font-family: Serif;
 }
+
+@media(max-width: 980px){
+    .contact-formular h2 {
+        font-size: 60px;
+    }
+}
+
 /*den lille *required tekst*/
 .contact-formular p {
     margin-left: 70px;
     margin-bottom: 10px;
 }
+
+@media(max-width: 980px){
+    .contact-formular p {
+        font-size: 30px;
+    }
+}
+
 /*alle boksene med label og input*/
 .form-boxes {
     text-align: center;
     margin-bottom: 30px;
 }
+
+@media(max-width: 980px){
+    .form-boxes {
+        margin-bottom: 60px;
+    }
+}
+
 /* fokuser kun på input html delen her af boksene*/
 .form-boxes input {
     width: 66%; /*sikker en vis længde på felterne, som kan skrives på*/
@@ -652,6 +936,16 @@ section {
     border-radius: 4px; /*afrunder lidt hjørner på felterne*/
     font-size: 18px;
 }
+
+@media(max-width: 980px){
+    .form-boxes input {
+        font-size: 30px;
+        height: 70px;
+        padding-left: 25%;
+        width: 60%;
+    }
+}
+
 /*skifter style når man har mousen over*/
 .form-boxes input:hover {
     border-bottom: 1px solid #D9534F; /*ændre den nedre kant til ny farve (rød)*/
@@ -667,6 +961,13 @@ section {
     font-size: 18px;
     margin: 13px 20px; /*flytter dem så de står perfekt horisontalt og verticalt */
 }
+
+@media(max-width: 980px){
+    .form-boxes label {
+        font-size: 35px;
+    }
+}
+
 /*en textarea box som har meget ala style som input delene men med lidt ekstra*/
 #message-box textarea{
     width: 66%;
@@ -681,6 +982,16 @@ section {
     border-radius: 4px;
     font-size: 18px;
 }
+
+@media(max-width: 980px){
+    #message-box textarea{
+        font-size: 35px;
+        min-width: 55%;
+        padding-left: 25%;
+        width: 60%;
+    }
+}
+
 /*igen en skifter style når man har mousen over*/
 #message-box textarea:hover{
     border-bottom: 1px solid #D9534F;
@@ -709,6 +1020,13 @@ section {
     border-radius: 10px;/*afrunder hjørner*/
     cursor: pointer; /*gør at når man har curseren over at den skifter til en pegende finger*/
 }
+
+@media(max-width: 980px){
+    #contact button {
+        font-size: 35px;
+    }
+}
+
 /*skifter style når man har mousen over*/
 #contact button:hover {
     background-color: #bd4945;
@@ -733,5 +1051,6 @@ section {
     font-size: 0.9rem;
     margin-top: 0.5rem;
 }
+
 
 
