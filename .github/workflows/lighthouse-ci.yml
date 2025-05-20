@@ -1,0 +1,43 @@
+# .github/workflows/lighthouse-ci.yml
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]    # <-- her siger vi, at PRs imod main også må trigge jobbet
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install LHCI CLI
+        run: npm install -g @lhci/cli
+
+      - name: Start HTTP server
+        run: |
+          python3 -m http.server 8000 &
+          sleep 3
+
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun \
+            --collect.url=http://localhost:8000 \
+            --collect.numberOfRuns=3 \
+            --assert.largest-contentful-paint.error=1000 \
+            --assert.cumulative-layout-shift.warn=0.1 \
+            --upload.target=filesystem
+
+      - name: Upload Lighthouse report
+        uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse-report
+          path: ./.lighthouseci/output/
