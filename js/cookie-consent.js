@@ -5,6 +5,15 @@ const acceptBtn            = document.getElementById("accept-cookies");
 const acceptEssentialBtn   = document.getElementById("accept-essential-cookies");
 const denyBtn              = document.getElementById("deny-cookies");
 
+
+function loadRecaptcha() {
+    const script = document.createElement("script")
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+}
+
 async function initConsent() {
     // 1) Hent samtykke fra localStorage eller fra backend
     let consent = null;
@@ -58,6 +67,12 @@ acceptEssentialBtn.addEventListener("click", async () => {
     localStorage.setItem("cookieConsent", JSON.stringify(consent));
     banner.style.display = "none";
     // ingen logVisit, da analytics ikke er godkendt
+
+    if(!localStorage.getItem("visitedLogged")) {
+        await logVisit();
+        localStorage.setItem("visitedLogged", "true");
+    }
+    loadRecaptcha()
 });
 
 // “Deny all” knap

@@ -62,7 +62,7 @@ section {
 }
 
 /* undertag til at styre hero-text*/
-
+/* tekst størrelse styres af det her i catch phrase*/
 .overlay-text {
     position: absolute;
     top: 40%; /* justeret text boksen ned i section ifh video */
@@ -74,19 +74,19 @@ section {
     border-radius: 15px;
     text-align: center;
     max-width: 90%;
+    font-size: 2.5em;
 }
 
 @media(max-width: 980px){
     .overlay-text{
         left: 42%;
-        font-size: 38px;
+        font-size: 80px;
+        max-width: none;
     }
 }
 
-/* tekst størrelse styres af det her i catch phrase*/
-.overlay-text h1 {
-    font-size: 2.5em;
-}
+
+
 /*-----------------------------------------End on the hero-section ---------------------------------*/
 
 
