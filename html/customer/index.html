@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
+    <title>DM-Datascience</title>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=980">
+    <meta name="description" content="DM-Datascience leverer avancerede datavidenskabelige løsninger med ekspertise i Python, R, datavisualisering, statistiske analyser og API-integrationer. Skab værdi med skræddersyede data-løsninger til din virksomhed.">
     <link rel="stylesheet" href="../../css/customer/index-css.css">
     <link rel="stylesheet" href="../../css/customer/cookie-consent.css">
+
 </head>
 <body>
 
@@ -16,21 +19,18 @@
 <!-- ========== HERO SECTION ========== -->
 <section id="hero-section">
 
-    <video id="backgroundVideo1" autoplay muted playsinline class="background-video">
+    <video id="backgroundVideo1" preload="auto" autoplay muted playsinline class="background-video">
         <source src="/assets/AlternativHeroSection.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
     </video>
-    <video id="backgroundVideo2" muted playsinline class="background-video" style="display:none">
+    <video id="backgroundVideo2" preload="auto" muted playsinline class="background-video" style="display:none">
         <source src="/assets/AlternativHeroSection-reverse-video.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
     </video>
-
-    <div class="overlay-text">
-        <h1>DataScience done right.</h1>
-    </div>
-
-
 </section>
+
+<h1 class="overlay-text" lang="en">DataScience done right.</h1>
+
 
 <!-- ========== WHAT IS DM DATASCIENCE ========== -->
 <section id="intro">
@@ -39,8 +39,8 @@
             <h2>Hvem er DM-Datascience?</h2>
             <hr>
             <p>Hos DM-Datascience er vi specialister i datavidenskabelig programmering.
-                Vi arbejder med avancerede teknologier som Python <img src="/assets/images/python.png">
-                og R <img src="/assets/images/r.png"> for at levere datadrevne løsninger af høj kvalitet.
+                Vi arbejder med avancerede teknologier som Python <img alt="A programming python logo" src="/assets/images/python.svg">
+                og R <img alt="A R programmin language logo" src="/assets/images/r.svg"> for at levere datadrevne løsninger af høj kvalitet.
                 Ved hjælp af disse stærke værktøjer udvikler vi hurtigt og effektivt datavisualiseringer, statistiske analyser og API-integrationer, der skaber værdi og indsigt for vores kunder.
             </p>
         </div>
@@ -130,7 +130,7 @@
 
         <div class="case-carousel">
             <h3 class="carousel-title">Samarbejdspartnere</h3>
-            <button class="carousel-button prev">
+            <button class="carousel-button prev" aria-label="Forige samarbejdspartner icon/brand mærke">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
                     <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
                 </svg>
@@ -142,7 +142,7 @@
                     <!-- flere slides… -->
                 </ul>
             </div>
-            <button class="carousel-button next">
+            <button class="carousel-button next" aria-label="Næste samarbejdspartner icon/brand mærke">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
                     <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
                 </svg>
@@ -221,8 +221,9 @@
 <script src="../../js/send-message-frontend.js"></script>
 
 <script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Google API call til CAPCHA V2-->
+<!-- dette scipt gøre stadig at 3 parts google cookies er loaded før brugeren
+har sagt ja til cookies, og bryder med gdpr regler, os derfor lighthouse brokker sig -->
+<!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>--> <!-- Google API call til CAPCHA V2-->
 <script src="../../js/captcha.js"></script>
 <script type="module" src="../../js/cookie-consent.js"></script>
 
