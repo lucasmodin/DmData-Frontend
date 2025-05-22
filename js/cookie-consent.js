@@ -39,6 +39,7 @@ async function initConsent() {
             await logVisit();
             localStorage.setItem("visitLogged", "true");
         }
+        loadRecaptcha()
     }
 }
 
@@ -69,9 +70,9 @@ acceptEssentialBtn.addEventListener("click", async () => {
     banner.style.display = "none";
     // ingen logVisit, da analytics ikke er godkendt
 
-    if(!localStorage.getItem("visitedLogged")) {
+    if(!localStorage.getItem("visitLogged")) {
         await logVisit();
-        localStorage.setItem("visitedLogged", "true");
+        localStorage.setItem("visitLogged", "true");
     }
     loadRecaptcha()
 });
