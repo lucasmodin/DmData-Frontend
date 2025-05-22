@@ -31,6 +31,8 @@ jobs:
           cp -R css/* out/css/
           mkdir out/js
           cp -R js/* out/js/
+          mkdir out/assets
+          cp -R assets/* out/assets/
           
       - name: Build And Deploy
         id: builddeploy
@@ -57,3 +59,4 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LEMON_ROCK_05A51EB03 }}
           action: "close"
+          app_location: ''
