@@ -1,3 +1,5 @@
+const baseUrl = window._env_.API_URL;
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
 
@@ -80,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         try {
-            const response = await fetch("http://localhost:8080/saveMessage", {
+            const response = await fetch('${baseUrl}/saveMessage', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
