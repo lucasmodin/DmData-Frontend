@@ -100,12 +100,13 @@ header{
         z-index: 4;
     }
 
-    .nav-list hr{
-        width: 85%;
+    .nav-list li hr{
+        width: 51rem;
         margin: 4%;
-        border: 1px solid gray;
+        border: 1px solid white;
         z-index: 4;
-        margin-left: 8%;
+        margin-left: 1%;
+        height: 1px;
     }
 
     #logo2{
@@ -237,10 +238,10 @@ header{
     }
 
     .nav-bar .nav-list li a {
-        font-size: 55px;
+        font-size: 70px;
         text-transform: uppercase;
         font-weight: bold;
-        color: whitesmoke;
+        color: black;
         font-family: Serif;
     }
 
