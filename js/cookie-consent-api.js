@@ -1,6 +1,6 @@
-const USE_MOCK = true;
+const USE_MOCK = false;
 
-const baseUrl = window.location.hostname === "localhost" ? "" : "http://localhost:8080";
+const baseUrl = "http://localhost:8080";
 
 export async function fetchConsent() {
     if (USE_MOCK) {

@@ -56,6 +56,7 @@ acceptBtn.addEventListener("click", async () => {
         await logVisit();
         localStorage.setItem("visitLogged", "true");
     }
+    loadRecaptcha()
 });
 
 // “Kun essentielle” knap
