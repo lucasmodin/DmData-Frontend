@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../../css/customer/cases-css.css" />
     <link rel="stylesheet" href="../../css/customer/case-css.css" />
     <link rel="stylesheet" href="../../css/customer/cookie-consent.css">
+    <link rel="stylesheet" href="../../css/customer/cookie-modal.css">
 </head>
 <body>
 <header>
@@ -65,12 +66,24 @@
             <p>
                 Vi bruger cookies for at forbedre din oplevelse, analysere trafik og vise målrettede annoncer.
                 Du kan acceptere eller afvise ikke-nødvendige cookies.
-                <a href="/cookie-policy.html" target="_blank">Vis detaljer</a>
+                <a href="#" id="show-cookie-details">Vis detaljer</a>            </p>
             </p>
             <button id="accept-cookies">Tillad</button>
             <button id="accept-essential-cookies">Kun nødvendige cookies</button>
             <button id="deny-cookies">Afvis</button>
         </div>
+    </div>
+</div>
+
+<!-- Cookie Details Modal -->
+<div id="cookie-details-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="close-cookie-modal" class="close">&times;</span>
+        <h2>Cookiepolitik</h2>
+        <p><strong>Nødvendige cookies:</strong> Disse er nødvendige for at websitet fungerer korrekt og kan ikke slås fra i vores systemer.</p>
+        <p><strong>Analytiskecookies:</strong> Bruges til at analysere brugeradfærd og forbedre vores service.</p>
+        <p><strong>Marketingcookies:</strong> Bruges til at spore besøgende på tværs af hjemmesider for at vise relevante annoncer.</p>
+
     </div>
 </div>
 </body>

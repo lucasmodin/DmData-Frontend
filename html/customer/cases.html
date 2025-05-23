@@ -5,6 +5,8 @@
     <title>Title</title>
     <link rel="stylesheet" href="../../css/customer/cases-css.css">
     <link rel="stylesheet" href="../../css/customer/cookie-consent.css">
+    <link rel="stylesheet" href="../../css/customer/cookie-modal.css">
+
 </head>
 <body>
 
@@ -12,23 +14,25 @@
     <div id="header-container"></div> <!-- placeholder for header -->
 </header>
 
-    <main>
-        <div class="overview-title">
-            <h1>Oversigt over Cases</h1>
-            <p>Her kan du se et udpluk af vores tidligere projekter</p>
-        </div>
-        <!-- Divider mellem title og cases -->
-        <hr class="divider" />
+<main>
+    <div class="overview-title">
+        <h1>Oversigt over Cases</h1>
+        <p>Her kan du se et udpluk af vores tidligere projekter</p>
+    </div>
+    <!-- Divider mellem title og cases -->
+    <hr class="divider" />
 
-        <!-- Loader -->
-        <div id="loader" class="loader"></div>
+    <!-- Loader -->
+    <div id="loader" class="loader"></div>
 
 
-        <div id="cases-grid" class="hidden"></div>
-    </main>
+    <div id="cases-grid" class="hidden"></div>
+</main>
 
 <script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
 <script type="module" src="../../js/case-overview.js"></script>
+<script src="../../js/cookie-modal.js"></script>
+
 <footer>
     <div id="footer-container"></div> <!-- placeholder for footer -->
 </footer>
@@ -41,13 +45,26 @@
             <p>
                 Vi bruger cookies for at forbedre din oplevelse, analysere trafik og vise målrettede annoncer.
                 Du kan acceptere eller afvise ikke-nødvendige cookies.
-                <a href="/cookie-policy.html" target="_blank">Vis detaljer</a>
-            </p>
+                <a href="#" id="show-cookie-details">Vis detaljer</a>            </p>
             <button id="accept-cookies">Tillad</button>
             <button id="accept-essential-cookies">Kun nødvendige cookies</button>
             <button id="deny-cookies">Afvis</button>
         </div>
     </div>
 </div>
+
+<!-- Cookie Details Modal -->
+<div id="cookie-details-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="close-cookie-modal" class="close">&times;</span>
+        <h2>Cookiepolitik</h2>
+        <p><strong>Nødvendige cookies:</strong> Disse er nødvendige for at websitet fungerer korrekt og kan ikke slås fra i vores systemer.</p>
+        <p><strong>Analytiskecookies:</strong> Bruges til at analysere brugeradfærd og forbedre vores service.</p>
+        <p><strong>Marketingcookies:</strong> Bruges til at spore besøgende på tværs af hjemmesider for at vise relevante annoncer.</p>
+
+    </div>
+</div>>
+</div>
+
 </body>
 </html>

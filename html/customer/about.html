@@ -1,54 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <title>Om Os</title>
-    <link rel="stylesheet" href="../../css/customer/about-css.css">
+    <meta charset="UTF-8" />
+    <title>Case Detail</title>
+    <link rel="stylesheet" href="../../css/customer/cases-css.css" />
+    <link rel="stylesheet" href="../../css/customer/case-css.css" />
     <link rel="stylesheet" href="../../css/customer/cookie-consent.css">
+    <link rel="stylesheet" href="../../css/customer/cookie-modal.css">
+
 </head>
 <body>
 <header>
-    <div id="header-container"></div> <!-- placeholder for header -->
+    <div id="header-container"></div>
 </header>
+
 <main>
-    <section id="about-us">
-        <div class="about-us-text-wrapper">
-            <div id="about-us-pic1"></div>
-            <div>
-                <h2>Om DM-Datascience</h2>
-                <hr>
-                <p>
-                    Hos <strong>DM-Datascience</strong> er vi mere end blot specialister i datavidenskab – vi er en innovationspartner, der kombinerer <em>teknologisk ekspertise</em> med et skarpt <em>forretningsmæssigt fokus</em>. Vi tror på, at <strong>data er en strategisk ressource</strong>, og vi hjælper virksomheder med at transformere komplekse datasæt til konkrete indsigter og målbare resultater.
-                </p>
-                <p>
-                    Vores tilgang er præget af <strong>agil udvikling</strong>, <strong>datadreven beslutningstagning</strong> og <strong>automatiserede løsninger</strong>, der skalerer. Med et team bestående af højtuddannede data scientists og softwareingeniører, arbejder vi med cutting-edge teknologier som <code>Python</code>, <code>R</code>, <code>Docker</code>, <code>FastAPI</code>, og moderne <em>cloud-first</em> arkitekturer.
-                </p>
-                <p>
-                    Vi er passionerede omkring at levere <strong>effektive</strong>, <strong>skræddersyede</strong> løsninger, der er drevet af <strong>indsigt</strong>, <strong>impact</strong> og <strong>innovation</strong>. Hver linje kode, hver visualisering og hver integration er designet med ét mål for øje: <em>at maksimere værdien af dine data</em>.
-                </p>
-            </div>
+    <!-- OVERSKRIFT + BACK BUTTON -->
+    <div class="overview-title">
+        <button id="back-button">← Tilbage til oversigt</button>
+
+        <!-- 1A: Overskrift-skeleton -->
+        <div id="overview-skeleton">
+            <div class="skeleton title-skeleton"></div>
+            <div class="skeleton date-skeleton"></div>
         </div>
-        <div class="about-us-pic-wrapper">
-            <div id="about-us-pic2"></div>
-            <div>
-                <h3>Vores kerneværdier</h3>
-                <ul>
-                    <li><strong>Transparens:</strong> Vi tror på åbenhed og tydelig kommunikation – både internt og med vores kunder.</li>
-                    <li><strong>Effektivitet:</strong> Vi prioriterer hurtig udvikling uden at gå på kompromis med kvalitet.</li>
-                    <li><strong>Innovation:</strong> Vi er altid på forkant med ny teknologi og metodik – og vi bringer det i spil for dig.</li>
-                    <li><strong>Samarbejde:</strong> Vi arbejder tæt sammen med vores kunder for at sikre, at løsningerne matcher forretningsbehovet 1:1.</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Mission & Vision</h3>
-                <p><strong>Mission:</strong> At gøre data tilgængeligt, forståeligt og værdifuldt for virksomheder i alle størrelser gennem skræddersyede løsninger med høj teknisk kvalitet.</p>
-                <p><strong>Vision:</strong> At blive en førende aktør inden for datadrevne strategier i Norden, og en trusted partner for virksomheder, der ønsker at bruge data som et aktiv i den digitale transformation.</p>
-            </div>
+
+        <!-- 1B: Den rigtige overskrift, skjult indtil loaded -->
+        <h1 id="case-title" class="hidden"></h1>
+        <p id="case-date" class="hidden"></p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- RESTEN AF CASEN (BILLEDE + BESKRIVELSE) -->
+    <!-- 2A: Container-skeleton (hvid boks med shimmer) -->
+    <div id="content-skeleton">
+        <div class="skeleton image-skeleton"></div>
+        <div class="detail-content">
+            <div class="skeleton text-skeleton line1"></div>
+            <div class="skeleton text-skeleton line2"></div>
+            <div class="skeleton text-skeleton line3"></div>
         </div>
-    </section>
+    </div>
+
+    <!-- 2B: Det rigtige indhold, skjult indtil loaded -->
+    <div id="case-detail" class="hidden">
+        <div class="detail-image" id="case-image"></div>
+        <div class="detail-content">
+            <p id="case-description"></p>
+        </div>
+    </div>
 </main>
+
+<script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
+<script type="module" src="../../js/case-detail.js"></script>
+<script src="../../js/cookie-modal.js"></script>
+
+
 <footer>
-    <div id="footer-container"></div> <!-- placeholder for footer -->
+    <div id="footer-container"></div>
 </footer>
 <!-- ========== COOKIE CONSENT SCRIPT ========== -->
 <script type="module" src="../../js/cookie-consent.js"></script>
@@ -59,14 +69,24 @@
             <p>
                 Vi bruger cookies for at forbedre din oplevelse, analysere trafik og vise målrettede annoncer.
                 Du kan acceptere eller afvise ikke-nødvendige cookies.
-                <a href="/cookie-policy.html" target="_blank">Vis detaljer</a>
-            </p>
+                <a href="#" id="show-cookie-details">Vis detaljer</a>            </p>
             <button id="accept-cookies">Tillad</button>
             <button id="accept-essential-cookies">Kun nødvendige cookies</button>
             <button id="deny-cookies">Afvis</button>
         </div>
     </div>
 </div>
+<!-- Cookie Details Modal -->
+<div id="cookie-details-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="close-cookie-modal" class="close">&times;</span>
+        <h2>Cookiepolitik</h2>
+        <p><strong>Nødvendige cookies:</strong> Disse er nødvendige for at websitet fungerer korrekt og kan ikke slås fra i vores systemer.</p>
+        <p><strong>Analytiskecookies:</strong> Bruges til at analysere brugeradfærd og forbedre vores service.</p>
+        <p><strong>Marketingcookies:</strong> Bruges til at spore besøgende på tværs af hjemmesider for at vise relevante annoncer.</p>
+
+    </div>
+</div>
+
 </body>
-<script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
 </html>

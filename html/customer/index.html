@@ -7,6 +7,7 @@
     <meta name="description" content="DM-Datascience leverer avancerede datavidenskabelige løsninger med ekspertise i Python, R, datavisualisering, statistiske analyser og API-integrationer. Skab værdi med skræddersyede data-løsninger til din virksomhed.">
     <link rel="stylesheet" href="../../css/customer/index-css.css">
     <link rel="stylesheet" href="../../css/customer/cookie-consent.css">
+    <link rel="stylesheet" href="../../css/customer/cookie-modal.css">
 
 </head>
 <body>
@@ -159,7 +160,7 @@
         <h2>Kom i kontakt med os</h2>
         <p>Vi er altid klar til at tage imod spørgsmål, uanset hvad der er på linjen.
             Lyst til at høre ang. projekter, muligheder eller priser, så skriv endelig.
-        Vi plejer at vender tilbage efter ca. 2 arbejds hverdage.</p>
+            Vi plejer at vender tilbage efter ca. 2 arbejds hverdage.</p>
 
     </div>
     <!--right side of page-->
@@ -184,32 +185,32 @@
 
             <div class="form-boxes">
 
-          <div class="form-boxes">
-                <label for="phone-number"><strong>Tlf. Nr.</strong></label>
-                <!-- Fjernelse af +45 betyder at feltet er blankt og dermed kan sendes direkte-->
-                <input type="tel" id="phone-number" name="phone-number" placeholder="+45 12 34 56 78">
-              <p id="error-phone-number" class="error-message"></p>
-            </div>
+                <div class="form-boxes">
+                    <label for="phone-number"><strong>Tlf. Nr.</strong></label>
+                    <!-- Fjernelse af +45 betyder at feltet er blankt og dermed kan sendes direkte-->
+                    <input type="tel" id="phone-number" name="phone-number" placeholder="+45 12 34 56 78">
+                    <p id="error-phone-number" class="error-message"></p>
+                </div>
 
-            
-            <div class="form-boxes" id="message-box">
-                <label for="message"><strong>Besked</strong></label>
-                <textarea id="message" name="message" placeholder="Skriv besked her *" required></textarea >
-                <p id="error-message" class="error-message"></p>
-            </div>
-            <!-- reCAPTCHA site key. Den er OK normal at have liggende hardcoded ifølge ChatGPT -->
-            <div class="captcha-block">
-                <div class="g-recaptcha"
-                     data-sitekey="6Lc5XDIrAAAAANPtqzouB7I_tHTuYHcGI1PpfTcq"
-                     data-callback="onCaptchaSuccess"
-                ></div>
-            </div>
-            <!-- Fejlbesked som standard skjult -->
-            <p id="captcha-error" class="captcha-error hidden">
-                Du skal bekræfte, at du ikke er en robot, før du kan sende formularen.
-            </p>
 
-            <button id="submit-btn" type="submit">Send</button>
+                <div class="form-boxes" id="message-box">
+                    <label for="message"><strong>Besked</strong></label>
+                    <textarea id="message" name="message" placeholder="Skriv besked her *" required></textarea >
+                    <p id="error-message" class="error-message"></p>
+                </div>
+                <!-- reCAPTCHA site key. Den er OK normal at have liggende hardcoded ifølge ChatGPT -->
+                <div class="captcha-block">
+                    <div class="g-recaptcha"
+                         data-sitekey="6Lc5XDIrAAAAANPtqzouB7I_tHTuYHcGI1PpfTcq"
+                         data-callback="onCaptchaSuccess"
+                    ></div>
+                </div>
+                <!-- Fejlbesked som standard skjult -->
+                <p id="captcha-error" class="captcha-error hidden">
+                    Du skal bekræfte, at du ikke er en robot, før du kan sende formularen.
+                </p>
+
+                <button id="submit-btn" type="submit">Send</button>
             </div>
         </form>
     </div>
@@ -219,6 +220,8 @@
 <script src="../../js/heroSection.js"></script>
 <script src="../../js/case-carousel.js"></script>
 <script src="../../js/send-message-frontend.js"></script>
+<script src="../../js/cookie-modal.js"></script>
+
 
 <script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
 <!-- dette scipt gøre stadig at 3 parts google cookies er loaded før brugeren
@@ -238,12 +241,23 @@ har sagt ja til cookies, og bryder med gdpr regler, os derfor lighthouse brokker
             <p>
                 Vi bruger cookies for at forbedre din oplevelse, analysere trafik og vise målrettede annoncer.
                 Du kan acceptere eller afvise ikke-nødvendige cookies.
-                <a href="/cookie-policy.html" target="_blank">Vis detaljer</a>
-            </p>
+                <a href="#" id="show-cookie-details">Vis detaljer</a>            </p>
             <button id="accept-cookies">Tillad</button>
             <button id="accept-essential-cookies">Kun nødvendige cookies</button>
             <button id="deny-cookies">Afvis</button>
         </div>
+    </div>
+</div>
+
+<!-- Cookie Details Modal -->
+<div id="cookie-details-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="close-cookie-modal" class="close">&times;</span>
+        <h2>Cookiepolitik</h2>
+        <p><strong>Nødvendige cookies:</strong> Disse er nødvendige for at websitet fungerer korrekt og kan ikke slås fra i vores systemer.</p>
+        <p><strong>Analytiskecookies:</strong> Bruges til at analysere brugeradfærd og forbedre vores service.</p>
+        <p><strong>Marketingcookies:</strong> Bruges til at spore besøgende på tværs af hjemmesider for at vise relevante annoncer.</p>
+
     </div>
 </div>
 </body>
