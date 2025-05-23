@@ -23,7 +23,9 @@ jobs:
 
       - name: Prepare static file
         run: |
-          run: echo "window._env_ = { API_URL: '${{ secrets.API_URL_PROD }}' };" > config.js
+          echo "window._env_ = {" > config.js
+          echo "  API_URL: '${{ secrets.API_URL_PROD }}'" >> config.js
+          echo "};" >> config.js
 
       # 1) Lav en 'out'-mappe og kopier html/customer + css + js ind i den
       - name: Prepare static site
