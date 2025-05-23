@@ -25,7 +25,7 @@ const imgEl         = document.getElementById("case-image");
 const descContainer = document.querySelector("#content-skeleton .detail-content");
 
 // — Tilbage-knap —
-backBtn.addEventListener("click", () => window.history.back());
+backBtn.addEventListener("click", () => window.location.href = "cases.html");
 
 // — Hent ?id= fra URL —
 function getCaseId() {
