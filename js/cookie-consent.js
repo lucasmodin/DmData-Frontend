@@ -3,7 +3,7 @@ import { fetchConsent, updateConsent, logVisit } from "./cookie-consent-api.js";
 const banner               = document.getElementById("cookie-banner");
 const acceptBtn            = document.getElementById("accept-cookies");
 const acceptEssentialBtn   = document.getElementById("accept-essential-cookies");
-const denyBtn              = document.getElementById("deny-cookies");
+
 
 
 function loadRecaptcha() {
@@ -77,15 +77,5 @@ acceptEssentialBtn.addEventListener("click", async () => {
     loadRecaptcha()
 });
 
-// “Deny all” knap
-denyBtn.addEventListener("click", async () => {
-    const ok = await updateConsent(false, false);
-    if (!ok) return;
-
-    const consent = { analyticsAccepted: false, marketingAccepted: false };
-    localStorage.setItem("cookieConsent", JSON.stringify(consent));
-    banner.style.display = "none";
-    // heller ikke her logVisit
-});
 
 document.addEventListener("DOMContentLoaded", initConsent);

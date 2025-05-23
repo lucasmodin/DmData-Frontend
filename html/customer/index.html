@@ -7,6 +7,8 @@
     <meta name="description" content="DM-Datascience leverer avancerede datavidenskabelige løsninger med ekspertise i Python, R, datavisualisering, statistiske analyser og API-integrationer. Skab værdi med skræddersyede data-løsninger til din virksomhed.">
     <link rel="stylesheet" href="../../css/customer/index-css.css">
     <link rel="stylesheet" href="../../css/customer/cookie-consent.css">
+    <link rel="stylesheet" href="../../css/customer/cookie-modal.css">
+
     <script src="../../config.js"></script>
 </head>
 <body>
@@ -219,6 +221,8 @@
 <script src="../../js/heroSection.js"></script>
 <script src="../../js/case-carousel.js"></script>
 <script src="../../js/send-message-frontend.js"></script>
+<script src="../../js/cookie-modal.js"></script>
+
 
 <script defer src="../../js/headerANDfooter/headerANDfooter.js"></script>
 <!-- dette scipt gøre stadig at 3 parts google cookies er loaded før brugeren
@@ -236,14 +240,26 @@ har sagt ja til cookies, og bryder med gdpr regler, os derfor lighthouse brokker
     <div class="cookie-banner-subcontainer">
         <div class="cookie-info-text">
             <p>
-                Vi bruger cookies for at forbedre din oplevelse, analysere trafik og vise målrettede annoncer.
-                Du kan acceptere eller afvise ikke-nødvendige cookies.
-                <a href="/cookie-policy.html" target="_blank">Vis detaljer</a>
-            </p>
+                Vi bruger cookies for at sikre den tekniske funktion af siden (herunder Google reCAPTCHA).
+                Hvis du giver samtykke, anvender vi også analyseværktøjer til at forstå brugeradfærd og forbedre vores services.
+                <br>Ingen marketingcookies benyttes. Dine valg bliver gemt.
+                <a href="#" id="show-cookie-details">Vis detaljer</a>            </p>
             <button id="accept-cookies">Tillad</button>
             <button id="accept-essential-cookies">Kun nødvendige cookies</button>
-            <button id="deny-cookies">Afvis</button>
         </div>
+    </div>
+</div>
+
+<!-- Cookie Details Modal -->
+<div id="cookie-details-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-cookie-modal" class="close">&times;</span>
+        <h2>Cookiepolitik</h2>
+        <p><strong>Nødvendige cookies:</strong> Disse cookies er afgørende for, at hjemmesiden fungerer korrekt. Vi bruger blandt andet tredjeparts-cookies fra Google reCAPTCHA til at beskytte kontaktformularen mod misbrug. Disse cookies kan ikke fravælges. </p>
+        <p><strong>Analytiskecookies:</strong> Hvis du giver samtykke til alle cookies, anvender vi disse til at indsamle anonymiserede data om din brug af hjemmesiden. Dette hjælper os med at analysere og forbedre vores indhold og funktionalitet. Vi registrerer også et besøgslog med generel geolokation baseret på din IP-adresse.</p>
+        <p><strong>Marketingcookies:</strong> Vi benytter ikke interne eller eksterne marketingcookies til målretning eller annoncering.</p>
+        <p><strong>Ekstra:</strong> Vi registrerer altid dit valg i vores cookieregister, så vi kan respektere dine præferencer ved fremtidige besøg.</p>
+
     </div>
 </div>
 </body>
