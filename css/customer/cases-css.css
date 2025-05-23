@@ -15,7 +15,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0 var(--gap);
-    background: #f9f9f9;
+    background-color: #F7F9FB;
 }
 
 /* === Cases Oversigt Titel === */
@@ -142,7 +142,7 @@ body {
 
 main {
     position: relative;
-    background-color: #E3F2FD;  /* Lys blå grundfarve */
+    background-color: #F7F9FB;  /* Lys blå grundfarve */
     padding: calc(var(--gap)*2);
     overflow: hidden;
     min-height: 100vh;
@@ -157,7 +157,7 @@ main::before {
     left: -20%;
     width: 60%;
     height: 50%;
-    background-color: rgba(44, 142, 214, 0.15);
+    background-color: rgba(44, 142, 214, 0.05);  /* lidt stærkere blå accent */
     clip-path: polygon(
             0% 20%,  /* venstre midt på */
             30% 0%,  /* øverst på */
@@ -176,7 +176,7 @@ main::after {
     right: -30%;
     width: 70%;
     height: 60%;
-    background-color: rgba(255, 195,  0, 0.10);
+    background-color: rgba(44, 142, 214, 0.03);  /* samme blå, men mere transparent */
     clip-path: polygon(
             30% 0%,   /* øverst lidt inde fra venstre */
             100% 20%, /* øverst til højre */

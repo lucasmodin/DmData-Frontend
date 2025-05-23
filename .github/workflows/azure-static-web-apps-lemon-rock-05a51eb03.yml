@@ -21,6 +21,12 @@ jobs:
           submodules: true
           lfs: false
 
+      - name: Prepare static file
+        run: |
+          echo "window._env_ = {" > config.js
+          echo "  API_URL: '${{ secrets.API_URL_PROD }}'" >> config.js
+          echo "};" >> config.js
+
       # 1) Lav en 'out'-mappe og kopier html/customer + css + js ind i den
       - name: Prepare static site
         run: |
@@ -33,6 +39,10 @@ jobs:
           cp -R js/* out/js/
           mkdir out/assets
           cp -R assets/* out/assets/
+          cp config.js out/
+
+      - name: Debug config.js
+        run: cat out/config.js
           
       - name: Build And Deploy
         id: builddeploy
