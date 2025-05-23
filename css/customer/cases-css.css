@@ -34,10 +34,22 @@ body {
     letter-spacing: 1px;
 }
 
+@media(max-width: 980px){
+    .overview-title h1 {
+        font-size: 70px;
+    }
+}
+
 .overview-title p {
     font-size: 1rem;
     color: #555;                 /* en mere dæmpet undertone */
     margin: 0;
+}
+
+@media(max-width: 980px){
+    .overview-title p {
+        font-size: 35px;
+    }
 }
 
 /* Horisontal linje mellem overview-title og cases */
