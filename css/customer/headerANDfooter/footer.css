@@ -23,7 +23,7 @@
 }
 
 .footer-logo img{
-    height: 120px;
+    height: auto;
     width: 145px;
 }
 .footer-social {
@@ -50,8 +50,8 @@
     }
 
     .footer-logo img {
-        height: 10%;
-        width: 27%;
+        height: auto;
+        width: 145px;
     }
 
     .footer-contact {

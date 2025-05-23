@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //error handling hvis video ikke hentes
     if (!video) {
-        console.error("Video element not found.");
+        console.warn("Video element not found.");
         return;
     }
 

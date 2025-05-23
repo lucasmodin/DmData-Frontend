@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../css/customer/cases-css.css">
+    <script src="../../config.js"></script>
+    <link rel="stylesheet" href="../../css/customer/cookie-consent.css">
 </head>
 <body>
 
@@ -31,5 +33,23 @@
 <footer>
     <div id="footer-container"></div> <!-- placeholder for footer -->
 </footer>
+
+<!-- ========== COOKIE CONSENT SCRIPT ========== -->
+<script type="module" src="../../js/cookie-consent.js"></script>
+<!-- ========== COOKIE CONSENT BANNER ========== -->
+<div id="cookie-banner" class="cookie-banner-container" style="display: none;">
+    <div class="cookie-banner-subcontainer">
+        <div class="cookie-info-text">
+            <p>
+                Vi bruger cookies for at forbedre din oplevelse, analysere trafik og vise målrettede annoncer.
+                Du kan acceptere eller afvise ikke-nødvendige cookies.
+                <a href="/cookie-policy.html" target="_blank">Vis detaljer</a>
+            </p>
+            <button id="accept-cookies">Tillad</button>
+            <button id="accept-essential-cookies">Kun nødvendige cookies</button>
+            <button id="deny-cookies">Afvis</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>

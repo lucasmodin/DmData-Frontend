@@ -1,7 +1,8 @@
 
 .cookie-banner-container {
-    width: 1600px;
-    margin: auto;
+    max-width: 100vw;
+    left: 0;
+    right: 0;
 }
 
 .cookie-banner-subcontainer {
@@ -46,12 +47,28 @@
     cursor: pointer;
 }
 
+#accept-essential-cookies{
+    background-color: #333333;
+}
+
+#accept-essential-cookies:hover{
+    background-color: #6c6c6c;
+}
+
+#deny-cookies{
+    background-color: #8b0000;
+}
+
+#deny-cookies:hover{
+    background-color: #d7423e;
+}
+
 .cookie-info-text button:hover {
     background-color: #020000;
 }
 
 #accept-cookies {
-    background-color: #228b22;
+    background-color: #006400;
 }
 
 #accept-cookies:hover {

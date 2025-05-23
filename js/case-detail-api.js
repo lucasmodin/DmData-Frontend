@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:8080";
+const baseUrl = window._env_.API_URL;
 
 export async function loadCase(id) {
     try {
