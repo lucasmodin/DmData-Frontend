@@ -40,6 +40,7 @@ jobs:
           mkdir out/assets
           cp -R assets/* out/assets/
           cp config.js out/
+          cp sitemap.xml out/
 
       - name: Debug config.js
         run: cat out/config.js
