@@ -87,7 +87,7 @@ function loadNavLogic() {
     if (serviceLink) {
         serviceLink.addEventListener('click', function(event) {
             event.preventDefault(); // gør det muligt at selv programmere sidens adfærd
-            window.location.href = "#services"; //hardcoded fil navn til navigation
+            window.location.href = "index.html#services"; //hardcoded fil navn til navigation
         });
     }
 
@@ -133,7 +133,7 @@ function loadNavLogic() {
     if (contactLink) {
         contactLink.addEventListener('click', function(event) {
             event.preventDefault();
-            window.location.href = "#contact";
+            window.location.href = "index.html#contact";
         });
     }
     // Sticky Header logikken skal hænger sammen med navigations logikken
