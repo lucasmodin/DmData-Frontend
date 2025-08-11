@@ -1,0 +1,8 @@
+{
+  "routes": [
+    { "route": "/sitemap.xml", "serve": "/sitemap.xml" },
+    { "route": "/robots.txt", "serve": "/robots.txt" },
+    { "route": "/favicon.ico", "serve": "/favicon.ico" },
+    { "route": "/*", "serve": "/maintenance.html" }
+  ]
+}
