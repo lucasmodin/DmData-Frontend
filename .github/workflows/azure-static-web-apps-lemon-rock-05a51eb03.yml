@@ -41,6 +41,7 @@ jobs:
           cp -R assets/* out/assets/
           cp config.js out/
           cp sitemap.xml out/
+          cp favicon.ico out/
 
       - name: Debug config.js
         run: cat out/config.js
